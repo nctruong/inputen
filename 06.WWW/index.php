@@ -1,6 +1,6 @@
 <?php
 // change the following paths if necessary
-$yii='YII_PATH';
+$yii='D:\Zend\ZendServer\share\YiiFramework\yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
 // remove the following lines when in production mode
 //defined('YII_DEBUG') or define('YII_DEBUG',true);
