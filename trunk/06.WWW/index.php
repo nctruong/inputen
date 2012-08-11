@@ -8,7 +8,7 @@ if (!defined('APPLICATION_PATH'))
 if (!defined('APPLICATION_ROOT'))
     define('APPLICATION_ROOT', realpath(dirname(__FILE__) . '/'));
 if (!defined('YII_PATH'))
-    define('YII_PATH', 'D:\Zend\ZendServer\share\YiiFramework');
+    define('YII_PATH', 'D:/Zend/ZendServer/share/YiiFramework');
 if (!defined('DS'))
     define('DS', DIRECTORY_SEPARATOR);
 if (!defined('PS'))
@@ -50,8 +50,6 @@ require_once($yii);
 
 // Run application
 $config = CMap::mergeArray($configMain, $configEnv);
-Yii::createWebApplication($config)->run();
-require_once($yii);
 Yii::createWebApplication($config)->run();
 $end_time = microtime(true);
 //*

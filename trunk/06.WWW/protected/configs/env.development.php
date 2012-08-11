@@ -16,16 +16,12 @@ return array(
         'gii' => array(
             'class' => 'system.gii.GiiModule',
             'password' => '123admin!@#$',
-        // 'ipFilters'=>array(...a list of IPs...),
-        // 'newFileMode'=>0666,
-        // 'newDirMode'=>0777,
         ),
     ),
     'components' => array(
         'urlManager' => array(
             'urlFormat' => 'path',
             'rules' => array(
-                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
                 'gii' => 'gii',
                 'gii/<controller:\w+>' => 'gii/<controller>',
                 'gii/<controller:\w+>/<action:\w+>' => 'gii/<controller>/<action>',
@@ -38,12 +34,9 @@ return array(
                     'class' => 'CFileLogRoute',
                     'levels' => 'error, warning',
                 ),
-            // uncomment the following to show log messages on web pages
-            /*
-              array(
-              'class'=>'CWebLogRoute',
-              ),
-             */
+                array(
+                    'class' => 'CWebLogRoute',
+                ),
             ),
         ),
         'db' => array(
