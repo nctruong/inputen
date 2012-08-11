@@ -60,7 +60,8 @@ return array(
             'enableProfiling' => true,
         ),
         'cache' => array(
-            'class' => 'system.caching.CFileCache',
+            'class' => 'system.caching.CMemCache',
+            'useMemcached' => true,
         ),
         'session' => array(
             'autoStart' => true,
