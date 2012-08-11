@@ -9,42 +9,29 @@ return array(
     ),
     'import' => array(
         'application.models.*',
-        'application.components.*',
-        'application.modules.*',
+        'application.components.*'
     ),
+    'defaultController' => 'site',
     'components' => array(
-        'bootstrap' => array(
-            'class' => 'ext.bootstrap.components.Bootstrap',
-        ),
         'urlManager' => array(
-            'class' => 'SlugURLManager',
-            'cache' => true,
             'urlFormat' => 'path',
-            'showScriptName' => false,
             'rules' => array(
-                /*
-                'sitemap.xml' => '/site/sitemap',
-                'search/<page:\d+>' => '/site/search',
-                'search/<id:\d+>' => '/site/mysqlsearch',
-                'search' => '/site/mysqlsearch',
-                'contact' => '/site/contact',
-                'blog.rss' => '/content/rss',
-                'blog/<page:\d+>' => '/content/list',
-                 * 
-                 */
-                '/' => '/content/list',
-                '/<id:\w+>' => '/content/index',
-                /*
-                'blog' => '/content/list',
-                'activation/<email:\w+>/<id:\w+>' => '/site/activation',
-                'activation' => '/site/activation',
-                'forgot/<id:\w+>' => '/site/forgot',
-                'forgot' => '/site/forgot',
-                'register' => '/site/register',
-                'login' => '/site/login',
-                'logout' => '/site/logout',
-                 * 
-                 */
+                '/' => 'site/index',
+            ),
+        ),
+        'log' => array(
+            'class' => 'CLogRouter',
+            'routes' => array(
+                array(
+                    'class' => 'CFileLogRoute',
+                    'levels' => 'error, warning',
+                ),
+            // uncomment the following to show log messages on web pages
+            /*
+              array(
+              'class'=>'CWebLogRoute',
+              ),
+             */
             ),
         ),
         'db' => array(
