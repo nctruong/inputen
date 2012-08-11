@@ -1,12 +1,8 @@
 <?php
 
-class DefaultController extends CController {
+class DefaultController extends SysadminMiisController {
 
     public function actionIndex() {
-        echo "<pre>";
-        var_dump('sysadmin-index');
-        echo "</pre>";
-        exit;
         $this->render('index');
     }
 
