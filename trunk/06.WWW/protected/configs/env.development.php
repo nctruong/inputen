@@ -11,8 +11,9 @@ return array(
         'application.models.*',
         'application.components.*'
     ),
-    'defaultController' => 'site',
     'modules' => array(
+        'members',
+        'sysadmin',
         'gii' => array(
             'class' => 'system.gii.GiiModule',
             'password' => '123admin!@#$',
@@ -22,6 +23,15 @@ return array(
         'urlManager' => array(
             'urlFormat' => 'path',
             'rules' => array(
+                // members module
+                'members' => 'members',
+                'members/<controller:\w+>' => 'members/<controller>',
+                'members/<controller:\w+>/<action:\w+>' => 'members/<controller>/<action>',
+                // sysadmin module
+                'sysadmin' => 'sysadmin',
+                'sysadmin/<controller:\w+>' => 'sysadmin/<controller>',
+                'sysadmin/<controller:\w+>/<action:\w+>' => 'sysadmin/<controller>/<action>',
+                // auto generate
                 'gii' => 'gii',
                 'gii/<controller:\w+>' => 'gii/<controller>',
                 'gii/<controller:\w+>/<action:\w+>' => 'gii/<controller>/<action>',
