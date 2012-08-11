@@ -1,0 +1,10 @@
+[ConnectionProfile]
+ConnectionType=JDBC
+Dbms=MySQL
+Description=connect to mysql to generate database
+DisableBind=0
+Driver=com.mysql.jdbc.Driver
+JarFiles=D:\Mtech\Dropbox\Sources\tienganh123-com\02.Analysis\mysql-connector-java-3.1.12.jar
+LogId=root
+TrimSpaces=0
+URL=jdbc:mysql://localhost:3306/tienganh

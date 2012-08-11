@@ -36,7 +36,7 @@ return array(
         ),
         'db' => array(
             'class' => 'CDbConnection',
-            'connectionString' => 'mysql:host=localhost;dbname=ciicms',
+            'connectionString' => 'mysql:host=localhost;dbname=tienganh123',
             'emulatePrepare' => true,
             'username' => 'root',
             'password' => 'root',
