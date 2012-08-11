@@ -1,9 +1,9 @@
 <?php
 
-class SiteController extends CController {
+class SiteController extends MiisController {
 
     public function actionIndex() {
-        die('index');
+       $this->render('index');
     }
 
 }
