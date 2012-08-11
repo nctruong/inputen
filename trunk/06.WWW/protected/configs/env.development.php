@@ -11,32 +11,41 @@ return array(
         'application.models.*',
         'application.components.*'
     ),
-	
-	'defaultController'=>'site',
-	
-    'components' => array(
-        
-        'urlManager' => array(
-            'urlFormat'=>'path',
-			'rules'=>array(
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-			),
+    'defaultController' => 'site',
+    'modules' => array(
+        'gii' => array(
+            'class' => 'system.gii.GiiModule',
+            'password' => '123admin!@#$',
+        // 'ipFilters'=>array(...a list of IPs...),
+        // 'newFileMode'=>0666,
+        // 'newDirMode'=>0777,
         ),
-		'log'=>array(
-			'class'=>'CLogRouter',
-			'routes'=>array(
-				array(
-					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
-				),
-				// uncomment the following to show log messages on web pages
-				/*
-				array(
-					'class'=>'CWebLogRoute',
-				),
-				*/
-			),
-		),
+    ),
+    'components' => array(
+        'urlManager' => array(
+            'urlFormat' => 'path',
+            'rules' => array(
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+                'gii' => 'gii',
+                'gii/<controller:\w+>' => 'gii/<controller>',
+                'gii/<controller:\w+>/<action:\w+>' => 'gii/<controller>/<action>',
+            ),
+        ),
+        'log' => array(
+            'class' => 'CLogRouter',
+            'routes' => array(
+                array(
+                    'class' => 'CFileLogRoute',
+                    'levels' => 'error, warning',
+                ),
+            // uncomment the following to show log messages on web pages
+            /*
+              array(
+              'class'=>'CWebLogRoute',
+              ),
+             */
+            ),
+        ),
         'db' => array(
             'class' => 'CDbConnection',
             'connectionString' => 'mysql:host=localhost;dbname=ciicms',
