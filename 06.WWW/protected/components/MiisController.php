@@ -2,7 +2,7 @@
 
 abstract class MiisController extends CController {
 
-    public $layout = '//layout/main';
+    public $layout = '//layouts/main';
 
     public function beforeAction($action) {
         $theme = 'default';
@@ -16,7 +16,7 @@ abstract class MiisController extends CController {
      */
     protected function setLayout($layout = "") {
         if ($layout != "") {
-            $layout = '//layout' . $layout;
+            $layout = '//layouts/' . $layout;
             $this->layout = $layout;
         }
     }
