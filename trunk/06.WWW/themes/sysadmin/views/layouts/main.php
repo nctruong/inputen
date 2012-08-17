@@ -69,7 +69,7 @@
     </head>
 
     <body onload="prettyPrint()">
-        <?php echo $content; ?>F
+        <?php echo $content; ?>
     </body>
 
 </html> 

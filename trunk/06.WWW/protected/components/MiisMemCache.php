@@ -60,7 +60,7 @@
  * @package system.caching
  * @since 1.0
  */
-class MiisMemCache extends MiisCache {
+class MiisMemCache extends CCache {
 
     /**
      * @var boolean whether to use memcached or memcache as the underlying caching extension.

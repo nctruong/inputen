@@ -23,6 +23,8 @@ return array(
         'urlManager' => array(
             'urlFormat' => 'path',
             'rules' => array(
+                // a custom rule to handle default controller
+                array('class' => 'application.components.MiisUrlRule'),
                 // members module
                 'members' => 'members',
                 'members/<controller:\w+>' => 'members/<controller>',
@@ -60,14 +62,20 @@ return array(
             'enableProfiling' => true,
         ),
         'cache' => array(
-            'class' => 'system.caching.CMemCache',
-            'useMemcached' => true,
+            'class' => 'application.components.MiisMemCache',
+            'useMemcached' => false,
         ),
         'session' => array(
             'autoStart' => true,
-        ),
+        )
+        /*,
         'cache' => array(
             'class' => 'system.caching.CFileCache',
         ),
+         * 
+         */
     ),
+    'params' => array(
+        'encryptionKey' => 'M@I@S@S@'
+    )
 );
