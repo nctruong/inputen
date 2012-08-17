@@ -22,6 +22,7 @@ return array(
     'components' => array(
         'urlManager' => array(
             'urlFormat' => 'path',
+            'urlSuffix' => '.html',
             'rules' => array(
                 // a custom rule to handle default controller
                 array('class' => 'application.components.MiisUrlRule'),
@@ -61,19 +62,16 @@ return array(
             'schemaCachingDuration' => '3600',
             'enableProfiling' => true,
         ),
+        'session' => array(
+            'autoStart' => true,
+        ),
         'cache' => array(
             'class' => 'application.components.MiisMemCache',
             'useMemcached' => false,
         ),
-        'session' => array(
-            'autoStart' => true,
-        )
-        /*,
         'cache' => array(
             'class' => 'system.caching.CFileCache',
         ),
-         * 
-         */
     ),
     'params' => array(
         'encryptionKey' => 'M@I@S@S@'
