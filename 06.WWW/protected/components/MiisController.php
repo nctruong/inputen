@@ -30,5 +30,9 @@ abstract class MiisController extends CController {
     protected function getParam($name, $default = '') {
         return Yii::app()->request->getParam($name, $default);
     }
+    
+    protected function isAuth() {
+        
+    }
 
 }
