@@ -1,7 +1,7 @@
 <?php
 
 abstract class SysadminMiisController extends MiisController {
-
+    private $auth;
     public function init() {
         parent::init();
         $theme = 'sysadmin';
@@ -9,6 +9,7 @@ abstract class SysadminMiisController extends MiisController {
     }
 
     public function beforeAction($action) {
+        
         return true;
     }
 
