@@ -5,11 +5,10 @@
             <div class="section">
                 <div class="box">
                     <div class="title">
-                        <h2>Welcome to Godzilla</h2>
+                        <h2>Sysadmin Cpanel</h2>
                         <div class="hide"></div>
                     </div>
                     <div class="content nopadding">
-
                         <div class="tabs">
                             <div class="tabmenu">
                                 <ul> 
@@ -19,26 +18,37 @@
                             </div>
 
                             <div class="tab nopadding" id="tabs-1">
-                                <div class="content"><div class="system info">Press the login button to proceed.</div></div>
-                                <form action="dashboard.html">
-                                    <div class="row">
-                                        <label>Username</label>
-                                        <div class="rowright"><input type="text" value="" /></div>
+                                <?php
+                                $form = $this->beginWidget('CActiveForm', array(
+                                    'id' => 'sysLoginForm',
+                                    'focus' => array($sysLoginForm, 'username'),
+                                    'enableAjaxValidation' => true,
+                                    'errorMessageCssClass' => 'alertBox-alert',
+                                        )
+                                );
+                                ?>
+                                <div class="content">
+                                    <?php echo $form->error($sysLoginForm, 'username', array('class' => 'system info')); ?>
+                                </div>
+                                <div class="row">
+                                    <label><?php echo $form->labelEx($sysLoginForm, 'Username'); ?></label>
+                                    <div class="rowright"><?php echo $form->textField($sysLoginForm, 'username'); ?></div>
+                                </div>
+                                <div class="row">
+                                    <label><?php echo $form->labelEx($sysLoginForm, 'Password'); ?></label>
+                                    <div class="rowright"><?php echo $form->passwordField($sysLoginForm, 'password'); ?></div>
+                                </div>
+                                <div class="row">
+                                    <label>
+                                        <?php echo $form->checkBox($sysLoginForm, 'rememberMe', array('id' => 'remember')) ?>
+                                        <label for="remember">Remember me?</label>
+                                    </label>
+                                    <div class="rowright button">
+                                        <?php //echo CHtml::submitButton('Login', array('type' => 'submit', 'class' => 'medium grey')); ?>
+                                        <button type="submit" class="medium grey"><span>Login</span></button>
                                     </div>
-                                    <div class="row">
-                                        <label>Password</label>
-                                        <div class="rowright"><input type="password" value="" /></div>
-                                    </div>
-                                    <div class="row">
-                                        <label>
-                                            <input type="checkbox" name="" value="" id="remember" />
-                                            <label for="remember">Remember me?</label>
-                                        </label>
-                                        <div class="rowright button">
-                                            <button type="submit" class="medium grey"><span>Login</span></button>
-                                        </div>
-                                    </div>
-                                </form>
+                                </div>
+                                <?php $this->endWidget(); ?>
                             </div>
 
                             <div class="tab nopadding" id="tabs-2">

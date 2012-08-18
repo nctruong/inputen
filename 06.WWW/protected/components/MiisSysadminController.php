@@ -1,7 +1,9 @@
 <?php
 
-abstract class SysadminMiisController extends MiisController {
+abstract class MiisSysadminController extends MiisController {
+
     private $auth;
+
     public function init() {
         parent::init();
         $theme = 'sysadmin';
@@ -9,7 +11,12 @@ abstract class SysadminMiisController extends MiisController {
     }
 
     public function beforeAction($action) {
-        
+        $this->auth = Yii::app()->user->id;
+        if (!$this->auth) {
+            if ($action->id != 'login') {
+                $this->redirect('/sysadmin/login');
+            }
+        }
         return true;
     }
 
