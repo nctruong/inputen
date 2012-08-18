@@ -1,6 +1,6 @@
 <?php
 
-class CategoryController extends MiisController {
+class CategoryController extends MiisSysadminController {
 
     public function actionIndex() {
         echo "<pre>";
