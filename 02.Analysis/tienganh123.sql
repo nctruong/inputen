@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     8/18/2012 1:55:57 PM                         */
+/* Created on:     8/19/2012 11:27:45 AM                        */
 /*==============================================================*/
 
 
@@ -28,11 +28,11 @@ drop table if exists users;
 create table categories
 (
    id                   int(11) not null auto_increment,
-   title                varchar(255),
-   slug                 varchar(255),
-   `desc`               text,
-   state                tinyint(3),
-   created_date         timestamp default current_timestamp,
+   title                varchar(255) not null,
+   slug                 varchar(255) not null,
+   `desc`               text not null,
+   state                tinyint(3) not null,
+   created_date         timestamp not null default current_timestamp,
    primary key (id)
 );
 
@@ -42,11 +42,11 @@ create table categories
 create table comments
 (
    id                   int(11) not null auto_increment,
-   comment              text,
-   state                tinyint(3),
-   created_date         timestamp default current_timestamp,
-   content_id           int(11),
-   user_id              int(11),
+   comment              text not null,
+   state                tinyint(3) not null,
+   created_date         timestamp not null default current_timestamp,
+   content_id           int(11) not null,
+   user_id              int(11) not null,
    primary key (id)
 );
 
@@ -56,13 +56,13 @@ create table comments
 create table contents
 (
    id                   int(11) not null auto_increment,
-   title                varchar(255),
-   slug                 varchar(255),
-   premium              tinyint(3),
-   content              text,
-   type                 varchar(150),
-   created_date         timestamp default current_timestamp,
-   category_id          int(11),
+   title                varchar(255) not null,
+   slug                 varchar(255) not null,
+   premium              tinyint(3) not null,
+   content              text not null,
+   type                 varchar(150) not null,
+   created_date         timestamp not null default current_timestamp,
+   category_id          int(11) not null,
    primary key (id)
 );
 
@@ -72,14 +72,14 @@ create table contents
 create table core_layouts
 (
    id                   int(11) not null auto_increment,
-   name                 varchar(250),
-   title                varbinary(250),
+   name                 varchar(250) not null,
+   title                varchar(255) not null,
    `desc`               text,
    meta                 text,
-   created_date         timestamp default current_timestamp,
-   state                tinyint(11),
-   theme                varchar(150),
-   core_user_id         int(11),
+   created_date         timestamp not null default current_timestamp,
+   state                tinyint(11) not null,
+   theme                varchar(150) not null,
+   core_user_id         int(11) not null,
    primary key (id)
 );
 
@@ -89,10 +89,10 @@ create table core_layouts
 create table core_layout_details
 (
    id                   int(11) not null auto_increment,
-   widget               varbinary(150),
-   params               varbinary(255),
-   state                tinyint(11),
-   layout_id            int(11),
+   widget               varchar(150) not null,
+   params               varchar(150),
+   state                tinyint(11) not null,
+   layout_id            int(11) not null,
    primary key (id)
 );
 
@@ -102,14 +102,14 @@ create table core_layout_details
 create table core_users
 (
    id                   int(11) not null auto_increment,
-   username             varbinary(50),
-   passwd               varchar(64),
-   email                varchar(50),
-   fullname             varbinary(150),
-   created_date         timestamp,
-   last_login           datetime,
-   state                tinyint(3),
-   blocked              tinyint(1),
+   username             varchar(150) not null,
+   password             varchar(64) not null,
+   email                varchar(50) not null,
+   fullname             varchar(150) not null,
+   created_date         timestamp not null,
+   last_login           datetime not null,
+   state                tinyint(3) not null,
+   blocked              tinyint(1) not null,
    primary key (id)
 );
 
@@ -119,10 +119,10 @@ create table core_users
 create table lessons_favorite
 (
    id                   int(11) not null auto_increment,
-   state                tinyint(3),
-   created_date         timestamp default current_timestamp on update current_timestamp,
-   content_id           int(11),
-   user_id              int(11),
+   state                tinyint(3) not null,
+   created_date         timestamp not null default current_timestamp on update current_timestamp,
+   content_id           int(11) not null,
+   user_id              int(11) not null,
    primary key (id)
 );
 
@@ -132,10 +132,10 @@ create table lessons_favorite
 create table lessons_remember
 (
    id                   int(11) not null auto_increment,
-   state                tinyint(3),
-   created_date         datetime,
-   content_id           int(11),
-   user_id              int(11),
+   state                tinyint(3) not null,
+   created_date         datetime not null,
+   content_id           int(11) not null,
+   user_id              int(11) not null,
    primary key (id)
 );
 
@@ -145,17 +145,17 @@ create table lessons_remember
 create table users
 (
    id                   int(11) not null auto_increment,
-   username             varchar(100),
-   passwd               varchar(32),
-   email                varchar(50),
-   fullname             varbinary(150),
-   dob                  datetime,
-   gender               tinyint(1),
-   address              varbinary(255),
+   username             varchar(100) not null,
+   password             varchar(32) not null,
+   email                varchar(50) not null,
+   fullname             varchar(150) not null,
+   dob                  datetime not null,
+   gender               tinyint(1) not null,
+   address              varchar(255) not null,
    school               varchar(250),
-   country              varchar(100),
-   premium              tinyint(3),
-   created_date         timestamp default current_timestamp,
+   country              varchar(100) not null,
+   premium              tinyint(3) not null,
+   created_date         timestamp not null default current_timestamp,
    primary key (id)
 );
 

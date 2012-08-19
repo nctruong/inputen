@@ -5,7 +5,7 @@
  * SysLoginForm is the data structure for keeping
  * user login form data. It is used by the 'login' action of 'DefaultController'.
  */
-Yii::import('application.components.MiisSysUserIdentity');
+Yii::import('application.components.MiisUserIdentity');
 
 class SysLoginForm extends CFormModel {
 
@@ -65,7 +65,7 @@ class SysLoginForm extends CFormModel {
             $this->_identity = new MiisSysUserIdentity($this->username, $this->password);
             $this->_identity->authenticate();
         }
-        if ($this->_identity->errorCode === MissSysUserIdentity::ERROR_NONE) {
+        if ($this->_identity->errorCode === MiisSysUserIdentity::ERROR_NONE) {
             $duration = $this->rememberMe ? 3600 * 24 : 0; // 30 days
             Yii::app()->user->login($this->_identity, $duration);
             return true;

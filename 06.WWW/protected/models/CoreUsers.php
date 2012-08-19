@@ -4,15 +4,18 @@
  * This is the model class for table "core_users".
  *
  * The followings are the available columns in table 'core_users':
- * @property integer $ID
- * @property string $USERNAME
- * @property string $PASSWD
- * @property string $EMAIL
- * @property string $FULLNAME
- * @property string $CREATED_DATE
- * @property string $LAST_LOGIN
- * @property integer $STATE
- * @property integer $BLOCKED
+ * @property integer $id
+ * @property string $username
+ * @property string $password
+ * @property string $email
+ * @property string $fullname
+ * @property string $created_date
+ * @property string $last_login
+ * @property integer $state
+ * @property integer $blocked
+ *
+ * The followings are the available model relations:
+ * @property CoreLayouts[] $coreLayouts
  */
 class CoreUsers extends CActiveRecord
 {
@@ -42,15 +45,14 @@ class CoreUsers extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('CREATED_DATE', 'required'),
-			array('STATE, BLOCKED', 'numerical', 'integerOnly'=>true),
-			array('USERNAME, EMAIL', 'length', 'max'=>50),
-			array('PASSWD', 'length', 'max'=>64),
-			array('FULLNAME', 'length', 'max'=>150),
-			array('LAST_LOGIN', 'safe'),
+			array('username, password, email, fullname, created_date, last_login, state, blocked', 'required'),
+			array('state, blocked', 'numerical', 'integerOnly'=>true),
+			array('username, fullname', 'length', 'max'=>150),
+			array('password', 'length', 'max'=>64),
+			array('email', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('ID, USERNAME, PASSWD, EMAIL, FULLNAME, CREATED_DATE, LAST_LOGIN, STATE, BLOCKED', 'safe', 'on'=>'search'),
+			array('id, username, password, email, fullname, created_date, last_login, state, blocked', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,6 +64,7 @@ class CoreUsers extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'coreLayouts' => array(self::HAS_MANY, 'CoreLayouts', 'core_user_id'),
 		);
 	}
 
@@ -71,15 +74,15 @@ class CoreUsers extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'ID' => 'ID',
-			'USERNAME' => 'Username',
-			'PASSWD' => 'Passwd',
-			'EMAIL' => 'Email',
-			'FULLNAME' => 'Fullname',
-			'CREATED_DATE' => 'Created Date',
-			'LAST_LOGIN' => 'Last Login',
-			'STATE' => 'State',
-			'BLOCKED' => 'Blocked',
+			'id' => 'ID',
+			'username' => 'Username',
+			'password' => 'Password',
+			'email' => 'Email',
+			'fullname' => 'Fullname',
+			'created_date' => 'Created Date',
+			'last_login' => 'Last Login',
+			'state' => 'State',
+			'blocked' => 'Blocked',
 		);
 	}
 
@@ -94,15 +97,15 @@ class CoreUsers extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('ID',$this->ID);
-		$criteria->compare('USERNAME',$this->USERNAME,true);
-		$criteria->compare('PASSWD',$this->PASSWD,true);
-		$criteria->compare('EMAIL',$this->EMAIL,true);
-		$criteria->compare('FULLNAME',$this->FULLNAME,true);
-		$criteria->compare('CREATED_DATE',$this->CREATED_DATE,true);
-		$criteria->compare('LAST_LOGIN',$this->LAST_LOGIN,true);
-		$criteria->compare('STATE',$this->STATE);
-		$criteria->compare('BLOCKED',$this->BLOCKED);
+		$criteria->compare('id',$this->id);
+		$criteria->compare('username',$this->username,true);
+		$criteria->compare('password',$this->password,true);
+		$criteria->compare('email',$this->email,true);
+		$criteria->compare('fullname',$this->fullname,true);
+		$criteria->compare('created_date',$this->created_date,true);
+		$criteria->compare('last_login',$this->last_login,true);
+		$criteria->compare('state',$this->state);
+		$criteria->compare('blocked',$this->blocked);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
