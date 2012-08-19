@@ -17,6 +17,9 @@ return array(
         'gii' => array(
             'class' => 'system.gii.GiiModule',
             'password' => '123admin!@#$',
+            'generatorPaths' => array(
+                'bootstrap.gii',
+            ),
         ),
     ),
     'components' => array(
@@ -65,16 +68,16 @@ return array(
         'session' => array(
             'autoStart' => true,
         ),
-        /*
-        'cache' => array(
-            'class' => 'application.components.MiisMemCache',
-            'useMemcached' => false,
-        ),
-        'cache' => array(
-            'class' => 'system.caching.CFileCache',
-        ),
-         * 
-         */
+    /*
+      'cache' => array(
+      'class' => 'application.components.MiisMemCache',
+      'useMemcached' => false,
+      ),
+      'cache' => array(
+      'class' => 'system.caching.CFileCache',
+      ),
+     * 
+     */
     ),
     'params' => array(
         'encryptionKey' => 'M@I@S@S@'

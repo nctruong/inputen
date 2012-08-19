@@ -7,6 +7,10 @@ abstract class MiisSysadminController extends MiisController {
 
     public function init() {
         parent::init();
+        // Load MIIS Bootstrap.
+        $miisBootstrap = Yii::createComponent(array('class' => 'application.components.MiisBootstrap'));
+        Yii::app()->setComponent('bootstrap', $miisBootstrap);
+        Yii::app()->setAliases(array('bootstrap' => 'ext.bootstrap'));
         $theme = 'sysadmin';
         Yii::app()->setTheme(file_exists(dirname(__FILE__) . '/../../themes/' . $theme) ? $theme : 'sysadmin');
     }
