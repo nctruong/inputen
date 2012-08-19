@@ -65,6 +65,7 @@ return array(
         'session' => array(
             'autoStart' => true,
         ),
+        /*
         'cache' => array(
             'class' => 'application.components.MiisMemCache',
             'useMemcached' => false,
@@ -72,6 +73,8 @@ return array(
         'cache' => array(
             'class' => 'system.caching.CFileCache',
         ),
+         * 
+         */
     ),
     'params' => array(
         'encryptionKey' => 'M@I@S@S@'

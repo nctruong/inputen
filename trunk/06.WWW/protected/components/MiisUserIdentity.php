@@ -1,6 +1,6 @@
 <?php
 
-abstract class MissUserIdentity extends CUserIdentity {
+class MiisUserIdentity extends CUserIdentity {
 
     private $_id;
 
@@ -23,3 +23,4 @@ abstract class MissUserIdentity extends CUserIdentity {
     }
 
 }
+
