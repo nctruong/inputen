@@ -4,8 +4,9 @@ Yii::import('ext.bootstrap.components.Bootstrap');
 
 class MiisBootstrap extends Bootstrap {
 
-    public $coreCss;
-
+    /**
+     * Override init method.
+     */
     public function init() {
         $this->_assetsUrl = '/themes/sysadmin/assets';
         $this->registerCoreCss();

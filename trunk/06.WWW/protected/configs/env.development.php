@@ -22,6 +22,9 @@ return array(
             ),
         ),
     ),
+//    'user' => array(
+//        'allowAutoLogin' => true,
+//    ),
     'components' => array(
         'urlManager' => array(
             'urlFormat' => 'path',
