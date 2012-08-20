@@ -11,6 +11,8 @@ abstract class MiisSysadminController extends MiisController {
         $miisBootstrap = Yii::createComponent(array('class' => 'application.components.MiisBootstrap'));
         Yii::app()->setComponent('bootstrap', $miisBootstrap);
         Yii::app()->setAliases(array('bootstrap' => 'ext.bootstrap'));
+
+        // Load theme default for sysadmin.
         $theme = 'sysadmin';
         Yii::app()->setTheme(file_exists(dirname(__FILE__) . '/../../themes/' . $theme) ? $theme : 'sysadmin');
     }
@@ -18,7 +20,7 @@ abstract class MiisSysadminController extends MiisController {
     public function beforeAction($action) {
         $this->auth = Yii::app()->user->id;
         if ($action->id != 'login') {
-            if (!$this->auth) {
+            if (!$this->auth) { // Check if has yet login.
                 $this->redirect('/sysadmin/login.html');
             }
         } elseif ($this->auth && $action->id == 'login') {
@@ -27,11 +29,14 @@ abstract class MiisSysadminController extends MiisController {
         return true;
     }
 
+    /**
+     * $desc Login sysadmin 
+     */
     public function actionLogin() {
         $this->setLayout('login');
         $this->setPageTitle('Login');
         $sysLoginForm = new SysLoginForm();
-        if (isset($_POST['SysLoginForm'])) {
+        if (isset($_POST['SysLoginForm'])) { // Submit login form.
             $sysLoginForm->attributes = $_POST['SysLoginForm'];
             if ($sysLoginForm->validate() && $sysLoginForm->login()) {
                 $this->redirect('/sysadmin.html');
@@ -41,6 +46,9 @@ abstract class MiisSysadminController extends MiisController {
         $this->render('login', array('sysLoginForm' => $sysLoginForm));
     }
 
+    /**
+     * @desc logout sysadmin 
+     */
     public function actionLogout() {
         // Logout the current user
         Yii::app()->user->logout();

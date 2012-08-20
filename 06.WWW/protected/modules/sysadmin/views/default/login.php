@@ -1,9 +1,9 @@
 <div class="container" style="margin-top:100px;">
     <div class="row-fluid">
         <div class="span4">&nbsp;</div>
-        <div class="span3">
+        <div class="span4">
             <?php
-            /** @var BootActiveForm $form */
+            /** @var TbActiveForm $form */
             $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
                 'id' => 'sysLoginForm',
                 'htmlOptions' => array('class' => 'well well-large'),
