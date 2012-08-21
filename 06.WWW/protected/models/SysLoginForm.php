@@ -40,7 +40,7 @@ class SysLoginForm extends CFormModel {
      */
     public function attributeLabels() {
         return array(
-            'rememberMe' => 'Remember me next time',
+            'rememberMe' => 'Remember me',
         );
     }
 

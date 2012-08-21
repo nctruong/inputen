@@ -20,34 +20,7 @@
             <link rel="apple-touch-icon-precomposed" href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/ico/apple-touch-icon-57-precomposed.png"/>
     </head>
     <body>
-        <div class="container-fluid">
-            <div class="subnav subnav-fixed">
-                <ul class="nav nav-pills">
-                    <li class="dropdown active">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="brand">Tienganh 123</span><b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li class="active"><a href="#buttonGroups">Button groups</a></li>
-                            <li><a href="#buttonDropdowns">Button dropdowns</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Navigation <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#navs">Nav, tabs, pills</a></li>
-                            <li><a href="#navbar">Navbar</a></li>
-                            <li><a href="#breadcrumbs">Breadcrumbs</a></li>
-                            <li><a href="#pagination">Pagination</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#labels">Labels</a></li>
-                    <li><a href="#badges">Badges</a></li>
-                    <li><a href="#typography">Typography</a></li>
-                    <li><a href="#thumbnails">Thumbnails</a></li>
-                    <li><a href="#alerts">Alerts</a></li>
-                    <li><a href="#progress">Progress bars</a></li>
-                    <li><a href="#misc">Miscellaneous</a></li>
-                </ul>
-            </div>
+        <div class="container">
             <?php echo $content; ?>
         </div> <!-- /container -->
         <!-- Le javascript -->

@@ -22,10 +22,10 @@ return array(
             ),
         ),
     ),
-//    'user' => array(
-//        'allowAutoLogin' => true,
-//    ),
     'components' => array(
+        'user' => array(
+            'allowAutoLogin' => true,
+        ),
         'urlManager' => array(
             'urlFormat' => 'path',
             'urlSuffix' => '.html',
