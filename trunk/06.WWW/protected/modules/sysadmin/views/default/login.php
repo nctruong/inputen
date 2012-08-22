@@ -15,7 +15,7 @@
         echo $form->textFieldRow($sysLoginForm, 'username', array('class' => 'span3'));
         echo $form->passwordFieldRow($sysLoginForm, 'password', array('class' => 'span3'));
         echo $form->checkboxRow($sysLoginForm, 'rememberMe');
-        $this->widget('bootstrap.widgets.TbButton', array('buttonType' => 'submit', 'icon' => 'ok', 'label' => 'Submit'));
+        $this->widget('bootstrap.widgets.TbButton', array('buttonType' => 'submit', 'icon' => 'arrow-right', 'label' => 'Đăng nhập'));
         $this->endWidget();
         ?>
     </div>
