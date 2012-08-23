@@ -38,6 +38,7 @@
         ?>
 
         <div class="container">
+            <?php echo $toolbar; ?>
             <?php echo $content; ?>
         </div> <!-- /container -->
         <!-- Le javascript -->
