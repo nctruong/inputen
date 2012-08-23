@@ -41,3 +41,102 @@ body > .navbar .brand:hover {
 #login {
     margin-top:50px;
 }
+
+/***TOOLBAR**/
+#miis-element-box,
+#miis-toolbar-box,
+#miis-submenu-box { padding: 10px 0 0 0;}
+
+#miis-toolbar-box { margin-bottom: 10px;}
+
+#miis-toolbar-box .m {background: #fcfcfc; min-height: 48px;}
+
+#miis-submenu-box { margin-bottom: 10px;}
+
+#miis-submenu-box .padding { padding: 0;}
+div#miis-toolbar-box div.m {  padding: 0 0 10px;}
+.miis-submenu-box, div.m {  border: 1px solid #eeeeee; padding: 0 8px; background-color: #fcfcfc;}
+
+/* Main toolbars */
+div.toolbar-list {  float: right; text-align: right;  padding: 0;}
+
+div.toolbar-list ul {
+    margin: 0;
+    padding: 0;
+}
+
+div.toolbar-list li {
+    padding: 1px 1px 3px 4px;
+    text-align: center;
+    color: #666;
+    height: 48px;
+    list-style: none;
+    float: left;
+}
+
+div.toolbar-list li.spacer {
+    width: 10px;
+}
+
+div.toolbar-list li.divider {
+    border-right: 1px solid #c7c7c7;
+    width: 2px;
+}
+
+div.toolbar-list span {
+    float: none;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+    display: block;
+}
+
+div.toolbar-list a {
+    display: block;
+    float: left;
+    white-space: nowrap;
+/*    border: 1px solid #F4F4F4;*/
+    padding: 2px 5px;
+    cursor: pointer;
+}
+
+div.toolbar-list a:hover,
+div.toolbar-list a:focus,
+div.toolbar-list a:active {
+    border-left: 1px solid #eee;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-decoration: none;
+    color: #0B55C4;
+}
+
+/* Page titles */
+div.pagetitle {
+    padding-left: 15px;
+    background-repeat: no-repeat;
+    margin-left: 15px;
+    margin-top:10px;
+    float:left;
+}
+
+div.pagetitle h1 {
+    margin: 0;
+    padding: 0;
+    padding-left: 25px;
+/*     margin-top:15px;*/
+/*    line-height: 48px;*/
+    font-size: 2em;
+    
+    min-width: 200px;
+
+}
+
+div.pagetitle span {
+    color: #666;
+}
+/***END TOOLBAR**/
+.icon-large.icon-new, .icon-large.icon-new{ background-position: -138px -240px; }
+.icon-large.icon-edit{ background-position: 0 -985px; }
+.icon-large.icon-delete, .icon-large.icon-delete{ background-position: -138px -312px; }
+.icon-large.icon-generic{ background-position: -92px -853px;}

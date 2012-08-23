@@ -67,4 +67,23 @@ abstract class MiisSysadminController extends MiisController {
         $this->redirect('/sysadmin.html');
     }
 
+    public function render($view, $data = null, $return = false) {
+        if ($this->beforeRender($view)) {
+            $bar = MiisToolbar::getInstance()->render();
+            $output = $this->renderPartial($view, $data, true);
+            if (($layoutFile = $this->getLayoutFile($this->layout)) !== false)
+                $output = $this->renderFile($layoutFile, array('content' => $output, 'toolbar' => $bar), true);
+
+            $this->afterRender($view, $output);
+
+            $output = $this->processOutput($output);
+
+            if ($return)
+                return $output;
+            else
+                echo $output;
+        }
+    }
+
 }
+
