@@ -29,6 +29,7 @@ return array(
         'urlManager' => array(
             'urlFormat' => 'path',
             'urlSuffix' => '.html',
+            'showScriptName'=>false,
             'rules' => array(
                 // a custom rule to handle default controller
                 array('class' => 'application.components.MiisUrlRule'),

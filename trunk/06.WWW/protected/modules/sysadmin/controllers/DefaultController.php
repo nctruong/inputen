@@ -10,10 +10,6 @@ class DefaultController extends MiisSysadminController {
 
     protected function addToolbar() {
         MiisToolbarHelper::hideToolBar();
-        MiisToolbarHelper::title('Bài Học');
-        MiisToolbarHelper::addNew();
-        MiisToolbarHelper::editList();
-        MiisToolbarHelper::deleteList();
     }
 
 }

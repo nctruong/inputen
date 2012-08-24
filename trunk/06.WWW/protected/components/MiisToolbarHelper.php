@@ -26,19 +26,19 @@ abstract class MiisToolbarHelper {
         $bar->appendSlot('Separator', 'divider');
     }
 
-    public static function addNew($task = 'add', $alt = 'New', $check = false) {
+    public static function Create($task = 'create', $alt = 'Create', $check = false) {
         $bar = MiisToolbar::getInstance();
         // Add a new button.
-        $bar->setSlot('new', $alt, 'new');
+        $bar->setSlot('create', $alt, 'create');
     }
 
-    public static function editList($task = 'edit', $alt = 'Edit') {
+    public static function UpdateList($task = 'update', $alt = 'Update') {
         $bar = MiisToolbar::getInstance();
         // Add an edit button.
-        $bar->setSlot('edit', $alt, 'edit');
+        $bar->setSlot('update', $alt, 'update');
     }
 
-    public static function deleteList($msg = '', $task = 'remove', $alt = 'Delete') {
+    public static function deleteList($msg = '', $task = 'delete', $alt = 'Delete') {
         $bar = MiisToolbar::getInstance();
         // Add a delete button.
         if ($msg) {
@@ -46,6 +46,18 @@ abstract class MiisToolbarHelper {
         } else {
             $bar->setSlot('delete', $alt, 'delete');
         }
+    }
+
+    public static function save($task = 'save', $alt = 'Save') {
+        $bar = MiisToolbar::getInstance();
+        // Add a save button.
+        $bar->setSlot('save', $alt, 'save');
+    }
+
+    public static function cancel($task = 'cancel', $alt = 'Cancel') {
+        $bar = MiisToolbar::getInstance();
+        // Add a cancel button.
+        $bar->setSlot('cancel', $alt, 'cancel');
     }
 
     public static function hideToolBar($hide = true) {
