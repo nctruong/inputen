@@ -48,5 +48,11 @@ abstract class MiisToolbarHelper {
         }
     }
 
+    public static function hideToolBar($hide = true) {
+        $bar = MiisToolbar::getInstance();
+        // Add an edit button.
+        $bar->setHide($hide);
+    }
+
 }
 

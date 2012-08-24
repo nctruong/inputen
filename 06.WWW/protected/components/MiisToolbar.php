@@ -5,10 +5,12 @@ class MiisToolbar extends CApplicationComponent {
     private $_title = '';
     private $_slots;
     protected static $instance = null;
+    private $_hide;
 
     public function __construct() {
         $this->_title = '';
         $this->_slots = array();
+        $this->_hide = false;
     }
 
     /**
@@ -22,11 +24,8 @@ class MiisToolbar extends CApplicationComponent {
         return self::$instance;
     }
 
-    public function appendSlot() {
-        // Push button onto the end of the toolbar array.
-        $slot = func_get_args();
-        array_push($this->_slots, $slot);
-        return true;
+    public function setHide($hide = false) {
+        $this->_hide = $hide;
     }
 
     public function setTitle($title, $icon = 'default') {
@@ -46,6 +45,9 @@ class MiisToolbar extends CApplicationComponent {
     }
 
     public function render() {
+        if ($this->_hide) {
+            return '';
+        }
         $html = array();
         $html[] = '<div id="miis-toolbar-box">';
         $html[] = '<div class="m">';
