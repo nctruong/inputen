@@ -553,6 +553,7 @@ div.pagetitle span {
 .icon-large.icon-create, .icon-large.icon-create{ background-position: -138px -240px; }
 .icon-large.icon-update{ background-position: 0 -985px; }
 .icon-large.icon-delete, .icon-large.icon-delete{ background-position: -138px -312px; }
+.icon-large.icon-delete{ background-position: 0 -528px; }
 .icon-large.icon-generic{ background-position: -92px -853px;}
 .icon-large.icon-cancel, .icon-large.icon-cancel{ background-position: -138px -312px; }
 .icon-large.icon-save, .icon-large.icon-save{ background-position: -138px -348px; }

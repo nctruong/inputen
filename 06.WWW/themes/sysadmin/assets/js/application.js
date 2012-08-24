@@ -12,8 +12,32 @@
                     return false;
                 }else if(action=='cancel'){
                     window.location.href = $(this).attr('name');
+                } else if(action=='update') {
+                    var id = isCheckCids();
+                    if(id) {
+                        window.location.href = $(this).attr('name') + '?id=' + id;  
+                    } else {
+                        alert($(this).attr('title'));
+                        return false;
+                    }
+                } else {
+                    if(!isCheckCids()){
+                        alert($(this).attr('title'));
+                        return false;
+                    }
+                    //window.location.href = $(this).attr('name');
                 }
             });
+        }
+        function isCheckCids(){
+            var is_check = false;
+            $('input[name*="cid"]').each(function(index,el){
+                var chk = $(this).attr('checked');
+                if(chk == 'checked'){
+                    is_check = $(this).val();
+                }
+            });
+            return is_check;
         }
         //init document event
         $(document).ready(function(){
