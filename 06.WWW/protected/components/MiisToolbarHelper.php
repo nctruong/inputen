@@ -51,13 +51,18 @@ abstract class MiisToolbarHelper {
     public static function save($task = 'save', $alt = 'Save') {
         $bar = MiisToolbar::getInstance();
         // Add a save button.
-        $bar->setSlot('save', $alt, 'save');
+        $bar->setSlot('save', $alt, 'save','','adminForm');
     }
 
     public static function cancel($task = 'cancel', $alt = 'Cancel') {
         $bar = MiisToolbar::getInstance();
+        $arrParams = array(
+            'modules' => Yii::app()->controller->module->id,
+            'controller' => Yii::app()->controller->id,
+            'action' => ''
+        );
         // Add a cancel button.
-        $bar->setSlot('cancel', $alt, 'cancel');
+        $bar->setSlot('cancel', $alt, 'cancel', '', Yii::app()->createUrl(MiisHelper::url($arrParams)));
     }
 
     public static function hideToolBar($hide = true) {
