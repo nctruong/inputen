@@ -62,7 +62,7 @@ class BaiHocController extends MiisSysadminController {
         if (isset($_POST['BaiHoc'])) {
             $model->attributes = $_POST['BaiHoc'];
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+                $this->redirect(array('index'));
         }
 
         $this->render('create', array(
