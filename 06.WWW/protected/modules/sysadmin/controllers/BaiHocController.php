@@ -41,10 +41,18 @@ class BaiHocController extends MiisSysadminController {
      * Lists all models.
      */
     public function actionIndex() {
+        $this->addToolbar();
         $dataProvider = new CActiveDataProvider('BaiHoc');
         $this->render('index', array(
             'dataProvider' => $dataProvider,
         ));
+    }
+
+    protected function addToolbar() {
+        MiisToolbarHelper::title('Bài Học');
+        MiisToolbarHelper::addNew();
+        MiisToolbarHelper::editList();
+        MiisToolbarHelper::deleteList();
     }
 
 }
