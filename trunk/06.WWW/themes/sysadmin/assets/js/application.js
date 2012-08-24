@@ -6,10 +6,9 @@
                 event.preventDefault();
                 var aEl = $(this);
                 var action = task = aEl.attr('rel');
-                alert(action);
                 if(task=='unpublish') action = 'publish';
                 if(action == 'save'){
-                    $('form[name=' + $(this).attr('name') + ']').submit();
+                    $('#' + $(this).attr('name')).submit();
                     return false;
                 }else if(action=='cancel'){
                     window.location.href = $(this).attr('name');
