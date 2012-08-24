@@ -29,29 +29,34 @@ abstract class MiisToolbarHelper {
     public static function Create($task = 'create', $alt = 'Create', $check = false) {
         $bar = MiisToolbar::getInstance();
         // Add a new button.
-        $bar->setSlot('create', $alt, 'create');
+        $bar->setSlot('create', $alt, 'create', 'Create');
     }
 
     public static function UpdateList($task = 'update', $alt = 'Update') {
         $bar = MiisToolbar::getInstance();
+        $arrParams = array(
+            'modules' => Yii::app()->controller->module->id,
+            'controller' => Yii::app()->controller->id,
+            'action' => 'update'
+        );
         // Add an edit button.
-        $bar->setSlot('update', $alt, 'update');
+        $bar->setSlot('update', $alt, 'update', 'Please slect an item.', Yii::app()->createUrl(MiisHelper::url($arrParams)));
     }
 
     public static function deleteList($msg = '', $task = 'delete', $alt = 'Delete') {
         $bar = MiisToolbar::getInstance();
         // Add a delete button.
         if ($msg) {
-            $bar->setSlot('delete', $alt, 'delete');
+            $bar->setSlot('delete', $alt, 'delete', 'Delete');
         } else {
-            $bar->setSlot('delete', $alt, 'delete');
+            $bar->setSlot('delete', $alt, 'delete', 'Please slect an item(s).','delete');
         }
     }
 
     public static function save($task = 'save', $alt = 'Save') {
         $bar = MiisToolbar::getInstance();
         // Add a save button.
-        $bar->setSlot('save', $alt, 'save','','adminForm');
+        $bar->setSlot('save', $alt, 'save', 'Save', 'adminForm');
     }
 
     public static function cancel($task = 'cancel', $alt = 'Cancel') {
@@ -62,7 +67,7 @@ abstract class MiisToolbarHelper {
             'action' => ''
         );
         // Add a cancel button.
-        $bar->setSlot('cancel', $alt, 'cancel', '', Yii::app()->createUrl(MiisHelper::url($arrParams)));
+        $bar->setSlot('cancel', $alt, 'cancel', 'Cancel', Yii::app()->createUrl(MiisHelper::url($arrParams)));
     }
 
     public static function hideToolBar($hide = true) {
