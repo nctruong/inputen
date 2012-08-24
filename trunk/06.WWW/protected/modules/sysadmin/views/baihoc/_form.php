@@ -1,7 +1,7 @@
 <?php
 /** @var BootActiveForm $form */
 $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-    'id' => 'bai-hoc-form',
+    'id' => 'adminForm',
     'type' => 'horizontal',
     'htmlOptions' => array('class' => 'table-bordered form-horizontal well'),
         ));

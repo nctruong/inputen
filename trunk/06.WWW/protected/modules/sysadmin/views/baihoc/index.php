@@ -1,4 +1,5 @@
 <?php
+
 $this->widget('bootstrap.widgets.TbGridView', array(
     'type' => 'bordered ',
     'dataProvider' => $dataProvider,
@@ -8,10 +9,6 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         array('name' => 'title', 'header' => 'Title'),
         array('name' => 'slug', 'header' => 'Slug'),
         array('name' => 'content', 'header' => 'Content'),
-        array(
-            'class' => 'bootstrap.widgets.TbButtonColumn',
-            'htmlOptions' => array('style' => 'width: 50px'),
-        ),
     ),
 ));
 ?>
