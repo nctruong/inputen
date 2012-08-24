@@ -70,12 +70,33 @@ class BaiHocController extends MiisSysadminController {
         ));
     }
 
-    public function actionUpdate() {
+    public function actionUpdate($id) {
         $this->addToolbar();
-        $model = new BaiHoc;
+        $model = $this->loadModel($id);
+        // Uncomment the following line if AJAX validation is needed
+        // $this->performAjaxValidation($model);
+
+        if (isset($_POST['BaiHoc'])) {
+            $model->attributes = $_POST['BaiHoc'];
+            if ($model->save())
+                $this->redirect(array('index'));
+        }
+
         $this->render('create', array(
             'model' => $model,
         ));
+    }
+
+    /**
+     * Returns the data model based on the primary key given in the GET variable.
+     * If the data model is not found, an HTTP exception will be raised.
+     * @param integer the ID of the model to be loaded
+     */
+    public function loadModel($id) {
+        $model = BaiHoc::model()->findByPk($id);
+        if ($model === null)
+            throw new CHttpException(404, 'The requested page does not exist.');
+        return $model;
     }
 
     protected function addToolbar() {
