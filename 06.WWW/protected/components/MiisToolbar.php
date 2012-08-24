@@ -1,6 +1,6 @@
 <?php
 
-class MiisToolbar extends CApplicationComponent {
+class MiisToolbar {
 
     private $_title = '';
     private $_slots;
@@ -33,7 +33,7 @@ class MiisToolbar extends CApplicationComponent {
         return $this;
     }
 
-    public function setSlot($slot_id, $alt = '', $icon = 'default', $alert = 'Please slect an item(s).', $call_ajax = true) {
+    public function setSlot($slot_id, $alt = '', $icon = 'default', $alert = 'Please slect an item(s).', $call_ajax = false) {
         $this->_slots[] = array(
             'id' => $slot_id,
             'alt' => $alt,
@@ -59,8 +59,13 @@ class MiisToolbar extends CApplicationComponent {
             if ($slot['id'] == 'divider') {
                 $html[] = '<li class="divider"></li>';
             } else {
-                //$arrParams['action'] = $slot['id'];
-                $html[] = '<li' . ($slot['ajax'] ? ' class="button"' : '') . '><a href="' . ($slot['ajax'] ? '#toolbar' : '') . '" rel="' . $slot['id'] . '" title="' . $slot['alert'] . '" ' . ($slot['ajax'] ? 'name="' . $slot['ajax'] . '"' : '') . '><span class="icon-large icon-' . $slot['ico'] . '"></span>' . $slot['alt'] . '</a></li>';
+                $arrParams = array(
+                    'modules' => Yii::app()->controller->module->id,
+                    'controller' => Yii::app()->controller->id,
+                    'action' => Yii::app()->controller->action->id
+                );
+                $arrParams['action'] = $slot['id'];
+                $html[] = '<li' . ($slot['ajax'] ? ' class="button"' : '') . '><a href="' . ($slot['ajax'] ? '#toolbar' : Yii::app()->createUrl(MiisHelper::url($arrParams))) . '" rel="' . $slot['id'] . '" title="' . $slot['alert'] . '" ' . ($slot['ajax'] ? 'name="' . $slot['ajax'] . '"' : '') . '><span class="icon-large icon-' . $slot['ico'] . '"></span>' . $slot['alt'] . '</a></li>';
             }
         }
         // End toolbar div.
