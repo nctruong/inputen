@@ -70,16 +70,32 @@ class BaiHocController extends MiisSysadminController {
         ));
     }
 
+    public function actionUpdate() {
+        $this->addToolbar();
+        $model = new BaiHoc;
+        $this->render('create', array(
+            'model' => $model,
+        ));
+    }
+
     protected function addToolbar() {
-        if ($this->action->id != 'index') {
-            MiisToolbarHelper::title('Thêm bài học');
-            MiisToolbarHelper::save();
-            MiisToolbarHelper::cancel();
-        } else {
-            MiisToolbarHelper::title('Bài Học');
-            MiisToolbarHelper::Create();
-            MiisToolbarHelper::UpdateList();
-            MiisToolbarHelper::deleteList();
+        switch ($this->action->id) {
+            case 'create':
+                MiisToolbarHelper::title('Thêm bài học');
+                MiisToolbarHelper::save();
+                MiisToolbarHelper::cancel();
+                break;
+            case 'update':
+                MiisToolbarHelper::title('Chỉnh sửa bài học');
+                MiisToolbarHelper::save();
+                MiisToolbarHelper::cancel();
+                break;
+            default:
+                MiisToolbarHelper::title('Bài Học');
+                MiisToolbarHelper::Create();
+                MiisToolbarHelper::UpdateList();
+                MiisToolbarHelper::deleteList();
+                break;
         }
     }
 
