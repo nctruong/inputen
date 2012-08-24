@@ -1,19 +1,6 @@
-
-<?php
-$this->widget('bootstrap.widgets.TbMenu', array(
-    'type' => 'list',
-    'items' => array(
-        array('label' => 'ACTION'),
-        array('label' => '', 'icon' => 'icon-large icon-circle-plus', 'url' => '#'),
-        array('label' => '', 'icon' => 'icon-large icon-pencil', 'url' => '#'),
-        array('label' => '', 'icon' => 'icon-large icon-large icon-circle-minus', 'url' => '#'),
-        array('label' => '', 'icon' => 'icon-large icon-circle-remove', 'url' => '#'),
-    ),
-));
-?>  
 <?php
 $this->widget('bootstrap.widgets.TbGridView', array(
-    'type' => 'condensed',
+    'type' => 'bordered ',
     'dataProvider' => $dataProvider,
     'template' => "{items}",
     'columns' => array(
@@ -28,12 +15,3 @@ $this->widget('bootstrap.widgets.TbGridView', array(
     ),
 ));
 ?>
-<div class="span10">
-    <div class="page-header">
-        <h1>Data</h1>
-    </div>
-
-</div>
-<div class="span1">
-
-</div>
