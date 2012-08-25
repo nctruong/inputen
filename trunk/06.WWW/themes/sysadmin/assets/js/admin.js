@@ -20,14 +20,28 @@
                         alert($(this).attr('title'));
                         return false;
                     }
+                }else if(action=='delete') {
+                    if(!isCheckCids()){
+                        alert($(this).attr('title'));
+                        return false;
+                    } else {
+                        var method = $(this).attr('name');
+                        if(method) {
+                            $('form[name=adminForm]').attr('action',method);
+                            $('form[name=adminForm]').submit();
+                        }
+                    }
                 } else {
                     if(!isCheckCids()){
                         alert($(this).attr('title'));
                         return false;
                     }
-                    //window.location.href = $(this).attr('name');
+                //window.location.href = $(this).attr('name');
                 }
             });
+        }
+        function initDelete() {
+            
         }
         function isCheckCids(){
             var is_check = false;

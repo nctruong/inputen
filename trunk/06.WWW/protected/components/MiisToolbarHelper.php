@@ -45,11 +45,16 @@ abstract class MiisToolbarHelper {
 
     public static function deleteList($msg = '', $task = 'delete', $alt = 'Delete') {
         $bar = MiisToolbar::getInstance();
+        $arrParams = array(
+            'modules' => Yii::app()->controller->module->id,
+            'controller' => Yii::app()->controller->id,
+            'action' => 'delete'
+        );
         // Add a delete button.
         if ($msg) {
             $bar->setSlot('delete', $alt, 'delete', 'Delete');
         } else {
-            $bar->setSlot('delete', $alt, 'delete', 'Please slect an item(s).','delete');
+            $bar->setSlot('delete', $alt, 'delete', 'Please slect an item(s).', Yii::app()->createUrl(MiisHelper::url($arrParams)));
         }
     }
 

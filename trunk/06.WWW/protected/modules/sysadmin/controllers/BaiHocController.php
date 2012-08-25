@@ -19,12 +19,12 @@ class BaiHocController extends MiisSysadminController {
      */
     public function accessRules() {
         return array(
-            array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
+            array('allow', // allow all users to perform 'index' actions
+                'actions' => array('index'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update'),
+                'actions' => array('create', 'update', 'delete'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -65,7 +65,7 @@ class BaiHocController extends MiisSysadminController {
                 $this->redirect(array('index'));
         }
 
-        $this->render('create', array(
+        $this->render('form', array(
             'model' => $model,
         ));
     }
@@ -82,9 +82,30 @@ class BaiHocController extends MiisSysadminController {
                 $this->redirect(array('index'));
         }
 
-        $this->render('create', array(
+        $this->render('form', array(
             'model' => $model,
         ));
+    }
+
+    public function actionDelete() {
+        $cids = $this->getParam('cid', 0);
+        if (count($cids) > 0) {
+            foreach ($cids as $cid) {
+                BaiHoc::model()->findByPk($cid)->delete();
+            }
+        }
+        $this->redirect(array('index'));
+    }
+
+    /**
+     * Performs the AJAX validation.
+     * @param CModel the model to be validated
+     */
+    protected function performAjaxValidation($model) {
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'adminForm') {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
     }
 
     /**
