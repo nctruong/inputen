@@ -105,6 +105,10 @@ class BaiHoc extends CActiveRecord {
 
         return new CActiveDataProvider($this, array(
                     'criteria' => $criteria,
+                    'sort' => false,
+                    'pagination' => array(
+                        'pageSize' => 2
+                    ),
                 ));
     }
 

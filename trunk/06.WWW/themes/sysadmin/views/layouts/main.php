@@ -44,7 +44,6 @@
         <!-- Le javascript -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-        <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery.js"></script>
         <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/admin.js"></script>
     </body>
 </html>

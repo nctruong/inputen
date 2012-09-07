@@ -25,10 +25,13 @@
                         alert($(this).attr('title'));
                         return false;
                     } else {
-                        var method = $(this).attr('name');
-                        if(method) {
-                            $('form[name=adminForm]').attr('action',method);
-                            $('form[name=adminForm]').submit();
+                        var cf = confirm('Do you really want to delete?');
+                        if(cf) {
+                            var method = $(this).attr('name');
+                            if(method) {
+                                $('form[name=adminForm]').attr('action',method);
+                                $('form[name=adminForm]').submit();
+                            }  
                         }
                     }
                 } else {
