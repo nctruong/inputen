@@ -66,7 +66,7 @@ abstract class MiisSysadminController extends MiisController {
         Yii::app()->user->logout();
         $this->redirect('/sysadmin.html');
     }
-
+    
     public function render($view, $data = null, $return = false) {
         if ($this->beforeRender($view)) {
             $bar = MiisToolbar::getInstance()->render();

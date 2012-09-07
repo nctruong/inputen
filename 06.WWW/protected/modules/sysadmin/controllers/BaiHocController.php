@@ -20,7 +20,7 @@ class BaiHocController extends MiisSysadminController {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' actions
-                'actions' => array('index'),
+                'actions' => array('index','view'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -42,9 +42,12 @@ class BaiHocController extends MiisSysadminController {
      */
     public function actionIndex() {
         $this->addToolbar();
-        $dataProvider = new CActiveDataProvider('BaiHoc');
+        $model = new BaiHoc('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['BaiHoc']))
+            $model->attributes = $_GET['BaiHoc'];
         $this->render('index', array(
-            'dataProvider' => $dataProvider,
+            'model' => $model,
         ));
     }
 
@@ -102,7 +105,7 @@ class BaiHocController extends MiisSysadminController {
      * @param CModel the model to be validated
      */
     protected function performAjaxValidation($model) {
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'adminForm') {
+        if (isset($_POST['ajax'])) {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
@@ -123,12 +126,12 @@ class BaiHocController extends MiisSysadminController {
     protected function addToolbar() {
         switch ($this->action->id) {
             case 'create':
-                MiisToolbarHelper::title('Thêm bài học');
+                MiisToolbarHelper::title('Thêm mới');
                 MiisToolbarHelper::save();
                 MiisToolbarHelper::cancel();
                 break;
             case 'update':
-                MiisToolbarHelper::title('Chỉnh sửa bài học');
+                MiisToolbarHelper::title('Chỉnh sữa');
                 MiisToolbarHelper::save();
                 MiisToolbarHelper::cancel();
                 break;

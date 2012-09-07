@@ -18,10 +18,11 @@ return array(
             'class' => 'system.gii.GiiModule',
             'password' => '123admin!@#$',
             'generatorPaths' => array(
-                'bootstrap.gii',
+                'ext.MiisCG',
             ),
         ),
     ),
+    'sourceLanguage' => 'vi',
     'components' => array(
         'user' => array(
             'allowAutoLogin' => true,
@@ -29,7 +30,7 @@ return array(
         'urlManager' => array(
             'urlFormat' => 'path',
             'urlSuffix' => '.html',
-            'showScriptName'=>false,
+            'showScriptName' => false,
             'rules' => array(
                 // a custom rule to handle default controller
                 array('class' => 'application.components.MiisUrlRule'),
@@ -58,6 +59,9 @@ return array(
                     'class' => 'CWebLogRoute',
                 ),
             ),
+        ),
+        'errorHandler' => array(
+            'errorAction' => 'site/error',
         ),
         'db' => array(
             'class' => 'CDbConnection',
