@@ -1,29 +1,30 @@
 <?php
 
 /**
- * This is the model class for table "categories".
+ * This is the model class for table "contents".
  *
- * The followings are the available columns in table 'categories':
+ * The followings are the available columns in table 'contents':
  * @property integer $id
  * @property string $title
  * @property string $slug
- * @property string $desc
- * @property integer $state
+ * @property integer $premium
+ * @property string $content
  * @property string $created_date
- * @property integer $order
- * @property integer $parent
- * @property integer $taxonomy_id
+ * @property integer $category_id
  *
  * The followings are the available model relations:
- * @property Taxonomy $taxonomy
- * @property Contents[] $contents
+ * @property Comments[] $comments
+ * @property Categories $category
+ * @property LessonsFavorite[] $lessonsFavorites
+ * @property LessonsRemember[] $lessonsRemembers
+ * @property ResourceDetails[] $resourceDetails
  */
-class Categories extends CActiveRecord
+class Contents extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Categories the static model class
+	 * @return Contents the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -35,7 +36,7 @@ class Categories extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'categories';
+		return 'contents';
 	}
 
 	/**
@@ -46,12 +47,12 @@ class Categories extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, title, slug, desc, state, created_date', 'required'),
-			array('id, state, order, parent, taxonomy_id', 'numerical', 'integerOnly'=>true),
+			array('title, slug, premium, content, created_date, category_id', 'required'),
+			array('premium, category_id', 'numerical', 'integerOnly'=>true),
 			array('title, slug', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title, slug, desc, state, created_date, order, parent, taxonomy_id', 'safe', 'on'=>'search'),
+			array('id, title, slug, premium, content, created_date, category_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,8 +64,11 @@ class Categories extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'taxonomy' => array(self::BELONGS_TO, 'Taxonomy', 'taxonomy_id'),
-			'contents' => array(self::HAS_MANY, 'Contents', 'category_id'),
+			'comments' => array(self::HAS_MANY, 'Comments', 'content_id'),
+			'category' => array(self::BELONGS_TO, 'Categories', 'category_id'),
+			'lessonsFavorites' => array(self::HAS_MANY, 'LessonsFavorite', 'content_id'),
+			'lessonsRemembers' => array(self::HAS_MANY, 'LessonsRemember', 'content_id'),
+			'resourceDetails' => array(self::HAS_MANY, 'ResourceDetails', 'content_id'),
 		);
 	}
 
@@ -77,12 +81,10 @@ class Categories extends CActiveRecord
 			'id' => 'ID',
 			'title' => 'Title',
 			'slug' => 'Slug',
-			'desc' => 'Desc',
-			'state' => 'State',
+			'premium' => 'Premium',
+			'content' => 'Content',
 			'created_date' => 'Created Date',
-			'order' => 'Order',
-			'parent' => 'Parent',
-			'taxonomy_id' => 'Taxonomy',
+			'category_id' => 'Category',
 		);
 	}
 
@@ -100,12 +102,10 @@ class Categories extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('slug',$this->slug,true);
-		$criteria->compare('desc',$this->desc,true);
-		$criteria->compare('state',$this->state);
+		$criteria->compare('premium',$this->premium);
+		$criteria->compare('content',$this->content,true);
 		$criteria->compare('created_date',$this->created_date,true);
-		$criteria->compare('order',$this->order);
-		$criteria->compare('parent',$this->parent);
-		$criteria->compare('taxonomy_id',$this->taxonomy_id);
+		$criteria->compare('category_id',$this->category_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

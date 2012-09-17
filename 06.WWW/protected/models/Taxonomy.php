@@ -1,29 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "categories".
+ * This is the model class for table "taxonomy".
  *
- * The followings are the available columns in table 'categories':
+ * The followings are the available columns in table 'taxonomy':
  * @property integer $id
- * @property string $title
- * @property string $slug
- * @property string $desc
+ * @property string $name
+ * @property string $description
+ * @property string $type
  * @property integer $state
- * @property string $created_date
- * @property integer $order
- * @property integer $parent
- * @property integer $taxonomy_id
  *
  * The followings are the available model relations:
- * @property Taxonomy $taxonomy
- * @property Contents[] $contents
+ * @property Categories[] $categories
  */
-class Categories extends CActiveRecord
+class Taxonomy extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Categories the static model class
+	 * @return Taxonomy the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -35,7 +30,7 @@ class Categories extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'categories';
+		return 'taxonomy';
 	}
 
 	/**
@@ -46,12 +41,13 @@ class Categories extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, title, slug, desc, state, created_date', 'required'),
-			array('id, state, order, parent, taxonomy_id', 'numerical', 'integerOnly'=>true),
-			array('title, slug', 'length', 'max'=>255),
+			array('name, type, state', 'required'),
+			array('state', 'numerical', 'integerOnly'=>true),
+			array('name, type', 'length', 'max'=>255),
+			array('description', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title, slug, desc, state, created_date, order, parent, taxonomy_id', 'safe', 'on'=>'search'),
+			array('id, name, description, type, state', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,8 +59,7 @@ class Categories extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'taxonomy' => array(self::BELONGS_TO, 'Taxonomy', 'taxonomy_id'),
-			'contents' => array(self::HAS_MANY, 'Contents', 'category_id'),
+			'categories' => array(self::HAS_MANY, 'Categories', 'taxonomy_id'),
 		);
 	}
 
@@ -75,14 +70,10 @@ class Categories extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
-			'slug' => 'Slug',
-			'desc' => 'Desc',
+			'name' => 'Name',
+			'description' => 'Description',
+			'type' => 'Type',
 			'state' => 'State',
-			'created_date' => 'Created Date',
-			'order' => 'Order',
-			'parent' => 'Parent',
-			'taxonomy_id' => 'Taxonomy',
 		);
 	}
 
@@ -98,14 +89,10 @@ class Categories extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('slug',$this->slug,true);
-		$criteria->compare('desc',$this->desc,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('description',$this->description,true);
+		$criteria->compare('type',$this->type,true);
 		$criteria->compare('state',$this->state);
-		$criteria->compare('created_date',$this->created_date,true);
-		$criteria->compare('order',$this->order);
-		$criteria->compare('parent',$this->parent);
-		$criteria->compare('taxonomy_id',$this->taxonomy_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

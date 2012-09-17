@@ -11,7 +11,8 @@
 		<Model Expanded="Yes" ID="{B67EA36B-955F-4FC0-9630-ACE2CF0810D9}" Loaded="No" Name="tienganh123" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="tienganh123.pdm"/>
 		<Model Expanded="Yes" ID="{B67EA36B-955F-4FC0-9630-ACE2CF0810D9}" Loaded="No" Name="tienganh123" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="tienganh123.pdm"/>
 		<Model Expanded="Yes" ID="{B67EA36B-955F-4FC0-9630-ACE2CF0810D9}" Loaded="No" Name="tienganh123" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="tienganh123.pdm"/>
-		<Model Expanded="Yes" ID="{B67EA36B-955F-4FC0-9630-ACE2CF0810D9}" Name="tienganh123" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="tienganh123.pdm"/>
+		<Model Expanded="Yes" ID="{B67EA36B-955F-4FC0-9630-ACE2CF0810D9}" Loaded="No" Name="tienganh123" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="tienganh123.pdm"/>
+		<Model Expanded="Yes" ID="{B67EA36B-955F-4FC0-9630-ACE2CF0810D9}" Name="tienganh123" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="tienganh123_08312012.pdm"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>
