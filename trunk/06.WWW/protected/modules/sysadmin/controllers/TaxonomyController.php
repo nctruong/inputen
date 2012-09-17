@@ -1,6 +1,6 @@
-<?php echo "<?php\n"; ?>
+<?php
 
-class <?php echo $this->controllerClass; ?> extends MiisSysadminController
+class TaxonomyController extends MiisSysadminController
 {
 
 	/**
@@ -43,10 +43,10 @@ class <?php echo $this->controllerClass; ?> extends MiisSysadminController
         */
         public function actionIndex() {
             $this->addToolbar();
-            $model = new <?php echo $this->modelClass; ?>('search');
+            $model = new Taxonomy('search');
             $model->unsetAttributes();  // clear any default values
-            if (isset($_GET['<?php echo $this->modelClass; ?>']))
-                $model->attributes = $_GET['<?php echo $this->modelClass; ?>'];
+            if (isset($_GET['Taxonomy']))
+                $model->attributes = $_GET['Taxonomy'];
             $this->render('index', array(
                 'model' => $model,
             ));
@@ -58,13 +58,13 @@ class <?php echo $this->controllerClass; ?> extends MiisSysadminController
         */
         public function actionCreate() {
             $this->addToolbar();
-            $model = new <?php echo $this->modelClass; ?>();
+            $model = new Taxonomy();
 
             // Uncomment the following line if AJAX validation is needed
             // $this->performAjaxValidation($model);
 
-            if (isset($_POST['<?php echo $this->modelClass; ?>'])) {
-                $model->attributes = $_POST['<?php echo $this->modelClass; ?>'];
+            if (isset($_POST['Taxonomy'])) {
+                $model->attributes = $_POST['Taxonomy'];
                 if ($model->save())
                     $this->redirect(array('index'));
             }
@@ -80,8 +80,8 @@ class <?php echo $this->controllerClass; ?> extends MiisSysadminController
             // Uncomment the following line if AJAX validation is needed
             // $this->performAjaxValidation($model);
 
-            if (isset($_POST['<?php echo $this->modelClass; ?>'])) {
-                $model->attributes = $_POST['<?php echo $this->modelClass; ?>'];
+            if (isset($_POST['Taxonomy'])) {
+                $model->attributes = $_POST['Taxonomy'];
                 if ($model->save())
                     $this->redirect(array('index'));
             }
@@ -95,7 +95,7 @@ class <?php echo $this->controllerClass; ?> extends MiisSysadminController
             $cids = $this->getParam('cid', 0);
             if (count($cids) > 0) {
                 foreach ($cids as $cid) {
-                    <?php echo $this->modelClass; ?>::model()->findByPk($cid)->delete();
+                    Taxonomy::model()->findByPk($cid)->delete();
                 }
             }
             $this->redirect(array('index'));
@@ -109,7 +109,7 @@ class <?php echo $this->controllerClass; ?> extends MiisSysadminController
 	 */
 	public function loadModel($id)
 	{
-		$model=<?php echo $this->modelClass; ?>::model()->findByPk($id);
+		$model=Taxonomy::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -121,7 +121,7 @@ class <?php echo $this->controllerClass; ?> extends MiisSysadminController
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='<?php echo $this->class2id($this->modelClass); ?>-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='taxonomy-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
