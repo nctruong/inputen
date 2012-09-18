@@ -1,5 +1,4 @@
 <?php
-
 header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 $exec_start_time = microtime(true);
