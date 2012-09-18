@@ -26,7 +26,7 @@ $arrParams = array(
             array('name' => 'name','type' => 'raw', 'header' => 'name','value'=>'CHtml::link($data->name,array("'.Yii::app()->controller->id.'/update","id"=>$data->id))'),
             array('name' => 'description', 'header' => 'description'),
             array('name' => 'type', 'header' => 'type'),
-            array('name' => 'state','type' => 'raw', 'header' => 'state'),
+            array('name' => 'state', 'header' => 'state'),
         ),
     ));
     ?>
