@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     9/18/2012 1:17:26 AM                         */
+/* Created on:     9/18/2012 2:00:16 PM                         */
 /*==============================================================*/
 
 
@@ -15,6 +15,8 @@ drop table if exists core_layouts;
 drop table if exists core_layout_details;
 
 drop table if exists core_settings;
+
+drop table if exists core_users;
 
 drop table if exists lessons_favorite;
 
@@ -119,6 +121,23 @@ create table core_settings
    type                 varchar(250) not null,
    key                  varchar(250) not null,
    value                text,
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: core_users                                            */
+/*==============================================================*/
+create table core_users
+(
+   id                   int(11) not null auto_increment,
+   username             varchar(150) not null,
+   password             varchar(64) not null,
+   email                varchar(50) not null,
+   fullname             varchar(150) not null,
+   created_date         timestamp not null,
+   last_login           datetime not null,
+   state                tinyint(3) not null,
+   blocked              tinyint(1) not null,
    primary key (id)
 );
 
