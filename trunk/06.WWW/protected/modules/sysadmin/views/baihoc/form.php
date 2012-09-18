@@ -18,8 +18,17 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     <?php echo $form->textFieldRow($model, 'slug', array('class' => 'span5', 'maxlength' => 255)); ?>
 
     <?php echo $form->textFieldRow($model, 'premium', array('class' => 'span5')); ?>
-
-    <?php echo $form->textAreaRow($model, 'content', array('rows' => 6, 'cols' => 50, 'class' => 'span8')); ?>
+    <div class="control-group ">
+        <label for="Contents_content" class="control-label required">content <span class="required">*</span></label>
+        <div class="controls">
+            <?php
+            $this->widget('ext.ckeditor.CKEditorWidget', array(
+                'model' => $model,
+                'attribute' => 'content',
+            ));
+            ?>
+        </div>
+    </div>
 
     <?php echo $form->textFieldRow($model, 'created_date', array('class' => 'span5')); ?>
 
@@ -27,9 +36,5 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 
 </fieldset>
 <?php $this->endWidget(); ?>
-<?php
-$this->widget('application.extensions.ckeditor.CKEditorWidget', array(
-    'model' => $model,
-    'attribute' => 'content',
-));
-?>
+
+
