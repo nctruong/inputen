@@ -8,10 +8,10 @@ $arrParams = array(
 <form name="adminForm" id="adminForm" action="<?php echo Yii::app()->createUrl(MiisHelper::url($arrParams)); ?>" method="post">
     <?php
     $this->widget('bootstrap.widgets.TbGridView', array(
-        'id' => 'Taxonomy-grid',
+        'id' => 'Widgets-grid',
         'type' => 'striped bordered condensed',
-        'dataProvider' => $model->search(),
         'filter' => $model,
+        'dataProvider' => $model->search(),
         'selectableRows' => 2, // multiple rows can be selected
         'template' => "{items}{summary}{pager}",
         'columns' => array(
@@ -24,21 +24,14 @@ $arrParams = array(
                 ),
             ),
             array('name' => 'id', 'header' => 'id',
-                'filter' => CHtml::activeTextField($model, 'id',array('style' => 'width:45px;')),
+                'filter' => CHtml::activeTextField($model, 'id', array('class' => 'span1')),
                 'headerHtmlOptions' => array(
-                    'style' => 'width:45px',
+                    'class' => 'span1',
                 ),
             ),
             array('name' => 'name', 'header' => 'name'),
-            array('name' => 'description', 'header' => 'description'),
-            array(
-                'name' => 'type',
-                'header' => 'type',
-                'filter' => CHtml::activeDropDownList($model, 'type', CHtml::listData(Taxonomy::model()->findAll(), 'type', 'type'), array('empty' => 'None', 'class' => 'span3')),
-                'headerHtmlOptions' => array(
-                    'class' => 'span3',
-                ),
-            ),
+            array('name' => 'type', 'header' => 'type'),
+            array('name' => 'params', 'header' => 'params'),
             array(
                 'name' => 'state',
                 'header' => 'state',
@@ -48,6 +41,7 @@ $arrParams = array(
                     'class' => 'span2',
                 ),
             ),
+            array('name' => 'created_date', 'header' => 'created_date'),
         ),
     ));
     ?>

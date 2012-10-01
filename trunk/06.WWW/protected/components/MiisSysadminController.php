@@ -47,19 +47,19 @@ abstract class MiisSysadminController extends MiisController {
             // Categories
             array('label' => 'Categories', 'icon' => 'icon-tag icon-white', 'url' => Yii::app()->baseUrl . '/sysadmin/categories.html', 'active' => $this->id == 'categories' || $this->id == 'taxonomy' ? true : false,
                 'items' => array(
-                    array('label' => 'Create Category', 'url' => Yii::app()->baseUrl . '/sysadmin/categories/create.html', 'active' => $this->id == 'create' ? true : false),
-                    array('label' => 'Manage Categories', 'url' => Yii::app()->baseUrl . '/sysadmin/categories.html', 'active' => $this->id == 'categories' ? true : false),
-                    array('label' => 'Create Taxonomy', 'url' => Yii::app()->baseUrl . '/sysadmin/taxonomy/create.html', 'active' => $this->id == 'create' ? true : false),
-                    array('label' => 'Mangage Taxonomy', 'url' => Yii::app()->baseUrl . '/sysadmin/taxonomy.html', 'active' => $this->id == 'categories' ? true : false),
+                    array('label' => 'Create Category', 'url' => Yii::app()->baseUrl . '/sysadmin/categories/create.html', 'active' => $this->id == 'categories' && $this->action->id == 'create' ? true : false),
+                    array('label' => 'Manage Categories', 'url' => Yii::app()->baseUrl . '/sysadmin/categories.html', 'active' => $this->id == 'categories' && $this->action->id == 'index' ? true : false),
+                    array('label' => 'Create Taxonomy', 'url' => Yii::app()->baseUrl . '/sysadmin/taxonomy/create.html', 'active' => $this->id == 'taxonomy' && $this->action->id == 'create' ? true : false),
+                    array('label' => 'Mangage Taxonomy', 'url' => Yii::app()->baseUrl . '/sysadmin/taxonomy.html', 'active' => $this->id == 'taxonomy' && $this->action->id == 'index' ? true : false),
                 )
             ), // Contents
-            array('label' => 'Contents', 'icon' => 'icon-book icon-white', 'url' => Yii::app()->baseUrl . '/sysadmin/contents.html', 'active' => $this->id == 'contents' || $this->id == 'baihoc' ? true : false,
-                'items' => array(
-                    array('label' => 'Create BaiHoc', 'url' => Yii::app()->baseUrl . '/sysadmin/baihoc/create.html', 'active' => $this->id == 'create' ? true : false),
-                    array('label' => 'Manage BaiHoc', 'url' => Yii::app()->baseUrl . '/sysadmin/baihoc.html', 'active' => $this->id == 'baihoc' ? true : false),
-                    array('label' => 'Create HocQuaClip', 'url' => Yii::app()->baseUrl . '/sysadmin/hocquaclip/create.html', 'active' => $this->id == 'create' ? true : false),
-                    array('label' => 'Mangage HocQuaClip', 'url' => Yii::app()->baseUrl . '/sysadmin/hocquaclip.html', 'active' => $this->id == 'hocquaclip' ? true : false),
-                )
+            array('label' => 'Contents', 'icon' => 'icon-book icon-white', 'url' => Yii::app()->baseUrl . '/sysadmin/contents.html', 'active' => $this->id == 'contents' ? true : false,
+//                'items' => array(
+//                    array('label' => 'Create BaiHoc', 'url' => Yii::app()->baseUrl . '/sysadmin/baihoc/create.html', 'active' => $this->id == 'create' ? true : false),
+//                    array('label' => 'Manage BaiHoc', 'url' => Yii::app()->baseUrl . '/sysadmin/baihoc.html', 'active' => $this->id == 'baihoc' ? true : false),
+//                    array('label' => 'Create HocQuaClip', 'url' => Yii::app()->baseUrl . '/sysadmin/hocquaclip/create.html', 'active' => $this->id == 'create' ? true : false),
+//                    array('label' => 'Mangage HocQuaClip', 'url' => Yii::app()->baseUrl . '/sysadmin/hocquaclip.html', 'active' => $this->id == 'hocquaclip' ? true : false),
+//                )
             ), // Pages
             array('label' => 'Pages', 'icon' => 'icon-file icon-white', 'url' => Yii::app()->baseUrl . '/sysadmin/pages.html', 'active' => $this->id == 'pages' || $this->id == 'menus' || $this->id == 'widgets' ? true : false,
                 'items' => array(
@@ -73,19 +73,19 @@ abstract class MiisSysadminController extends MiisController {
             ), // Resources
             array('label' => 'Resources', 'icon' => 'icon-inbox icon-white', 'url' => Yii::app()->baseUrl . '/sysadmin/resources.html', 'active' => $this->id == 'resources' ? true : false,
                 'items' => array(
-                    array('label' => 'Create Resource', 'url' => Yii::app()->baseUrl . '/sysadmin/resources/create.html', 'active' => $this->id == 'create' ? true : false),
-                    array('label' => 'Manage Resources', 'url' => Yii::app()->baseUrl . '/sysadmin/resources.html', 'active' => $this->id == 'resources' ? true : false),
+                    array('label' => 'Create Resource', 'url' => Yii::app()->baseUrl . '/sysadmin.html', 'active' => $this->id == 'create' ? true : false),
+                    array('label' => 'Manage Resources', 'url' => Yii::app()->baseUrl . '/sysadmin.html', 'active' => $this->id == 'resources' ? true : false),
                 )
             ), // Comments
-            array('label' => 'Comments', 'icon' => 'icon-comment icon-white', 'url' => Yii::app()->baseUrl . '/sysadmin/comments.html', 'active' => $this->id == 'comments' ? true : false,
+            array('label' => 'Comments', 'icon' => 'icon-comment icon-white', 'url' => Yii::app()->baseUrl . '/sysadmin.html', 'active' => $this->id == 'comments' ? true : false,
                 'items' => array(
-                    array('label' => 'Manage Resources', 'url' => Yii::app()->baseUrl . '/sysadmin/comments.html', 'active' => $this->id == 'comments' ? true : false),
+                    array('label' => 'Manage Resources', 'url' => Yii::app()->baseUrl . '/sysadmin.html', 'active' => $this->id == 'comments' ? true : false),
                 )
             ), // Users
             array('label' => 'Users', 'icon' => 'icon-user icon-white', 'url' => Yii::app()->baseUrl . '/sysadmin/users.html', 'active' => $this->id == 'users' ? true : false,
                 'items' => array(
-                    array('label' => 'Create User', 'url' => Yii::app()->baseUrl . '/sysadmin/users/create.html', 'active' => $this->id == 'create' ? true : false),
-                    array('label' => 'Mangage Users', 'url' => Yii::app()->baseUrl . '/sysadmin/users.html', 'active' => $this->id == 'pages' ? true : false),
+                    array('label' => 'Create User', 'url' => Yii::app()->baseUrl . '/sysadmin/users/create.html', 'active' => $this->id == 'users' && $this->action->id == 'create' ? true : false),
+                    array('label' => 'Mangage Users', 'url' => Yii::app()->baseUrl . '/sysadmin/users.html', 'active' => $this->id == 'users' && $this->action->id == 'index' ? true : false),
                 )
             ), // Settings
             array('label' => 'Settings', 'icon' => 'icon-wrench icon-white', 'url' => Yii::app()->baseUrl . '/sysadmin/settings.html', 'active' => $this->id == 'settings' ? true : false)

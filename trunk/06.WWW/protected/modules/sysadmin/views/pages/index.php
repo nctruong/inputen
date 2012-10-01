@@ -8,10 +8,10 @@ $arrParams = array(
 <form name="adminForm" id="adminForm" action="<?php echo Yii::app()->createUrl(MiisHelper::url($arrParams)); ?>" method="post">
     <?php
     $this->widget('bootstrap.widgets.TbGridView', array(
-        'id' => 'Taxonomy-grid',
+        'id' => 'Pages-grid',
         'type' => 'striped bordered condensed',
-        'dataProvider' => $model->search(),
         'filter' => $model,
+        'dataProvider' => $model->search(),
         'selectableRows' => 2, // multiple rows can be selected
         'template' => "{items}{summary}{pager}",
         'columns' => array(
@@ -24,26 +24,25 @@ $arrParams = array(
                 ),
             ),
             array('name' => 'id', 'header' => 'id',
-                'filter' => CHtml::activeTextField($model, 'id',array('style' => 'width:45px;')),
+                'filter' => CHtml::activeTextField($model, 'id', array('class' => 'span1')),
                 'headerHtmlOptions' => array(
-                    'style' => 'width:45px',
+                    'class' => 'span1',
                 ),
             ),
-            array('name' => 'name', 'header' => 'name'),
-            array('name' => 'description', 'header' => 'description'),
-            array(
-                'name' => 'type',
-                'header' => 'type',
-                'filter' => CHtml::activeDropDownList($model, 'type', CHtml::listData(Taxonomy::model()->findAll(), 'type', 'type'), array('empty' => 'None', 'class' => 'span3')),
-                'headerHtmlOptions' => array(
-                    'class' => 'span3',
-                ),
-            ),
+            array('name' => 'title', 'header' => 'title'),
+            array('name' => 'meta', 'header' => 'meta'),
+            array('name' => 'theme', 'header' => 'theme'),
             array(
                 'name' => 'state',
                 'header' => 'state',
                 'value' => '@$data->state ? "Publish" : "Unpublish"',
                 'filter' => CHtml::activeDropDownList($model, 'state', array(1 => 'Publish', 0 => 'Unpublish'), array('empty' => 'None', 'class' => 'span2')),
+                'headerHtmlOptions' => array(
+                    'class' => 'span2',
+                ),
+            ),
+            array('name' => 'created_date', 'header' => 'created_date',
+                'filter' => CHtml::activeTextField($model, 'created_date', array('class' => 'span2')),
                 'headerHtmlOptions' => array(
                     'class' => 'span2',
                 ),

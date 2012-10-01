@@ -54,10 +54,10 @@ return array(
         ),
         'db' => array(
             'class' => 'CDbConnection',
-            'connectionString' => 'mysql:host=localhost;dbname=tienganh123',
+            'connectionString' => 'mysql:host=localhost;dbname=lehuy_english456',
             'emulatePrepare' => true,
-            'username' => 'root',
-            'password' => 'root',
+            'username' => 'lehuy_english456',
+            'password' => 'english456',
             'charset' => 'utf8',
             'schemaCachingDuration' => '3600',
             'enableProfiling' => true,
