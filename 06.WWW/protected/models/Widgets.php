@@ -1,24 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "menus".
+ * This is the model class for table "widgets".
  *
- * The followings are the available columns in table 'menus':
+ * The followings are the available columns in table 'widgets':
  * @property integer $id
- * @property string $name
- * @property string $description
- * @property integer $order
+ * @property integer $name
+ * @property string $type
+ * @property string $params
+ * @property string $created_date
  * @property integer $state
  *
  * The followings are the available model relations:
- * @property MenuItems[] $menuItems
+ * @property CoreLayoutDetails[] $coreLayoutDetails
  */
-class Menus extends CActiveRecord {
+class Widgets extends CActiveRecord {
 
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
-     * @return Menus the static model class
+     * @return Widgets the static model class
      */
     public static function model($className = __CLASS__) {
         return parent::model($className);
@@ -28,7 +29,7 @@ class Menus extends CActiveRecord {
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'menus';
+        return 'widgets';
     }
 
     /**
@@ -38,12 +39,13 @@ class Menus extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('order, state', 'numerical', 'integerOnly' => true),
-            array('name', 'length', 'max' => 250),
-            array('description', 'safe'),
+            array('created_date', 'required'),
+            array('name, state', 'numerical', 'integerOnly' => true),
+            array('type', 'length', 'max' => 250),
+            array('params', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, name, description, order, state', 'safe', 'on' => 'search'),
+            array('id, name, type, params, created_date, state', 'safe', 'on' => 'search'),
         );
     }
 
@@ -54,7 +56,7 @@ class Menus extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'menuItems' => array(self::HAS_MANY, 'MenuItems', 'menu_id'),
+            'coreLayoutDetails' => array(self::HAS_MANY, 'CoreLayoutDetails', 'widget_id'),
         );
     }
 
@@ -65,8 +67,9 @@ class Menus extends CActiveRecord {
         return array(
             'id' => 'ID',
             'name' => 'Name',
-            'description' => 'Description',
-            'order' => 'Order',
+            'type' => 'Type',
+            'params' => 'Params',
+            'created_date' => 'Created Date',
             'state' => 'State',
         );
     }
@@ -82,15 +85,23 @@ class Menus extends CActiveRecord {
         $criteria = new CDbCriteria;
 
         $criteria->compare('id', $this->id);
-        $criteria->compare('name', $this->name, true);
-        $criteria->compare('description', $this->description, true);
-        $criteria->compare('order', $this->order);
+        $criteria->compare('name', $this->name);
+        $criteria->compare('type', $this->type, true);
+        $criteria->compare('params', $this->params, true);
+        $criteria->compare('created_date', $this->created_date, true);
         $criteria->compare('state', $this->state);
 
         return new CActiveDataProvider($this, array(
                     'criteria' => $criteria,
                     'sort' => false
                 ));
+    }
+
+    public function afterSave() {
+        if ($this->isNewRecord) {
+            $this->created_date = new CDbExpression('NOW()');
+        }
+        parent::afterSave();
     }
 
 }

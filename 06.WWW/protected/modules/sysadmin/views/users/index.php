@@ -7,10 +7,9 @@ $arrParams = array(
 ?>
 <form name="adminForm" id="adminForm" action="<?php echo Yii::app()->createUrl(MiisHelper::url($arrParams)); ?>" method="post">
     <?php
-    $this->widget('bootstrap.widgets.TbGridView', array(
-        'id' => 'CoreSettings-grid',
+$this->widget('bootstrap.widgets.TbGridView', array(
+        'id' => 'Users-grid',
         'type' => 'striped bordered condensed',
-        'filter' => $model,
         'dataProvider' => $model->search(),
         'selectableRows' => 2, // multiple rows can be selected
         'template' => "{items}{summary}{pager}",
@@ -21,20 +20,21 @@ $arrParams = array(
                 'value' => '$data->id',
                 'headerHtmlOptions' => array(
                     'style' => 'width:25px;',
-                ),
+		),
             ),
-            array('name' => 'id', 'header' => 'id',
-                'filter' => CHtml::activeTextField($model, 'id', array('class' => 'span1')),
-                'headerHtmlOptions' => array(
-                    'class' => 'span1',
-                ),
-            ),
-            array('name' => 'type', 'header' => 'type',
-                'filter' => CHtml::activeDropDownList($model, 'type', array('general' => 'General', 'system' => 'System'), array('empty' => 'None', 'class' => 'span2')),
-            ),
-            array('name' => 'key', 'header' => 'key'),
-            array('name' => 'value', 'header' => 'value'),
+            		 array('name' => 'id', 'header' => 'id'),
+		 array('name' => 'username', 'header' => 'username'),
+		 array('name' => 'email', 'header' => 'email'),
+		 array('name' => 'fullname', 'header' => 'fullname'),
+		 array('name' => 'dob', 'header' => 'dob'),
+		 array('name' => 'gender', 'header' => 'gender'),
+		 array('name' => 'address', 'header' => 'address'),
+		 array('name' => 'school', 'header' => 'school'),
+		 array('name' => 'country', 'header' => 'country'),
+		 //array('name' => 'premium', 'header' => 'premium'),
+		 array('name' => 'created_date', 'header' => 'created_date'),
+
         ),
     ));
-    ?>
+?>
 </form>
