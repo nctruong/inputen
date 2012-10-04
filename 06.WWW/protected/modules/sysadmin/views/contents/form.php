@@ -31,6 +31,8 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     </div>
 
     <?php echo $form->dropDownListRow($model, 'category_id', Categories::getCategories(), array('class' => 'span3')); ?>
+    
+    <?php echo $form->dropDownListRow($model, 'state', array(1 => 'Publish', 0 => 'UnPublish')); ?>
 
 </fieldset>
 <?php $this->endWidget(); ?>

@@ -160,6 +160,7 @@
         $(document).ready(function(){
             initToolBar();
             copyString('#Categories_title','#Categories_slug','slug');
+            copyString('#Contents_title','#Contents_slug','slug');
         });
     });
 }(window.jQuery)

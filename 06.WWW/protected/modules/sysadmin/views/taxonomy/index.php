@@ -24,9 +24,9 @@ $arrParams = array(
                 ),
             ),
             array('name' => 'id', 'header' => 'id',
-                'filter' => CHtml::activeTextField($model, 'id',array('style' => 'width:45px;')),
+                'filter' => CHtml::activeTextField($model, 'id', array('class' => 'span1')),
                 'headerHtmlOptions' => array(
-                    'style' => 'width:45px',
+                    'class' => 'span1',
                 ),
             ),
             array('name' => 'name', 'header' => 'name'),

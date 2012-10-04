@@ -45,7 +45,7 @@ class CoreUsers extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, email, fullname, created_date, last_login, state, blocked', 'required'),
+			array('username, password, email, fullname, last_login, state, blocked', 'required'),
 			array('state, blocked', 'numerical', 'integerOnly'=>true),
 			array('username, fullname', 'length', 'max'=>150),
 			array('password', 'length', 'max'=>64),

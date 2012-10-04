@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table 'widgets':
  * @property integer $id
- * @property integer $name
+ * @property string $name
  * @property string $type
  * @property string $params
  * @property string $created_date
@@ -39,10 +39,10 @@ class Widgets extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('created_date', 'required'),
-            array('name, state', 'numerical', 'integerOnly' => true),
-            array('type', 'length', 'max' => 250),
-            array('params', 'safe'),
+            array('name, type, state', 'required'),
+            array('state', 'numerical', 'integerOnly' => true),
+            array('name, type', 'length', 'max' => 250),
+            array('params, created_date', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             array('id, name, type, params, created_date, state', 'safe', 'on' => 'search'),
@@ -85,7 +85,7 @@ class Widgets extends CActiveRecord {
         $criteria = new CDbCriteria;
 
         $criteria->compare('id', $this->id);
-        $criteria->compare('name', $this->name);
+        $criteria->compare('name', $this->name, true);
         $criteria->compare('type', $this->type, true);
         $criteria->compare('params', $this->params, true);
         $criteria->compare('created_date', $this->created_date, true);

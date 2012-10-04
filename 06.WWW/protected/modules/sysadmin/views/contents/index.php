@@ -10,6 +10,7 @@ $arrParams = array(
     $this->widget('bootstrap.widgets.TbGridView', array(
         'id' => 'Contents-grid',
         'type' => 'striped bordered condensed',
+        'filter' => $model,
         'dataProvider' => $model->search(),
         'selectableRows' => 2, // multiple rows can be selected
         'template' => "{items}{summary}{pager}",
@@ -30,14 +31,21 @@ $arrParams = array(
             ),
             array('name' => 'title', 'header' => 'title'),
             array('name' => 'slug', 'header' => 'slug'),
-            array('name' => 'premium', 'header' => 'premium'),
-            array('name' => 'content', 'header' => 'content'),
-            array('name' => 'category_id', 'header' => 'category_id'),
+            array('name' => 'category_id', 'header' => 'category',
+                'value' => '$data->category->title',
+                'filter' => CHtml::activeDropDownList($model, 'category_id', CHtml::listData(Categories::model()->findAll(), 'id', 'title'), array('empty' => 'None', 'class' => 'span2')),
+            ),
             array(
                 'name' => 'state',
                 'header' => 'state',
                 'value' => '@$data->state ? "Publish" : "Unpublish"',
                 'filter' => CHtml::activeDropDownList($model, 'state', array(1 => 'Publish', 0 => 'Unpublish'), array('empty' => 'None', 'class' => 'span2')),
+                'headerHtmlOptions' => array(
+                    'class' => 'span2',
+                ),
+            ),
+            array('name' => 'created_date', 'header' => 'created_date',
+                'filter' => CHtml::activeTextField($model, 'created_date', array('class' => 'span2')),
                 'headerHtmlOptions' => array(
                     'class' => 'span2',
                 ),

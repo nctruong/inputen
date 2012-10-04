@@ -16,7 +16,6 @@
  *
  * The followings are the available model relations:
  * @property CoreLayoutDetails[] $coreLayoutDetails
- * @property CoreUsers $coreUser
  */
 class Pages extends CActiveRecord {
 
@@ -43,12 +42,12 @@ class Pages extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name, title, created_date, state, theme, core_user_id', 'required'),
+            array('name, title, state, theme', 'required'),
             array('state, core_user_id', 'numerical', 'integerOnly' => true),
             array('name', 'length', 'max' => 250),
             array('title', 'length', 'max' => 255),
             array('theme', 'length', 'max' => 150),
-            array('desc, meta', 'safe'),
+            array('desc, meta, created_date', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             array('id, name, title, desc, meta, created_date, state, theme, core_user_id', 'safe', 'on' => 'search'),
@@ -63,7 +62,6 @@ class Pages extends CActiveRecord {
         // class name for the relations automatically generated below.
         return array(
             'coreLayoutDetails' => array(self::HAS_MANY, 'CoreLayoutDetails', 'layout_id'),
-            'coreUser' => array(self::BELONGS_TO, 'CoreUsers', 'core_user_id'),
         );
     }
 

@@ -23,13 +23,10 @@ $arrParams = array(
                     'style' => 'width:25px;',
                 ),
             ),
-            array(
-                'name' => 'id',
-                'header' => 'id',
-                'type' => 'raw',
-                'filter' => CHtml::activeTextField($model, 'id'),
+            array('name' => 'id', 'header' => 'id',
+                'filter' => CHtml::activeTextField($model, 'id', array('class' => 'span1')),
                 'headerHtmlOptions' => array(
-                    'style' => 'width:25px',
+                    'class' => 'span1',
                 ),
             ),
             array('name' => 'title', 'header' => 'title'),
