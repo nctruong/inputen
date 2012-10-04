@@ -10,11 +10,11 @@
  * @property integer $premium
  * @property string $content
  * @property string $created_date
- * @property integer $state
  * @property integer $category_id
+ * @property integer $view
+ * @property integer $state
  *
  * The followings are the available model relations:
- * @property Comments[] $comments
  * @property Categories $category
  * @property LessonsFavorite[] $lessonsFavorites
  * @property LessonsRemember[] $lessonsRemembers
@@ -45,12 +45,12 @@ class Contents extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('title, slug, premium, content, created_date, state, category_id', 'required'),
-            array('premium, state, category_id', 'numerical', 'integerOnly' => true),
+            array('title, slug, content, category_id, state', 'required'),
+            array('premium, category_id, view, state', 'numerical', 'integerOnly' => true),
             array('title, slug', 'length', 'max' => 255),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, title, slug, premium, content, created_date, state, category_id', 'safe', 'on' => 'search'),
+            array('id, title, slug, premium, content, created_date, category_id, view, state', 'safe', 'on' => 'search'),
         );
     }
 
@@ -61,7 +61,6 @@ class Contents extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'comments' => array(self::HAS_MANY, 'Comments', 'content_id'),
             'category' => array(self::BELONGS_TO, 'Categories', 'category_id'),
             'lessonsFavorites' => array(self::HAS_MANY, 'LessonsFavorite', 'content_id'),
             'lessonsRemembers' => array(self::HAS_MANY, 'LessonsRemember', 'content_id'),
@@ -80,8 +79,9 @@ class Contents extends CActiveRecord {
             'premium' => 'Premium',
             'content' => 'Content',
             'created_date' => 'Created Date',
-            'state' => 'State',
             'category_id' => 'Category',
+            'view' => 'View',
+            'state' => 'State',
         );
     }
 
@@ -101,13 +101,21 @@ class Contents extends CActiveRecord {
         $criteria->compare('premium', $this->premium);
         $criteria->compare('content', $this->content, true);
         $criteria->compare('created_date', $this->created_date, true);
-        $criteria->compare('state', $this->state);
         $criteria->compare('category_id', $this->category_id);
+        $criteria->compare('view', $this->view);
+        $criteria->compare('state', $this->state);
 
         return new CActiveDataProvider($this, array(
                     'criteria' => $criteria,
                     'sort' => false
                 ));
+    }
+
+    public function afterSave() {
+        if ($this->isNewRecord) {
+            $this->created_date = new CDbExpression('NOW()');
+        }
+        parent::afterSave();
     }
 
 }

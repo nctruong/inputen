@@ -16,7 +16,7 @@ return array(
         'sysadmin',
         'gii' => array(
             'class' => 'system.gii.GiiModule',
-            'password' => '123admin!@#$',
+            'password' => '123sysadmin!@#$',
         ),
     ),
     'components' => array(
@@ -54,10 +54,10 @@ return array(
         ),
         'db' => array(
             'class' => 'CDbConnection',
-            'connectionString' => 'mysql:host=localhost;dbname=lehuy_english456',
+            'connectionString' => 'mysql:host=localhost;dbname=hminhcom_english456',
             'emulatePrepare' => true,
-            'username' => 'lehuy_english456',
-            'password' => 'english456',
+            'username' => 'hminhcom_english',
+            'password' => 'peAwF7+E%Nuw',
             'charset' => 'utf8',
             'schemaCachingDuration' => '3600',
             'enableProfiling' => true,
@@ -67,7 +67,7 @@ return array(
         ),
         'cache' => array(
             'class' => 'application.components.MiisMemCache',
-            'useMemcached' => false,
+            'useMemcached' => true,
         ),
         'cache' => array(
             'class' => 'system.caching.CFileCache',

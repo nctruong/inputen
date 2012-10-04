@@ -1,4 +1,5 @@
 <?php
+
 header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 $exec_start_time = microtime(true);
@@ -8,6 +9,7 @@ if (!defined('APPLICATION_ROOT'))
     define('APPLICATION_ROOT', realpath(dirname(__FILE__) . '/'));
 if (!defined('YII_PATH'))
     define('YII_PATH', 'D:/Zend/ZendServer/share/YiiFramework');
+//define('YII_PATH', '/home/hminhcom/share/YiiFramework');
 if (!defined('DS'))
     define('DS', DIRECTORY_SEPARATOR);
 if (!defined('PS'))

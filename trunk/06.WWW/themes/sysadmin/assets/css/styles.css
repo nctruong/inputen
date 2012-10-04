@@ -42,9 +42,6 @@ body > .navbar .brand:hover {
     margin-top:50px;
 }
 
-.filter-container input {
-    width: 95%;
-}
 /***TOOLBAR**/
 #miis-element-box,
 #miis-toolbar-box,

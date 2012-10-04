@@ -16,6 +16,7 @@
  * @property string $country
  * @property integer $premium
  * @property string $created_date
+ * @property integer $blocked
  *
  * The followings are the available model relations:
  * @property LessonsFavorite[] $lessonsFavorites
@@ -46,18 +47,18 @@ class Users extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('username, password, email, fullname, created_date', 'required'),
-            array('gender, premium', 'numerical', 'integerOnly' => true),
+            array('username, password, email, fullname', 'required'),
+            array('gender, premium, blocked', 'numerical', 'integerOnly' => true),
             array('username, country', 'length', 'max' => 100),
             array('password', 'length', 'max' => 32),
             array('email', 'length', 'max' => 50),
             array('fullname', 'length', 'max' => 150),
             array('address', 'length', 'max' => 255),
             array('school', 'length', 'max' => 250),
-            array('dob', 'safe'),
+            array('dob, created_date', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, username, password, email, fullname, dob, gender, address, school, country, premium, created_date', 'safe', 'on' => 'search'),
+            array('id, username, password, email, fullname, dob, gender, address, school, country, premium, created_date, blocked', 'safe', 'on' => 'search'),
         );
     }
 
@@ -90,6 +91,7 @@ class Users extends CActiveRecord {
             'country' => 'Country',
             'premium' => 'Premium',
             'created_date' => 'Created Date',
+            'blocked' => 'Blocked',
         );
     }
 
@@ -105,16 +107,17 @@ class Users extends CActiveRecord {
 
         $criteria->compare('id', $this->id);
         $criteria->compare('username', $this->username, true);
-        //$criteria->compare('password', $this->password, true);
+        $criteria->compare('password', $this->password, true);
         $criteria->compare('email', $this->email, true);
         $criteria->compare('fullname', $this->fullname, true);
         $criteria->compare('dob', $this->dob, true);
         $criteria->compare('gender', $this->gender);
         $criteria->compare('address', $this->address, true);
         $criteria->compare('school', $this->school, true);
-        //$criteria->compare('country', $this->country, true);
-        //$criteria->compare('premium', $this->premium);
+        $criteria->compare('country', $this->country, true);
+        $criteria->compare('premium', $this->premium);
         $criteria->compare('created_date', $this->created_date, true);
+        $criteria->compare('blocked', $this->blocked);
 
         return new CActiveDataProvider($this, array(
                     'criteria' => $criteria,
@@ -125,6 +128,7 @@ class Users extends CActiveRecord {
     public function afterSave() {
         if ($this->isNewRecord) {
             $this->created_date = new CDbExpression('NOW()');
+            $this->blocked = 0;
         }
         parent::afterSave();
     }
