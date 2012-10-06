@@ -1,0 +1,238 @@
+/*!
+ * @author: trantuan
+ * @email: tuan.php@gmail.com
+ */
+ *{
+     padding:0px;
+     margin:0px;
+     font-family: tahoma;
+     font-size: 13px;
+ }
+
+/* top menu*/
+#en-nav {
+    background: #015b7e;
+    box-shadow: #ccc 2px 2px;
+}
+#en-nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+#en-nav ul li {
+    display: inline;
+    float: left;
+    width: auto;
+    height: 35px;
+    line-height: 35px;
+}
+#en-nav ul li:hover {
+    background: #840202;
+}
+#en-nav ul li.active {
+    background: #840202;
+}
+#en-nav ul li a {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-left: 1px solid #003348;
+    padding: 0 8px;
+    border-right: 1px solid #8cb5c5;
+}
+.li-last{border-right: 0px!important;}
+.li-first{border-left: 0px!important;}
+
+#sub-nav #title {
+    padding-left: 20px;
+    font-family: League Gothic;
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 1px 2px 0px #ccc;
+    color: #383838;
+}
+#sub-nav #image-title img {
+    height: 104px;
+    float: right;
+    margin-top: -2px;
+}
+#sub-nav {
+    background: none repeat scroll 0 0 #F6F6F6;
+    border: 1px solid #F2F2F2;
+    height: 100px;
+    line-height: 100px;
+    margin: 15px 0;
+    box-shadow: #ccc 1px 2px;
+}
+/* en-box */
+.en-box .en-box-title {
+    color: #015B7E;
+    font-family: -moz-fixed;
+    font-size: 18px;
+    font-weight: bold;
+    margin: -1px 0 9px;
+    text-transform: uppercase;
+}
+.en-box {
+    padding: 10px;
+    background: #f6f6f6;
+    border: 1px solid #f4f4f4;
+    box-shadow: #ccc 1px 1px 2px;
+    margin-bottom: 20px;
+}
+.en-box-text-feature {
+    color: #585858;
+    font-size: 12px;
+    line-height: 18px;
+    padding-left: 0px;
+    text-align: justify;
+    font-weight: bold;
+}
+
+.en-box-img {
+    border: 2px solid #007ABA;
+    box-shadow: -2px 2px #CCCCCC;
+    float: left;
+    height: 100px;
+    margin-left: -1px;
+    padding: 1px;
+    width: 64px;
+}
+
+.en-box-desc ul li {
+    display: inline;
+    float: left;
+    width: 100%;
+    height: 23px;
+    color: #015b7e;
+    font-weight: bold;
+    background: url('../img/li-book.png') no-repeat;
+    padding-left: 26px;
+}
+.en-box-desc ul {
+    list-style-type: none;
+    width: 226px;
+    float: left;
+    padding: 0px;
+    margin: 11px 0px -3px 0px ;
+    border-top: 1px solid white;
+    padding-top: 7px;
+    width: 100%;
+}
+.en-box-desc ul li a {
+    font-size: 10.5px;
+    text-decoration: none;
+    color: #015B7E;
+}
+.en-box-desc ul li a:hover {
+    color: blue;
+}
+/* mid */
+#en-mid {
+     margin: 0 16px 10px 38px;
+}
+.en-box-img-type2 {
+    border: 2px solid #007ABA;
+    box-shadow: -2px 2px #CCCCCC;
+    float: left;
+    height: 100px;
+    margin-left: -1px;
+    padding: 1px;
+    width: 90px;
+}
+/* footer */
+#footer-menu {
+    background: #015B7E;
+}
+#top-footer #en-nav ul li a {
+    font-family: arial;
+    font-size: 11px;
+}
+#footer-info p {
+    color: #d6d6d6;
+    height: 15px;
+}
+#footer-info {
+    background: #646464;
+    padding: 25px 0px 45px 26px;
+}
+.container-fluid{
+    padding:0px;
+    margin:0px;
+}
+#top-footer #en-nav {
+    margin: 0;
+    padding: 0;
+    box-shadow: 0px 0px;
+}
+#footer-info-copy {
+    padding-left: 19px;
+}
+
+/* extends bootstrap */
+.row-fluid .span5 {
+    width: 35.426%;
+}
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color: #6094A8;
+    font-family: Georgia;
+    font-weight: bold;
+}
+input.search-query {
+    border: 1px solid #6094A8;
+    border-radius: 15px 15px 15px 15px;
+    margin-bottom: 0;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+#box_login{
+padding: 5px;
+}
+.top_login{
+padding: 5px 0px;
+}
+.top_login a{
+color:#333;
+margin-left: 5px;
+}
+.body_login{
+padding: 5px;
+  border: 1px solid #bbb;
+  background: #f1f1f1;
+}
+.inputfix{
+width: 190px;
+}
+.title_support{
+background: #015b7f; 
+padding: 7px 15px; 
+font-size: 17px; 
+color: white
+}
+.body_right{
+border: 1px solid #015b7f; 
+background: white; 
+padding-top: 10px; 
+}
+.none_list_style{
+	list-style: none;
+}
+.box_ul ul, ol{
+	margin: 0px 0px 0px 0px;
+}
+.box_ul{
+margin: 15px 0px;
+}
+.box_ul li{
+overflow: hidden;
+}
+.box_ul li img{
+float: left;
+margin-right: 5px;
+}
+.margin_topbot10{
+margin: 10px 0px;
+}
