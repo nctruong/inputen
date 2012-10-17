@@ -5,6 +5,10 @@ class SiteController extends MiisController {
     public function actionIndex() {
         $this->render('index');
     }
+    
+    public function ActionBaihoc() {
+        $this->render('baihoc');
+    }
 
     /**
      * This is the action to handle external exceptions.

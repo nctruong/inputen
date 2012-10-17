@@ -6,7 +6,7 @@ class MiisSysUserIdentity extends CUserIdentity {
     private $_sysuser;
 
     public function authenticate() {
-        $sysuser = CoreUsers::model()->findByAttributes(array('username' => $this->username));
+        $sysuser = User::model()->findByAttributes(array('username' => $this->username));
         if ($sysuser === null)
             $this->errorCode = self::ERROR_USERNAME_INVALID;
         else if ($sysuser->password !== md5($this->password))
