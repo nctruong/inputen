@@ -105,7 +105,9 @@ class Bootstrap extends CApplicationComponent {
      * Registers the Bootstrap CSS.
      */
     public function registerCoreCss() {
-        Yii::app()->clientScript->registerCssFile($this->getAssetsUrl() . '/css/bootstrap.css');
+        Yii::app()->clientScript->registerCssFile(Yii::app()->getBaseUrl(true).'/themes/sysadmin/assets/css/bootstrap.css');
+       
+        
     }
 
     /**
@@ -116,7 +118,7 @@ class Bootstrap extends CApplicationComponent {
         /** @var CClientScript $cs */
         $cs = Yii::app()->getClientScript();
         $cs->registerMetaTag('width=device-width, initial-scale=1.0', 'viewport');
-        $cs->registerCssFile($this->getAssetsUrl() . '/css/bootstrap-responsive.css');
+        $cs->registerCssFile(Yii::app()->getBaseUrl(true) . '/themes/sysadmin/assets/css/bootstrap-responsive.css');
     }
 
     /**
@@ -124,7 +126,7 @@ class Bootstrap extends CApplicationComponent {
      * @since 0.9.11
      */
     public function registerYiiCss() {
-        Yii::app()->clientScript->registerCssFile($this->getAssetsUrl() . '/css/bootstrap-yii.css');
+        Yii::app()->clientScript->registerCssFile(Yii::app()->getBaseUrl() . '/themes/sysadmin/assets/css/bootstrap-yii.css');
     }
 
     /**
@@ -146,7 +148,7 @@ class Bootstrap extends CApplicationComponent {
         /** @var CClientScript $cs */
         $cs = Yii::app()->getClientScript();
         $cs->registerCoreScript('jquery');
-        $cs->registerScriptFile($this->getAssetsUrl() . '/js/bootstrap.js', $position);
+        $cs->registerScriptFile(Yii::app()->getBaseUrl() . '/themes/sysadmin/assets/js/bootstrap.js', $position);
     }
 
     /**
