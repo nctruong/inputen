@@ -21,10 +21,10 @@ abstract class MiisSysadminController extends MiisController {
         $this->auth = Yii::app()->user->id;
         if ($action->id != 'login') {
             if (!$this->auth) { // Check if has yet login.
-                $this->redirect(Yii::app()->createUrl('sysadmin/login'));
+                $this->redirect(Yii::app()->getBaseUrl(true).'/sysadmin/login.html');
             }
         } elseif ($this->auth && $action->id == 'login') {
-            $this->redirect(Yii::app()->createUrl('sysadmin'));
+            $this->redirect(Yii::app()->getBaseUrl(true).'/sysadmin.html');
         }
         // Load menus
         $this->menus = array();
@@ -90,7 +90,7 @@ abstract class MiisSysadminController extends MiisController {
         if (isset($_POST['SysLoginForm'])) { // Submit login form.
             $sysLoginForm->attributes = $_POST['SysLoginForm'];
             if ($sysLoginForm->validate() && $sysLoginForm->login()) {
-                $this->redirect('/sysadmin.html');
+                $this->redirect(Yii::app()->getBaseUrl(true).'/sysadmin.html');
             }
         }
         // display the login form
@@ -103,7 +103,7 @@ abstract class MiisSysadminController extends MiisController {
     public function actionLogout() {
         // Logout the current user
         Yii::app()->user->logout();
-        $this->redirect('/sysadmin.html');
+        $this->redirect(Yii::app()->getBaseUrl(true).'/sysadmin.html');
     }
 
     public function render($view, $data = null, $return = false) {
