@@ -29,6 +29,9 @@ return array(
             'rules' => array(
                 // a custom rule to handle default controller
                 array('class' => 'application.components.MiisUrlRule'),
+                'tin-tuc/' => 'news/list',
+                'tin-tuc/<category:\w+>' => 'news/list',
+                'tin-tuc/<category:\w+>/<id:\w+>' => 'news/detail',
                 // members module
                 'members' => 'members',
                 'members/<controller:\w+>' => 'members/<controller>',
