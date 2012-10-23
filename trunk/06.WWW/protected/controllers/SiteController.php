@@ -7,6 +7,7 @@ class SiteController extends MiisController {
     }
     
     public function ActionBaihoc() {
+        var_dump('tesss');exit;
         $this->render('baihoc');
     }
 
