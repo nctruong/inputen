@@ -11,28 +11,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'htmlOptions' => array('class' => 'table-bordered form-horizontal well'),
         ));
 ?>
-<?php
 
-function getTabularFormTabs($form, $model) {
-    $tabs = array();
-    $count = 0;
-    foreach (array('content' => 'Contents', 'resource' => 'Resources') as $type => $name) {
-        $tabs[] = array(
-            'active' => $count++ === 0,
-            'label' => $name,
-            'content' => $this->renderPartial('_tabular', array('form' => $form, 'model' => $model, 'content' => $type, 'resource' => $name), true),
-        );
-    }
-    return $tabs;
-}
-
-$this->widget('bootstrap.widgets.TbTabs', array(
-    'tye' => 'tabs',
-    'tabs' => array(
-        array('label' => 'Contents', 'content' => $this->renderPartial('_tabular', array('form' => $form, 'model' => $model), true), 'active' => true),
-        ))
-);
-?>
 <fieldset>
     <?php echo $form->checkBoxRow($model, 'premium', array('disabled' => false)); ?>
 
@@ -54,8 +33,8 @@ $this->widget('bootstrap.widgets.TbTabs', array(
         </div>
     </div>
 
-    <?php echo $form->dropDownListRow($model, 'category_id', Categories::getCategories(), array('class' => 'span3')); ?>
-
+    
+    <?php echo $form->dropDownListRow($model, 'category_id', CHtml::listData(Category::model()->findAll(), 'id', 'title'), array('prompt' => '-- Chọn --', 'class' => 'span4')); ?>
 <?php echo $form->dropDownListRow($model, 'state', array(1 => 'Publish', 0 => 'UnPublish')); ?>
 
 </fieldset>

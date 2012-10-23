@@ -82,6 +82,7 @@ class MenuController extends MiisSysadminController
 
             if (isset($_POST['Menu'])) {
                 $model->attributes = $_POST['Menu'];
+                
                 if ($model->save())
                     $this->redirect(array('index'));
             }
