@@ -17,22 +17,8 @@
             <div id="top" class="row-fluid">
                 <img class="logo" src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/logo.png">
             </div><!-- end #top -->
-            <div id='en-nav' class='row-fluid'>
-                <ul>
-                    <li class='active'><a href='/'>Home</a></li>
-                    <li><a href='#'>Tin tức</a></li>
-                    <li><a href='<?php echo Yii::app()->baseUrl . '/site/baihoc.html'; ?>'>Bài học</a></li>
-                    <li><a href='#'>Tham khảo</a></li>
-                    <li><a href='#'>Học qua clip</a></li>
-                    <li><a href='#'>Học và chơi</a></li>
-                    <li><a href='#'>Bài test</a></li>
-                    <li><a href='#'>Học offline</a></li>
-                    <li><a href='#'>Video</a></li>
-                    <li><a href='#'>T.A Phổ thông</a></li>
-                    <li><a href='#'>Chấm điểm</a></li>
-                    <li><a href='#' class='li-last'>Diễn đàn</a></li>
-                </ul>
-            </div><!-- end #menu-bar -->
+            
+            <?php $this->widget('home_menu_bar'); ?>
 
             <div id='sub-nav-header' class="row-fluid">
                 <div class='span6 sub-nav-header-left'>
@@ -810,27 +796,27 @@
                             <ul>
                                 <li>
                                     <span class='name'>soccon43234</span>
-                                    <p>năm nay mem lên lớp 6 cho mem hỏi THCS một này học sáng ,chiều hay sáng hay là chiều</p>
+                                    <p>năm nay mem lên lớp 6 cho mem hỏi THCS một này học sáng ,chiều hay sáng hay là chiều</p>
                                     <span class='answer'>Trả lời (2)</span>
                                 </li>
                                 <li>
                                     <span class='name'>soccon43234</span>
-                                    <p>năm nay mem lên lớp 6 cho mem hỏi THCS một này học sáng ,chiều hay sáng hay là chiều</p>
+                                    <p>năm nay mem lên lớp 6 cho mem hỏi THCS một này học sáng ,chiều hay sáng hay là chiều</p>
                                     <span class='answer'>Trả lời (2)</span>
                                 </li>
                                 <li>
                                     <span class='name'>soccon43234</span>
-                                    <p>năm nay mem lên lớp 6 cho mem hỏi THCS một này học sáng ,chiều hay sáng hay là chiều</p>
+                                    <p>năm nay mem lên lớp 6 cho mem hỏi THCS một này học sáng ,chiều hay sáng hay là chiều</p>
                                     <span class='answer'>Trả lời (2)</span>
                                 </li>
                                 <li>
                                     <span class='name'>soccon43234</span>
-                                    <p>năm nay mem lên lớp 6 cho mem hỏi THCS một này học sáng ,chiều hay sáng hay là chiều</p>
+                                    <p>năm nay mem lên lớp 6 cho mem hỏi THCS một này học sáng ,chiều hay sáng hay là chiều</p>
                                     <span class='answer'>Trả lời (2)</span>
                                 </li>
                                 <li>
                                     <span class='name'>soccon43234</span>
-                                    <p>năm nay mem lên lớp 6 cho mem hỏi THCS một này học sáng ,chiều hay sáng hay là chiều</p>
+                                    <p>năm nay mem lên lớp 6 cho mem hỏi THCS một này học sáng ,chiều hay sáng hay là chiều</p>
                                     <span class='answer'>Trả lời (2)</span>
                                 </li>
                             </ul>
@@ -896,11 +882,11 @@
         </div><!-- end #footer-info -->
 
     </body>
-    <script src="js/jquery-1.7.1.min.js"></script>
-    <script src="js/jquery-ui-1.8.0.min.js" type='text/javascript'></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.mousewheel.min.js"></script>
-    <script src="js/jquery.mCustomScrollbar.js"></script>
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery-1.7.1.min.js"></script>
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery-ui-1.8.0.min.js" type='text/javascript'></script>
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/bootstrap.min.js"></script>
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery.mousewheel.min.js"></script>
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery.mCustomScrollbar.js"></script>
     <script>
         $(document).ready(function(){
             $("#class").mCustomScrollbar({

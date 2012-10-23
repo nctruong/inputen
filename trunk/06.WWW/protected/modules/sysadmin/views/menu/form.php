@@ -13,6 +13,8 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 ?>
 <fieldset>
     <?php echo $form->textFieldRow($model, 'name', array('class' => 'span5', 'maxlength' => 250)); ?>
+    
+    <?php echo $form->textFieldRow($model, 'slug', array('class' => 'span5', 'maxlength' => 250)); ?>
 
     <?php echo $form->textAreaRow($model, 'description', array('rows' => 6, 'cols' => 50, 'class' => 'span8')); ?>
 
@@ -20,3 +22,8 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 
 </fieldset>
 <?php $this->endWidget(); ?>
+<?php $this->widget('ext.TiiSlug.TiiSlug', array(
+    'model' => $model,
+    'source' => 'name',
+    'target' => 'slug',
+)); ?>

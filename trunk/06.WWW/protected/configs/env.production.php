@@ -6,8 +6,11 @@ return array(
     'name' => 'Tiếng Anh 123',
     'preload' => array(
         'bootstrap',
+        'TiiSlug',
+        
     ),
     'import' => array(
+        'application.widgets.*',
         'application.models.*',
         'application.components.*'
     ),
@@ -16,7 +19,7 @@ return array(
         'sysadmin',
         'gii' => array(
             'class' => 'system.gii.GiiModule',
-            'password' => '123sysadmin!@#$',
+            'password' => 'admin',
         ),
     ),
     'components' => array(
@@ -40,6 +43,10 @@ return array(
                 'gii/<controller:\w+>/<action:\w+>' => 'gii/<controller>/<action>',
             ),
         ),
+        'errorHandler' => array(
+            // use 'site/error' action to display errors
+            'errorAction' => 'site/error',
+        ),
         'log' => array(
             'class' => 'CLogRouter',
             'routes' => array(
@@ -54,10 +61,10 @@ return array(
         ),
         'db' => array(
             'class' => 'CDbConnection',
-            'connectionString' => 'mysql:host=localhost;dbname=hminhcom_english456',
+            'connectionString' => 'mysql:host=localhost;dbname=tienganh123',
             'emulatePrepare' => true,
-            'username' => 'hminhcom_english',
-            'password' => 'peAwF7+E%Nuw',
+            'username' => 'root',
+            'password' => '',
             'charset' => 'utf8',
             'schemaCachingDuration' => '3600',
             'enableProfiling' => true,
