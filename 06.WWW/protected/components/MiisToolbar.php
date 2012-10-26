@@ -41,7 +41,6 @@ class MiisToolbar {
             'alert' => $alert,
             'ajax' => $call_ajax
         );
-        
         return $this;
     }
 

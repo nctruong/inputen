@@ -39,3 +39,8 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 
 </fieldset>
 <?php $this->endWidget(); ?>
+<?php $this->widget('ext.TiiSlug.TiiSlug', array(
+    'model' => $model,
+    'source' => 'title',
+    'target' => 'slug',
+)); ?>

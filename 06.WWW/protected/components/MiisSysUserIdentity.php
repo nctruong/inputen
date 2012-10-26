@@ -14,7 +14,7 @@ class MiisSysUserIdentity extends CUserIdentity {
         else {
             $this->_id = $sysuser->id;
             $this->_sysuser = $sysuser;
-            //$this->setState('last_login', $sysuser->last_login);
+        //    $this->setState('last_login', $sysuser->last_login);
             $this->setState('info', $this->_sysuser);
             $this->errorCode = self::ERROR_NONE;
         }

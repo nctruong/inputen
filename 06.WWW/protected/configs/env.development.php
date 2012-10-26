@@ -68,7 +68,7 @@ return array(
             'connectionString' => 'mysql:host=localhost;dbname=tienganh123',
             'emulatePrepare' => true,
             'username' => 'root',
-            'password' => '',
+            'password' => 'root',
             'charset' => 'utf8',
             'schemaCachingDuration' => '3600',
             'enableProfiling' => true,
