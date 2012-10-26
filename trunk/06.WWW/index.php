@@ -8,7 +8,7 @@ if (!defined('APPLICATION_PATH'))
 if (!defined('APPLICATION_ROOT'))
     define('APPLICATION_ROOT', realpath(dirname(__FILE__) . '/'));
 if (!defined('YII_PATH'))
-    define('YII_PATH', 'D:/Zend/ZendServer/share/YiiFramework');
+    define('YII_PATH', 'E:/wamp/www/yii/framework');
 //define('YII_PATH', '/home/hminhcom/share/YiiFramework');
 if (!defined('DS'))
     define('DS', DIRECTORY_SEPARATOR);

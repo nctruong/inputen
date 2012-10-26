@@ -43,10 +43,11 @@ class Member extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('username, password, email, fullname', 'required'),
-            array('gender, premium, blocked', 'numerical', 'integerOnly' => true),
+            array('username, password, email, fullname ,address ', 'required'),
+            array('gender, premium', 'numerical', 'integerOnly' => true),
             array('username, country', 'length', 'max' => 100),
             array('email', 'length', 'max' => 50),
+            array('email', 'email'),            
             array('fullname', 'length', 'max' => 150),
             array('address', 'length', 'max' => 255),
             array('school', 'length', 'max' => 250),
@@ -64,6 +65,7 @@ class Member extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
+            'Comment'  => array(self::HAS_MANY, 'Comment', 'member_id')                 
         );
     }
 
@@ -117,7 +119,18 @@ class Member extends CActiveRecord {
                     'sort' => false
                 ));
     }
-
+    protected function generateSalt()
+    {
+        return uniqid('',true);
+    }
+    public function validatePassword($password)
+    {
+        return $this->hashPassword($password,$this->generateSalt())===$this->password;
+    }
+    public function hashPassword($password,$salt)
+    {
+        return md5($salt.$password);
+    }
     public function afterSave() {
         if ($this->isNewRecord) {
             $this->created_date = new CDbExpression('NOW()');

@@ -1,33 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="vi" xml:lang="vi">
-    <head>
-        <title>E !@#</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <!-- Bootstrap -->
-        <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/en-style.css" rel="stylesheet"/>
-    </head>
-    <body>
-        <div class="container">
-            <div id='top' class='row-fluid'>
-                <img class='logo' src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/logo.png' />
-            </div><!-- end #top -->
-            <div id='en-nav' class='row-fluid'>
-                <ul>
-                    <li class='active'><a href='/'>Home</a></li>
-                    <li><a href='#'>Tin tức</a></li>
-                    <li><a href='<?php echo Yii::app()->baseUrl . '/site/baihoc.html'; ?>'>Bài học</a></li>
-                    <li><a href='#'>Tham khảo</a></li>
-                    <li><a href='#'>Học qua clip</a></li>
-                    <li><a href='#'>Học và chơi</a></li>
-                    <li><a href='#'>Bài test</a></li>
-                    <li><a href='#'>Học offline</a></li>
-                    <li><a href='#'>Video</a></li>
-                    <li><a href='#'>T.A Phổ thông</a></li>
-                    <li><a href='#'>Chấm điểm</a></li>
-                    <li><a href='#' class='li-last'>Diễn đàn</a></li>
-                </ul>
-            </div><!-- end #menu-bar -->
+
             <div id='sub-nav' class='row-fluid'>
                 <div id='title' class='span9'>
                     Bài học
@@ -324,111 +295,13 @@
                 </div><!-- end #en-mid -->
 
                 <div id='en-right' class='span3'>
-                    <div class='row-fluid' id='search'>
-                        <input type='text' class='search-query' placeholder='Tìm kiếm' name='kw' />
-                    </div>
-                    <div class="row-fluid margin_topbot10"> 
-                        <form>
-                            <div class="top_login">
-                                <img style="float: left" src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/people.png" alt="">
-                                    <a href="#">Thành viên</a><br/>
-                                    <a href="#">Đăng ký thành viên</a>
-                            </div><!--end .top_login-->
-                            <div class="body_login">
-                                <label>Tên đăng nhập:</label>
-                                <input type="text" class="input inputfix" title="Username" placeholder=""/>
-                                <label>Mật khẩu:</label>
-                                <input type="text" class="input inputfix" title="Password" placeholder="********"/>
-                                <button type="submit" class="btn btn-primary">Đăng nhập</button>
-                                <div class="checkbox"> <input type="checkbox"/> Ghi nhớ tài khoản <br/> <a href="#">Quên mật khẩu?</a>
-                                </div>
-                            </div><!--end .body_login-->
-
-                        </form>
-                    </div><!--end.row-fluid-->
-                    <div class="support row-fluid margin_topbot10">
-                        <div class="top_support">
-                            <img style="margin-left: 45px" src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/support.jpg">
-                        </div><!--end. top_support-->
-                        <div class="title_support">Hỗ trợ trực tuyến</div>
-                        <div class="body_right">
-
-                            <ul class="none_list_style">
-                                <li>Giáo viên 1: <img src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/yahoo.jpg"></li>
-                                <li>Giáo viên 2: <img src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/yahoo.jpg"></li>
-                                <li>Giáo viên 3: <img src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/yahoo.jpg"></li>
-                            </ul>
-                        </div>
-                    </div><!--end .suport-->
-                    <div class="box_ul margin_topbot10">
-                        <ul class="none_list_style">
-                            <li><img src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon_thumnail1.jpg" alt=""/>&raquo; <a href="#">Cách đăng ký thành viên vip 1234</a></li>
-                            <li><img src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon_thumnail2.jpg" alt=""/>&raquo; <a href="#">Cách đăng ký thành viên vip 1234</a></li>
-                            <li><img src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon_thumnail3.jpg" alt=""/>&raquo; <a href="#">Cách đăng ký thành viên vip</a></li>
-                            <li><img src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon_thumnail4.jpg" alt=""/>&raquo; <a href="#">Cách đăng ký thành viên vip1234</a></li>
-                        </ul>
-                    </div><!--end .box_ul-->
-                    <div class="ad_img margin_topbot10">
-                        <a href="#"><img src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/ad1.jpg" alt=""/></a>
-                    </div>
-                    <div class="thongke margin_topbot10">
-                        <div class="title_support">Thống Kê</div>
-                        <div class="body_right">
-                            <ul class="none_list_style">
-                                <li>Thành viên: <b>723926</b></li>
-                                <li>Thành viên mới: <a href="#">nga10</a> </li>
-                                <li>Đang trực tuyến: 1087</li>
-                                <li>Xem chi tiết <img src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon_people.jpg" alt=""/></li>
-                                <li><img src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/visitercount.jpg"/></li>
-                            </ul>
-                        </div>
-                    </div>
+                    <?php $this->widget('search'); ?>
+                    <?php $this->widget('login'); ?>
+                    <?php $this->widget('support'); ?>
+                    <?php $this->widget('support2'); ?>
+                    <?php $this->widget('adv'); ?>
+                    <?php $this->widget('statistics'); ?>                    
                 </div><!-- end #end-right -->
-
             </div><!-- end #wrap-en -->
-        </div><!-- end .container -->
-        <div class='container-fluid' id='footer-menu'>
-            <div class='row-fluid' id='top-footer'>
-                <div class='span2'></div>
-                <div id='en-nav' class='row-fluid span9'>
-                    <ul>
-                        <li><a href='#' class='li-first'>Home</a></li>
-                        <li><a href='#'>Phát âm tiếng anh</a></li>
-                        <li><a href='#'>Đọc tiếng anh</a></li>
-                        <li><a href='#'>Luyện thi toiec</a></li>
-                        <li><a href='#'>Từ vựng tiếng anh</a></li>
-                        <li><a href='#'>Ngữ pháp tiếng anh</a></li>
-                        <li><a href='#'>Nghe tiếng anh</a></li>
-                        <li><a href='#'>Tiếng anh thương mại</a></li>
-                        <li><a href='#' class='li-last'>Qui định sử dụng</a></li>
-                    </ul>
-                </div><!-- end #menu-bar -->
-            </div>
-        </div><!-- end #footer-menu -->
-        <div class='container-fluid' id='footer-info'>
-            <div class='span2'>&nbsp;</div>
-            <div class='row-fluid' id='top-footer'>
-                <div id='footer-info-copy' class='span9'>
-                    <p>
-                        TiếngAnh123.Com - a product of BeOnline Co., Ltd.
-                    </p>
-                    <p>
-                        Giấy phép ĐKKD số: 0102852740 cấp bởi Sở Kế hoạch và Đầu tư Hà Nội.
-                    </p>
-                    <p>
-                        Giấy phép ĐKKD số: 0102852740 cấp bởi Sở Kế hoạch và Đầu tư Hà Nội.
-                    </p>
-                    <p>
-                        Giấy xác nhận cung cấp dịch vụ mạng xã hội học tiếng Anh trực tuyến số: 36/GXN-TTĐT cấp bởi Bộ Thông tin & Truyền thông.
-                    </p>
-                    <p>
-                        Địa chỉ: số nhà 15-23, ngõ 259/9 phố Vọng, Đồng Tâm, Hai Bà Trưng, Hà Nội. Tel: 0436628077. Email: lophoc@tienganh123.com
-                    </p>
-                </div>
-            </div>
-        </div><!-- end #footer-info -->
-
-    </body>
-    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery-1.7.1.min.js"></script>
-    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/bootstrap.min.js"></script>
-</html>
+        
+       

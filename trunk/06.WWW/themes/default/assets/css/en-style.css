@@ -1254,3 +1254,6 @@ span.name a {
     width: 236px;
     margin: 4px 0px;
 }
+.emoticon_small img{
+    width:35px;
+}

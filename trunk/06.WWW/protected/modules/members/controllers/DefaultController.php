@@ -9,5 +9,8 @@ class DefaultController extends CController {
         exit;
         $this->render('index');
     }
+    public function actionRegister(){
+        echo 'fuck';
+    }
 
 }

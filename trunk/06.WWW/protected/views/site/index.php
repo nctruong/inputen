@@ -1,24 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="vi" xml:lang="vi">
-    <head>
-        <title>E !@#</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <!-- Bootstrap -->
-        <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
-            <!--[if lte IE 7]>  
-                <link href="css/ie.css" rel="stylesheet">
-            <![endif]--> 
-            <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/jquery.mCustomScrollbar.css" rel="stylesheet"/>
-            <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/en-style.css" rel="stylesheet"/>
-    </head>
-    <body>
-
-        <div class="container">
-            <div id="top" class="row-fluid">
-                <img class="logo" src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/logo.png">
-            </div><!-- end #top -->
-            
-            <?php $this->widget('home_menu_bar'); ?>
 
             <div id='sub-nav-header' class="row-fluid">
                 <div class='span6 sub-nav-header-left'>
@@ -148,22 +127,10 @@
                     </div>
                 </div><!-- end #challenger -->
                 <div class='span3'>
-                    <form>
-                        <div class="top_login">
-                            <img style="float: left" src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/people.png" alt="">
-                                <a href="#">Thành viên</a><br/>
-                                <a href="#">Đăng ký thành viên</a>
-                        </div><!--end .top_login-->
-                        <div class="body_login">
-                            <label>Tên đăng nhập:</label>
-                            <input type="text" class="input inputfix" title="Username" placeholder=""/>
-                            <label>Mật khẩu:</label>
-                            <input type="text" class="input inputfix" title="Password" placeholder="********"/>
-                            <button type="submit" class="btn btn-primary">Đăng nhập</button>
-                            <div class="checkbox"> <input type="checkbox"/> Ghi nhớ tài khoản <br/> <a href="#">Quên mật khẩu?</a>
-                            </div>
-                        </div><!--end .body_login-->
-                    </form>
+                        <!--  login widgets -->
+                <?php $this->widget('login') ?>
+                <!-- end login widgets -->
+                
                 </div>
             </div><!-- end .block-home-1 --> 
             <div class='hr clearfix'></div>
@@ -267,27 +234,8 @@
                     </div>
                 </div><!-- end mid box block 1 -->
                 <div class='span3'>
-                    <div class="support row-fluid margin_topbot10">
-                        <div class="top_support">
-                            <img src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/support.jpg" style="margin-left: 45px">
-                        </div><!--end. top_support-->
-                        <div class="title_support">Hỗ trợ trực tuyến</div>
-                        <div class="body_right">
-                            <ul class="none_list_style">
-                                <li>Giáo viên 1: <img src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/yahoo.jpg"></li>
-                                <li>Giáo viên 2: <img src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/yahoo.jpg"></li>
-                                <li>Giáo viên 3: <img src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/yahoo.jpg"></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="box_ul margin_topbot10">
-                        <ul class="none_list_style">
-                            <li><img alt="" src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon_thumnail1.jpg">» <a href="#">Cách đăng ký thành viên vip 1234</a></li>
-                            <li><img alt="" src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon_thumnail2.jpg">» <a href="#">Cách đăng ký thành viên vip 1234</a></li>
-                            <li><img alt="" src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon_thumnail3.jpg">» <a href="#">Cách đăng ký thành viên vip</a></li>
-                            <li><img alt="" src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon_thumnail4.jpg">» <a href="#">Cách đăng ký thành viên vip1234</a></li>
-                        </ul>
-                    </div>
+                   <?php $this->widget('support') ?>
+                   <?php $this->widget('support2') ?>
                 </div>
             </div><!-- end .block-home-2 -->
             <div class='ads row-fluid'>
@@ -824,102 +772,9 @@
                     </div>
                     <div class='clearfix' style='margin-bottom: -4px!important'></div>
                     <div class='row-fluid'>
-                        <div class="thongke margin_topbot10">
-                            <div class="title_support">Thống Kê</div>
-                            <div class="body_right">
-                                <ul class="none_list_style">
-                                    <li>Thành viên: <b>723926</b></li>
-                                    <li>Thành viên mới: <a href="#">nga10</a> </li>
-                                    <li>Đang trực tuyến: 1087</li>
-                                    <li>Xem chi tiết <img alt="" src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon_people.jpg"></li>
-                                    <li><img src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/visitercount.jpg"></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <?php $this->widget('statistics') ?>
                     </div><!-- end thong ke -->
                 </div><!-- end cau hoi va cau tra loi cua thanh vien -->
             </div><!-- end block member  -->
-        </div><!-- end .container -->
-        <div class='container-fluid' id='footer-menu'>
-            <div class='row-fluid' id='top-footer'>
-                <div class='span2'></div>
-                <div id='en-nav' class='row-fluid span9'>
-                    <ul>
-                        <li><a href='#' class='li-first'>Home</a></li>
-                        <li><a href='#'>Phát âm tiếng anh</a></li>
-                        <li><a href='#'>Đọc tiếng anh</a></li>
-                        <li><a href='#'>Luyện thi toiec</a></li>
-                        <li><a href='#'>Từ vựng tiếng anh</a></li>
-                        <li><a href='#'>Ngữ pháp tiếng anh</a></li>
-                        <li><a href='#'>Nghe tiếng anh</a></li>
-                        <li><a href='#'>Tiếng anh thương mại</a></li>
-                        <li><a href='#' class='li-last'>Qui định sử dụng</a></li>
-                    </ul>
-                </div><!-- end #menu-bar -->
-            </div>
-        </div><!-- end #footer-menu -->
-        <div class='container-fluid' id='footer-info'>
-            <div class='span2'>&nbsp;</div>
-            <div class='row-fluid' id='top-footer'>
-                <div id='footer-info-copy' class='span9'>
-                    <p>
-                        TiếngAnh123.Com - a product of BeOnline Co., Ltd.
-                    </p>
-                    <p>
-                        Giấy phép ĐKKD số: 0102852740 cấp bởi Sở Kế hoạch và Đầu tư Hà Nội.
-                    </p>
-                    <p>
-                        Giấy phép ĐKKD số: 0102852740 cấp bởi Sở Kế hoạch và Đầu tư Hà Nội.
-                    </p>
-                    <p>
-                        Giấy xác nhận cung cấp dịch vụ mạng xã hội học tiếng Anh trực tuyến số: 36/GXN-TTĐT cấp bởi Bộ Thông tin & Truyền thông.
-                    </p>
-                    <p>
-                        Địa chỉ: số nhà 15-23, ngõ 259/9 phố Vọng, Đồng Tâm, Hai Bà Trưng, Hà Nội. Tel: 0436628077. Email: lophoc@tienganh123.com
-                    </p>
-                </div>
-            </div>
-        </div><!-- end #footer-info -->
-
-    </body>
-    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery-1.7.1.min.js"></script>
-    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery-ui-1.8.0.min.js" type='text/javascript'></script>
-    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/bootstrap.min.js"></script>
-    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery.mousewheel.min.js"></script>
-    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery.mCustomScrollbar.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#class").mCustomScrollbar({
-                scrollButtons:{
-                    enable:true
-                },
-                scrollInertia:900,
-                scrollEasing:"easeOutQuint"
-            });
-                        
-            $(".box-ul-body").mCustomScrollbar({
-                scrollButtons:{
-                    enable:true
-                },
-                scrollInertia:900,
-                scrollEasing:"easeOutQuint"
-            });
-                        
-            $(".sty-idoms").mCustomScrollbar({
-                scrollButtons:{
-                    enable:true
-                },
-                scrollInertia:900,
-                scrollEasing:"easeOutQuint"
-            });
-                        
-            $(".mem-body").mCustomScrollbar({
-                scrollButtons:{
-                    enable:true
-                },
-                scrollInertia:900,
-                scrollEasing:"easeOutQuint"
-            });
-        });
-    </script>
-</html>
+        
+       

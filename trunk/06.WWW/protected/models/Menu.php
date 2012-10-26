@@ -17,7 +17,6 @@ class Menu extends CActiveRecord {
      * @param string $className active record class name.
      * @return Menu the static model class
      */
-    public $slug;
     public static function model($className = __CLASS__) {
         return parent::model($className);
     }
@@ -36,13 +35,13 @@ class Menu extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name, slug, state', 'required'),
+            array('name, state ,slug', 'required'),
             array('order, state', 'numerical', 'integerOnly' => true),
             array('name', 'length', 'max' => 250),
             array('description', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, name, slug, description, order, state', 'safe', 'on' => 'search'),
+            array('id, name, description, order, state', 'safe', 'on' => 'search'),
         );
     }
 
@@ -66,7 +65,7 @@ class Menu extends CActiveRecord {
             'description' => 'Description',
             'order' => 'Order',
             'state' => 'State',
-            'slug' => 'Slug',            
+            'slug' => 'Slug'
         );
     }
 

@@ -16,6 +16,7 @@ class MiisUserIdentity extends CUserIdentity {
             $this->errorCode = self::ERROR_NONE;
         }
         return !$this->errorCode;
+		return true;
     }
 
     public function getId() {

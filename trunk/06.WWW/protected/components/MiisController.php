@@ -7,6 +7,9 @@ abstract class MiisController extends CController {
     public function beforeAction($action) {
         $theme = 'default';
         Yii::app()->setTheme(file_exists(dirname(__FILE__) . '/../../themes/' . $theme) ? $theme : 'default');
+        Yii::app()->session['isLogin'] = 1;
+        Yii::app()->session['login_id'] = 1;
+        
         return true;
     }
 
@@ -33,14 +36,6 @@ abstract class MiisController extends CController {
     
     protected function isAuth() {
         
-    }
-    public function actionError() {
-        if ($error = Yii::app()->errorHandler->error) {
-            if (Yii::app()->request->isAjaxRequest)
-                echo $error['message'];
-            else
-                $this->render('error', $error);
-        }
     }
 
 }

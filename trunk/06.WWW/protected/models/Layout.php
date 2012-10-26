@@ -39,7 +39,7 @@ class Layout extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name, title, state, theme', 'required'),
+            array('name, title, state, theme, core_user_id', 'required'),
             array('state, core_user_id', 'numerical', 'integerOnly' => true),
             array('name', 'length', 'max' => 250),
             array('title', 'length', 'max' => 255),

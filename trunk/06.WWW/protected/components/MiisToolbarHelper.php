@@ -71,7 +71,6 @@ abstract class MiisToolbarHelper {
             'controller' => Yii::app()->controller->id,
             'action' => ''
         );
-        
         // Add a cancel button.
         $bar->setSlot('cancel', $alt, 'cancel', 'Cancel', Yii::app()->createUrl(MiisHelper::url($arrParams)));
     }
