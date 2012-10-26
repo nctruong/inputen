@@ -1,0 +1,109 @@
+.pag2 img.en-box-img{
+}
+.pag2 .en-box-text-feature{
+	font-weight:normal;
+	font-size:14px;
+}
+.pag2 .en-box-text-feature span{
+	color:#015b7e;
+	font-size:15px;
+	font-weight:bold;
+}
+.pag2 .iconx-view{
+	float:right;	
+	background:url(../img/view-ico.png) no-repeat;
+	height:21px;
+	line-height:21px;
+	padding-left:24px;
+	padding-right:15px;
+
+}
+.pag2 .iconx-cmt{
+	float:right;
+	border:1px solid greed;
+	background:url(../img/cmt-ico.png) no-repeat;	
+	height:21px;
+	line-height:21px;
+	padding-left:24px;	
+}
+
+.pag2 .en-box-feature{
+	border-bottom:1px solid #fff;
+	padding:4px 0px;
+}
+.pag2 .en-box-title{
+	color:#333;
+	font-size:17px;
+}
+.pag2 .box-last{
+	border:0px;
+}
+.en-box div.en-box-feature:first-child{
+	border:1px solid red;
+}
+.en-title-pg2{
+	margin-top:25px;
+	font-weight:bold;
+	line-height:25px;
+	color:#015b7e;
+		
+}
+.en-title-pg2 a{
+	color:#333;
+	font-size:11px;
+	font-family: 'Carrois Gothic SC', sans-serif;	
+}
+.en-title-pg2 a:hover{
+	color:#E60000;
+}
+.en-title-pg2 a.active{
+	color:#E60000;
+}
+.en-box-text-feature a.title_lession{
+	font-size:15px;
+	color:#015B7E;
+}
+.en-box-text-feature a.title_lession:hover{ 
+	color:#08C;
+}
+
+
+
+
+
+
+
+
+
+
+
+.pag7 .en-box-title{
+	font-size:22px;
+	font-style:italic;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	border-bottom:2px dotted #fff;
+	padding:12px;
+	width:90%;
+}
+.pag7 .en-box-feature{
+	text-align:center;
+	border:0;
+		
+}
+.pag7 .en-box-feature img{
+	
+}
+.pag7 .box-feature {
+	font-size:15px;
+	text-align:left;
+	padding:10px;
+}
+.italic{
+	font-style:italic;
+}
+.no_border{
+	border:0px !important;
+	margin-top:0px !important;
+	padding:0px !important;
+}
