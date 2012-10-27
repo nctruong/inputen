@@ -24,7 +24,7 @@ class MemberController extends MiisController {
 //            print_r($_POST);
 //            die();
             $model->attributes = $_POST['Member'];
-            $model->fullname = 'Trần Tuấn';//tao test ti tu them vao form...
+            $model->fullname = 'Trần Tuấn'; //tao test ti tu them vao form...
 //            echo '<pre>';
 //            print_r($model->attributes);
 //            die();
@@ -48,6 +48,34 @@ class MemberController extends MiisController {
                 echo $error['message'];
             else
                 $this->render('error', $error);
+        }
+    }
+
+    /*
+     * function user login
+     */
+
+    public function actionLogin() {
+
+        $iUser_login = new UserLoginForm;
+
+        if (isset($_POST['UserLoginForm'])) {
+            $iUser_login->attributes = $_POST['UserLoginForm'];
+            if ($iUser_login->validate() && $iUser_login->login()) {
+                $this->redirect(Yii::app()->getBaseUrl(true));
+            } else {
+                //display error
+                Yii::app()->user->setFlash('error', 'Sai username hoặc password.');
+            }
+        }
+
+        $this->redirect(Yii::app()->getBaseUrl(true));
+    }
+
+    public function actionLogout() {
+        if (isset($this->_session['isLogin'])) {
+            $this->_session->destroy('isLogin');
+            $this->_session->destroy('login_id');
         }
     }
 

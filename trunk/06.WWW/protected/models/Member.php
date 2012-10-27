@@ -25,6 +25,9 @@ class Member extends CActiveRecord {
      * @param string $className active record class name.
      * @return Member the static model class
      */
+    
+    public $repass;
+    
     public static function model($className = __CLASS__) {
         return parent::model($className);
     }
@@ -43,11 +46,14 @@ class Member extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('username, password, email, fullname ,address ', 'required'),
+            array('username, repass, password, email, fullname ,address ', 'required'),
             array('gender, premium', 'numerical', 'integerOnly' => true),
             array('username, country', 'length', 'max' => 100),
+            array('username','unique', 'className' => 'Member'),
+            array('repass','compare', 'compareAttribute' => 'password'),
             array('email', 'length', 'max' => 50),
             array('email', 'email'),            
+            array('email', 'unique', 'className' => 'Member'),
             array('fullname', 'length', 'max' => 150),
             array('address', 'length', 'max' => 255),
             array('school', 'length', 'max' => 250),
@@ -75,18 +81,21 @@ class Member extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'id' => 'ID',
-            'username' => 'Username',
-            'password' => 'Password',
+            'username' => 'Tên đăng nhập',
+            'password' => 'Mật khẩu',
             'email' => 'Email',
-            'fullname' => 'Fullname',
-            'dob' => 'Dob',
-            'gender' => 'Gender',
-            'address' => 'Address',
-            'school' => 'School',
-            'country' => 'Country',
+            'fullname' => 'Họ tên',
+            'dob' => 'Ngày sinh',
+            'gender' => 'Giới tính',
+            'address' => 'Địa chỉ',
+            'school' => 'Nơi công tác / trường',
+            'country' => 'Quốc gia',
             'premium' => 'Premium',
             'created_date' => 'Created Date',
             'blocked' => 'Blocked',
+            'hidden_address' => '',
+            'hidden_dob'    => '',
+            'repass'       => 'Xác nhận mật khẩu'
         );
     }
 

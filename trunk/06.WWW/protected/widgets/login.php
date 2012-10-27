@@ -14,18 +14,9 @@ class Login extends MiisWidget {
     public function run() {
         parent::run();
         
-        if (@$_POST['username']) {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $identity = new UserIdentity($username, $password);
-            $identity->authenticate();            
-            switch ($identity->errorCode) {
-                case UserIdentity::ERROR_NONE:
-                    Yii::app()->user->login($identity);
-                    break;
-            }
-        }
-        $this->render('login');
+        $user_login = new UserLoginForm;
+        
+        $this->render('login',array('iUser' => $user_login));
     }
 
 }
