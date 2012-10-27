@@ -46,6 +46,7 @@ return array(
                 // member
                 'thanh-vien' => 'member',
                 'thanh-vien/dang-ky' => 'member/register',
+                'thanh-vien/dang-nhap' => 'member/login',
                 'hoc-qua-clip/<controller:\w+>/<action:\w+>' => 'news/<controller>/<action>',
                                 
                 
@@ -123,13 +124,13 @@ return array(
             'autoStart' => true,
             
         ),
-        'cache' => array(
-            'class' => 'application.components.MiisMemCache',
-            'useMemcached' => true,
-        ),
-        'cache' => array(
-            'class' => 'system.caching.CFileCache',
-        ),
+//        'cache' => array(
+//            'class' => 'application.components.MiisMemCache',
+//            'useMemcached' => true,
+//        ),
+//        'cache' => array(
+//            'class' => 'system.caching.CFileCache',
+//        ),
     ),
     'params' => array(
         'encryptionKey' => 'M@I@S@S@'

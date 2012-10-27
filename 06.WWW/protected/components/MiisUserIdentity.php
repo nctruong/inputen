@@ -3,16 +3,25 @@
 class MiisUserIdentity extends CUserIdentity {
 
     private $_id;
-
+        
+    public $_session;
+    
     public function authenticate() {
+        
         $user = User::model()->findByAttributes(array('username' => $this->username));
         if ($user === null)
             $this->errorCode = self::ERROR_USERNAME_INVALID;
         else if ($user->password !== md5($this->password))
             $this->errorCode = self::ERROR_PASSWORD_INVALID;
         else {
+            //set session
+            $this->_session = new CHttpSession;
+            $this->_session->open();
+            $this->_session['isLogin'] = true;
+            $this->_session['login_id'] = $user->id;                    
+                    
             $this->_id = $user->id;
-            $this->setState('lastLoginTime', $user->last_login);
+            //$this->setState('lastLoginTime', $user->last_login);
             $this->errorCode = self::ERROR_NONE;
         }
         return !$this->errorCode;
