@@ -115,16 +115,17 @@ button.down_all{
 .margin20{
 	margin:20px;
 }
+
 .page-wrapper-top .iconx-container{
+        padding-top:20px;
 	float:left;
-	width:120px;
 	position:absolute;
 	bottom:4px;
 	right:5px;
 }
 .page-wrapper-top .line{
 	background:url(../img/line.png) repeat-x bottom;
-	padding:10px 0px;
+	padding:25px 0px;
 
 }
 a.warning_btn{
@@ -450,7 +451,9 @@ a.title_cate:hover{
 .create_date{
     color:#999;
 }
-
+.bold{
+    font-weight:bold;
+}
 
 
 
