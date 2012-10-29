@@ -1,4 +1,4 @@
-Cufon.replace('.header-at h2,.title_big,.title_small, .cufon');
+Cufon.replace('.header-at h2,.title_big,.title_small, .cufon,.sub-nav-header-left,.box-tapt-title, .tate');
 $().ready(function(){
     $(".emoticon_small a").click(function(){
         var nd = $(this).attr("href");
