@@ -12,7 +12,7 @@
  */
 class Libraries {
 
-    public function Cutstring($chuoi, $gioihan) {
+    public static function Cutstring($chuoi, $gioihan) {
         if (strlen($chuoi) <= $gioihan) {
             return $chuoi;
         } else {
@@ -25,28 +25,28 @@ class Libraries {
             return $new_chuoi;
         }
     }
-    public function check($s){
+    public static function check($s){
         echo "<pre>";
         print_r($s);
         echo "</pre>";
     }
-    public function get_vip($id){
+    public static function get_vip($id){
         $user = Member::model()->findByPk($id);
         if(!is_array($user))
             return 0;
         return ($user->premium=='') ? 0 : $user->premium;
     }
-    public function filterContent($content){
+    public static function filterContent($content){
         echo $content;   
     }
-    public function isEnable($id){
+    public static function isEnable($id){
         return count((Content::model()->findAll("category_id = ".$id)));
     }
-    public function getCmt($id){
+    public static function getCmt($id){
         $item = Comment::model()->findAllByAttributes(array('content_id' => $id));
         return count($item);
     }
-    public function getImage($post) {
+    public static function getImage($post) {
         $first_img = '';
         ob_start();
         ob_end_clean();
