@@ -1,3 +1,4 @@
+
 <?php
 $this->pageTitle = Yii::app()->name . ' - Error';
 ?>
@@ -7,13 +8,14 @@ $this->pageTitle = Yii::app()->name . ' - Error';
 <div class="error">
     <?php echo CHtml::encode($message); ?>
 </div>
+<div style="height: 200px"></div>
 <div class="source">
-    <?php echo $source; ?>
+    <?php //echo @$source; ?>
 </div>
 <div class="source">
-    <?php echo $file; ?>
-    <?php echo $line; ?>
+    <?php //echo $file; ?>
+    <?php //echo $line; ?>
 </div>
 <div class="source">
-    <?php echo $trace; ?>
+    <?php //echo $trace; ?>
 </div>

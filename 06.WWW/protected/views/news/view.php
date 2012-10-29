@@ -9,7 +9,8 @@
                 <div id="en-left" class="page-wrapper-top">
                     <div class=" row-fluid relative">
                         <div class="span12">
-                            <span class="title"><?php echo $item->title ?></span>  							
+                            <span class="title"><?php echo $item->title ?></span> 
+                            <br><i class="create_date"><?php echo $item->created_date?></i>                            
                             <span class="vip"><?php if ($item->premium == 1) {
     echo 'Bài học vip';
 } ?></span>
@@ -34,6 +35,7 @@
         <div class="clearfix"></div>
         <div id="bottom-page" class="margin_topbot10 margin20">
         </div><!-- end #bottom-page -->
+        <?php $this->widget('comments',array('c_id' => $item->id)) ?>
     </div><!-- end span9 -->
     <div id='en-right' class='span3'>
         <?php $this->widget('search'); ?>
