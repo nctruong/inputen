@@ -51,25 +51,25 @@ return array(
                                 
                 
                 'bai-hoc' => 'listen',
-                'bai-hoc/<title>/<slug:.*?>-<id:\d+>' => array('listen/view/', 'urlSuffix' => '.html'),
+                'bai-hoc/<title:.*?>-<tid:\d+>/<slug:.*?>-<id:\d+>' => array('listen/view/', 'urlSuffix' => '.html'),
                 'bai-hoc/<slug:.*>-<id:\d+>' => 'listen/viewlist/',
                 
                 'hoc-offline' => 'offline',
-                'hoc-offline/<title>/<slug:.*?>-<id:\d+>' => array('offline/view/', 'urlSuffix' => '.html'),
+                'hoc-offline/<title:.*?>-<tid:\d+>/<slug:.*?>-<id:\d+>' => array('offline/view/', 'urlSuffix' => '.html'),
                 'hoc-offline/<slug:.*>-<id:\d+>' => 'offline/viewlist/',
                 
                 'hoc-qua-clip' => 'clip',
-                'hoc-qua-clip/<title>/<slug:.*?>-<id:\d+>' => array('clip/view/', 'urlSuffix' => '.html'),
+                'hoc-qua-clip/<title:.*?>-<tid:\d+>/<slug:.*?>-<id:\d+>' => array('clip/view/', 'urlSuffix' => '.html'),
                 'hoc-qua-clip/<slug:.*>-<id:\d+>' => 'clip/viewlist/',
                 
                 
                 'tham-khao' => 'reference',
-                'tham-khao/<title>/<slug:.*?>-<id:\d+>' => array('reference/view/', 'urlSuffix' => '.html'),
+                'tham-khao/<title:.*?>-<tid:\d+>/<slug:.*?>-<id:\d+>' => array('reference/view/', 'urlSuffix' => '.html'),
                 'tham-khao/<slug:.*>-<id:\d+>' => 'reference/viewlist/',
                
                 
                 'tin-tuc' => 'news',
-                'tin-tuc/<title>/<slug:.*?>-<id:\d+>' => array('news/view/', 'urlSuffix' => '.html'),
+                'tin-tuc/<title:.*?>-<tid:\d+>/<slug:.*?>-<id:\d+>' => array('news/view/', 'urlSuffix' => '.html'),
                 'tin-tuc/<slug:.*>-<id:\d+>' => 'news/viewlist/',
                
                 
