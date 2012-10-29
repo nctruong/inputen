@@ -2,27 +2,103 @@
 
 class NewsController extends MiisController {
     public $title;
+      public $root_id;
     function init(){
-           
+        $this->root_id = 1;
     }
     public function actionIndex() { 
-        $this->title = 'Tin tá»©c';  
-        $data =  Category::model()->findAll('taxonomy_id=1');
-        $this->render('index',array('category' => $data));        
+        $this->title = 'Tin tức';  
+//       $page = Yii::app()->getParam("page");
+//        
+//        
+        
+       $criteria = new CDbCriteria();
+       $criteria->condition = 'taxonomy_id = :id';
+       $criteria->order = 'id DESC';
+       $criteria->params = array (':id'=>1);
+//       
+//        $item_count = Category::model()->count($criteria);
+//        $pages = new CPagination($item_count);
+//        $pages->setPageSize(5);
+//        $pages->applyLimit($criteria);  // the trick is here!
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                
+        $of = array();
+//        $of['model'] = Category::model()->findAll($criteria);
+//        $of['item_count'] = $item_count;
+//        $of['page_size'] = 1;
+//        $of['pages'] = $pages;
+//        
+//        
+        
+        
+        $criteria->limit = 10;
+         $data =  Category::model()->findAll($criteria);
+        $total = 0;
+        foreach($data as $k=>$v){
+            if(Libraries::isEnable($v->id))
+                   $total++;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        $this->render('index',array('category' => $data,'total'=>$total,/*'page'=>$pages*/'page'=>$of));        
     }
     public function actionViewlist($id=''){
         $root = Category::model()->findByPk($id);
+        if($root->taxonomy_id != $this->root_id){
+             throw new CHttpException(404,'PAGE NOT FOUND.');
+        }
         $this->title = $root->title;
         $items = Content::model()->findAll(array("condition"=>"state = 1 and category_id = ".$id));
         $listcat = Category::model()->findAll(array("condition"=>"state = 1 and taxonomy_id = ".$root->taxonomy_id));
         $this->render("viewlist",array('root'=>$root,'items' => $items,'listcat'=>$listcat));
     }
     public function actionView($id='') {
-        $data = array();
-        $data['item'] = Content::model()->findbyPk($id);
-        Content::model()->updateByPk($id,array('view'=>($data['item']->view + 1)));
-        $this->title = $data['item']->title;
-        $this->render('view',$data);                               
+          $cid = Yii::app()->request->getParam('tid');
+        $category = Category::model()->findByPk($cid);
+        if($category->taxonomy_id == $this->root_id){
+            $data = array();            
+            $data['item'] = Content::model()->findbyPk($id);
+            if($data['item']->category_id == $cid){
+                $data['cat'] = Category::model()->findbyPk($data['item']->category_id);
+                $data['root_cat'] = Taxonomy::model()->findbyPk($data['cat']->taxonomy_id);
+                $this->title = $data['item']->title;
+                Content::model()->updateByPk($id,array('view'=>($data['item']->view + 1)));
+                $data['comment_model'] = Comment::model()->findAll(array('condition'=> 'content_id = :cid and state = 1','params'=>array(':cid' => $id)));        
+                if($data['item']->category_id != $cid){
+                    throw new CHttpException(404,'PAGE NOT FOUND.');
+                }
+                $this->render('view',$data);            
+            }else{
+                throw new CHttpException(404,'PAGE NOT FOUND.');
+            }
+        }else{
+         throw new CHttpException(404,'PAGE NOT FOUND.');
+        }                            
     }
  
      /*

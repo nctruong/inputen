@@ -1,25 +1,23 @@
 <?php
 
-class ReferenceController extends MiisController {
+class TestController extends MiisController {
     public $title;
     public $root_id;
     function init(){
-        $this->root_id = 3;
+        $this->root_id = 7;
     }
     public function actionIndex() {
-        $this->title = 'Tham khảo';                
+        $this->title = 'Bài test';        
         $criteria=new CDbCriteria;
         $criteria->addCondition(array('taxonomy_id =  :cid', 'state = :stt'));    
-        $criteria->params = array(':cid' => 3,':stt' => 1);
-        $total = 0;
+        $criteria->params = array(':cid' => 7,':stt' => 1);
+         $total = 0;
         $data =  Category::model()->findAll($criteria);
         foreach($data as $k=>$v){
             if(Libraries::isEnable($v->id))
                    $total++;
         }
-        
-        $root = Taxonomy::model()->findByPk('3');
-        $this->render('index',array('category' => $data,'root'=>$root,'total'=>$total));                       
+        $this->render('index',array('category' => $data,'total'=>$total));                       
     }
     public function actionViewlist($id=''){
         $root = Category::model()->findByPk($id);
@@ -32,7 +30,7 @@ class ReferenceController extends MiisController {
         $this->render("viewlist",array('root'=>$root,'items' => $items,'listcat'=>$listcat));
     }
     public function actionView($id='') {
-        $cid = Yii::app()->request->getParam('tid');
+       $cid = Yii::app()->request->getParam('tid');
         $category = Category::model()->findByPk($cid);
         if($category->taxonomy_id == $this->root_id){
             $data = array();            
@@ -52,8 +50,9 @@ class ReferenceController extends MiisController {
             }
         }else{
          throw new CHttpException(404,'PAGE NOT FOUND.');
-        }
+        }                             
     }
+ 
     /**
      * This is the action to handle external exceptions.
      */
