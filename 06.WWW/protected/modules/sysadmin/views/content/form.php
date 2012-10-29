@@ -18,8 +18,10 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     <?php echo $form->textFieldRow($model, 'title', array('class' => 'span5', 'maxlength' => 255)); ?>
 
 <?php echo $form->textFieldRow($model, 'slug', array('class' => 'span5', 'maxlength' => 255)); ?>
-
-    <div class="control-group ">
+<?php echo $form->textAreaRow($model, 'desc', array('rows' => 6, 'class' => 'span5')); ?>
+    <div class="control-group ">        
+               
+        
         <label for="Contents_content" class="control-label required">content <span class="required">*</span></label>
         <div class="controls">
             <?php
