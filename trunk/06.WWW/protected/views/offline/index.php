@@ -13,10 +13,9 @@
         <div class='row-fluid body-at container'>	
             <div id="en-left" class="span6 pag2">
                 <?php
-                $total = count($category);
                 $i = 0;
                 foreach ($category as $row) {
-                    $i++;
+                    if(Libraries::isEnable($row->id)){  $i++;
                     ?>
                     <div class="en-box row-fluid">
                         <div class="row-fluid en-box-title">
@@ -30,6 +29,7 @@
                     if ($i == round($total / 2)) {
                         echo "</div>";
                         echo "<div id='en-mid' class='span6 pag2'>";
+                    }
                     }
                 }
                 ?>
