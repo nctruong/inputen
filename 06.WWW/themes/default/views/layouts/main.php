@@ -20,7 +20,7 @@
             <div id="top" class="row-fluid">
                 <img class="logo" src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/logo.png">
             </div><!-- end #top -->
-            <div id='en-nav' class='row-fluid'>
+<!--            <div id='en-nav' class='row-fluid'>
                 <ul>
                     <li><a href='<?php echo Yii::app()->getBaseUrl(true); ?>'>Home</a></li>
                     <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/tin-tuc.html'; ?>'>Tin tức</a></li>
@@ -35,7 +35,10 @@
                     <li><a href='#'>Chấm điểm</a></li>
                     <li><a href='#' class='li-last'>Diễn đàn</a></li>
                 </ul>
-            </div><!-- end #menu-bar -->
+            </div> end #menu-bar -->
+            <?php
+                $this->widget("menus");
+            ?>
 
             
 <?php echo $content ?>

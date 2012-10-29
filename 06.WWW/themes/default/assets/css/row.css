@@ -313,7 +313,8 @@ button.icon-heart{
 	
 }
 .comment-item{
-	background:#DDD;
+	background:#fff;
+        border:1px solid #ccc;
 	position:relative;
 }
 .comment-item .avatar{
@@ -326,10 +327,9 @@ button.icon-heart{
 	border:3px solid #F9F9F9;
 }
 .comment-item div.header-cmt{
-	background:#fff;
-	margin:3px;
 	padding:0px !important;
 	width:98.9%;
+        border:3px solid #ccc;
 	line-height:25px;
 	color:#08C;
 
@@ -343,6 +343,13 @@ button.icon-heart{
 .body-cmt ul{
 	list-style:square;
 	list-style-position:inside;
+}
+.cmt_side{
+    min-height:50px !important;
+}
+.cmt_side img{
+    width:35px;
+    
 }
 .padding0{
 	padding:0px !important;
@@ -393,8 +400,8 @@ padding-right: 25px;
 	margin-left:15px;
 	text-shadow:2px 2px 2px #ddd;
 	font-size:16px;
-	font-style:italic;
-	color:#666;
+	
+	color:#999;
 }
 .pag2{
 	 width:322px !important	;
@@ -437,8 +444,12 @@ text-transform: uppercase;
 a.title_cate:hover{
     color:#08C;
 }
- 
-
+.upcase{
+    text-transform: uppercase;
+}
+.create_date{
+    color:#999;
+}
 
 
 
