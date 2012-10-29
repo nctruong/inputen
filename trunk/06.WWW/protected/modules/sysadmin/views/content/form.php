@@ -24,12 +24,21 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
         
         <label for="Contents_content" class="control-label required">content <span class="required">*</span></label>
         <div class="controls">
-            <?php
-            $this->widget('ext.ckeditor.CKEditorWidget', array(
+             <?php
+            $this->widget('ext.tinymce.TinyMce', array(
                 'model' => $model,
                 'attribute' => 'content',
-                'toolbar' => 'Full',
-                'isNeedUpload' => true
+                // Optional config
+                'compressorRoute' => 'tinyMce/compressor',
+                'spellcheckerRoute' => 'tinyMce/spellchecker',
+                'fileManager' => array(
+                    'class' => 'ext.elFinder.TinyMceElFinder',
+                    'connectorRoute' => 'sysadmin/elfinder/connector',
+                ),
+                'htmlOptions' => array(
+                    'rows' => 6,
+                    'cols' => 60,
+                ),
             ));
             ?>
         </div>
