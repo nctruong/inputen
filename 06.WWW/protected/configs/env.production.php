@@ -62,6 +62,13 @@ return array(
                 'hoc-qua-clip/<title:.*?>-<tid:\d+>/<slug:.*?>-<id:\d+>' => array('clip/view/', 'urlSuffix' => '.html'),
                 'hoc-qua-clip/<slug:.*>-<id:\d+>' => 'clip/viewlist/',
                 
+                'hoc-va-choi' => 'lern',
+                'hoc-va-choi/<title:.*?>-<tid:\d+>/<slug:.*?>-<id:\d+>' => array('lern/view/', 'urlSuffix' => '.html'),
+                'hoc-va-choi/<slug:.*>-<id:\d+>' => 'lern/viewlist/',
+                
+                'bai-test' => 'test',
+                'bai-test/<title:.*?>-<tid:\d+>/<slug:.*?>-<id:\d+>' => array('test/view/', 'urlSuffix' => '.html'),
+                'bai-test/<slug:.*>-<id:\d+>' => 'test/viewlist/',
                 
                 'tham-khao' => 'reference',
                 'tham-khao/<title:.*?>-<tid:\d+>/<slug:.*?>-<id:\d+>' => array('reference/view/', 'urlSuffix' => '.html'),
