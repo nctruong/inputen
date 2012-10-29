@@ -54,7 +54,6 @@ if ($item->premium == 1) {
             </div><!-- end page-obj -->
         </div> <!-- end #page-wrapper-->
         <?php $this->widget('more_listen', array('p_id' => $item->id, 'c_id' => $item->category_id,'r_slug' => 'bai-hoc')); ?>
-        
         <?php $this->widget('comments',array('c_id' => $item->id)) ?>
         
         </div><!-- end span9 -->

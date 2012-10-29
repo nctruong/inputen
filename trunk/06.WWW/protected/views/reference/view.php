@@ -55,7 +55,7 @@ if ($item->premium == 1) {
         </div> <!-- end #page-wrapper-->
         <?php $this->widget('more_listen', array('p_id' => $item->id, 'c_id' => $item->category_id,'r_slug' => 'tham-khao')); ?>
         
-        <?php $this->widget('comments') ?>
+        <?php $this->widget('comments',array('c_id' => $item->id)) ?>
         
         </div><!-- end span9 -->
     <div id='en-right' class='span3'>

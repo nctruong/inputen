@@ -50,7 +50,7 @@
                     ?>
                     <div class="en-box row-fluid">
                     <div class="row-fluid en-box-title">
-                       <a class='title-listen' href="<?php echo Yii::app()->getBaseUrl(true)."/tham-khao/".$root->slug."/".$v->slug."-".$v->id.".html"?>" title="<?php echo $v->title ?>"><?php echo $v->title ?></a>
+                       <a class='title-listen' href="<?php echo Yii::app()->getBaseUrl(true)."/tham-khao/".$root->slug."-".$root->id."/".$v->slug."-".$v->id.".html"?>" title="<?php echo $v->title ?>"><?php echo $v->title ?></a>
                     </div>
                     <div class="row-fluid en-box-feature "><!-- .en-box-feature -->
                         <div class="row-fluid">
@@ -67,7 +67,7 @@
                 }
             ?>
         </div>
-            <div class="row-fluid center  " >               
+<!--            <div class="row-fluid center  " >               
                 <div class="pagination" style="padding:20px;">
 
                     <ul class="yiiPager mt_10">
@@ -81,7 +81,7 @@
                         <li class="next"><a href="/yii/card/index.php/sysadmin/categorycard/index.html?CategoryCard_page=2">→</a></li>
                     </ul>
                 </div>
-            </div>                            
+            </div>                            -->
 
         </div>
 

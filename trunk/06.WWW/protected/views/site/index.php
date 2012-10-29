@@ -70,12 +70,12 @@
                         </li>
                     </ul><!-- end .box-class -->
                     <div class='child-study'>
-                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/child-study.png' />
+                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/child-study.png' />
                     </div>
                 </div>
                 <div class='span3' id='challenger'>
                     <div class='img-cup'>
-                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/img-cup.png' />
+                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/img-cup.png' />
                     </div>
                     <div class='challenger'>
                         <div class='challenger-title'>
@@ -89,7 +89,7 @@
                                 <li>
                                     <div class='row-fluid challenger-row'>
                                         <div class='span3'>
-                                            <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-cup.png' />
+                                            <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-cup.png' />
                                         </div>
                                         <div class='span9 in'>
                                             <div class='row grey name'><a href=''>Angle's Smile</a></div>
@@ -100,7 +100,7 @@
                                 <li>
                                     <div class='row-fluid challenger-row'>
                                         <div class='span3'>
-                                            <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-cup.png' />
+                                            <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-cup.png' />
                                         </div>
                                         <div class='span9 in'>
                                             <div class='row grey name'><a href='#'>hMinh</a></div>
@@ -111,7 +111,7 @@
                                 <li>
                                     <div class='row-fluid challenger-row'>
                                         <div class='span3'>
-                                            <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-cup.png' />
+                                            <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-cup.png' />
                                         </div>
                                         <div class='span9 in'>
                                             <div class='row grey name'><a href='#'>mTuan</a></div>
@@ -138,7 +138,7 @@
                 <div class='span6'>
                     <div class='row-fluid box-item'>
                         <div class='span5'>
-                            <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/img1-block2.png' width="200px" height='209px' />
+                            <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/img1-block2.png' width="200px" height='209px' />
                         </div>
                         <div class='span7 box-tapt'>
                             <div class='row-fluid'>
@@ -159,7 +159,7 @@
                                     </ul>
                                 </div>
                                 <div class='span4 fix-otdh'>
-                                    <div class='row-fluid'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/img2-block.png' /></div>
+                                    <div class='row-fluid'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/img2-block.png' /></div>
                                     <div class='row-fluid otdh'><a href='#'>Ôn thi đại học</a></div>
                                 </div>
                             </div><!-- end lop & image -->
@@ -170,7 +170,7 @@
                             <a href='#'>tiếng anh trẻ em</a>
                         </div>
                         <div class='span4 block-2-img'>
-                            <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/child-study-girl-1.png' />
+                            <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/child-study-girl-1.png' />
                         </div>
                         <div class='span4 box-class-block-2'>
                             <ul class='ul1 os1'>
@@ -196,7 +196,7 @@
                             <a href='#'>tiếng anh cơ bản</a>
                         </div>
                         <div class='span6 we-en'>
-                            <img src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/we-english.png" width="225px">
+                            <img src="<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/we-english.png" width="225px">
                         </div>
                         <div class='span3 tate tagtcb'>
                             <a href='#'>tiếng anh giao tiếp cơ bản</a>
@@ -206,13 +206,13 @@
                 <div class='span3'>
                     <div class="row-fluid practise">
                         <div class='child-study-girl-2'>
-                            <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/child-study-girl.png' />
+                            <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/child-study-girl.png' />
                         </div>
                         <div class='text-head'>
                             <a href='#'>Luyện tập tiếng anh</a>
                         </div>
                         <div class='book-app'>
-                            <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/book.png' />
+                            <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/book.png' />
                         </div>
                         <ul>
                             <li><a href='#'>Kiểm tra trình độ</a></li>
@@ -243,7 +243,7 @@
                     <a href='#'>Tuyển CTV và đại lý phân phối thẻ trên toàn quốc</a>
                 </div>
                 <div class='span6 ctv-img'>
-                    <a href='#'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/chat-room.png' /></a>
+                    <a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/chat-room.png' /></a>
                 </div>
             </div><!-- end ads -->
             <div class='hr clearfix'></div>
@@ -294,8 +294,8 @@
                         <div class='card-title'>
                             <A href='#'>đăng ký mua thẻ</a>
                         </div>
-                        <a href='#'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/card-vip.png' /></a>
-                        <a href='#'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/card-golded.png' /></a>
+                        <a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/card-vip.png' /></a>
+                        <a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/card-golded.png' /></a>
                     </div>
                 </div>
                 <div class='span3'>
@@ -317,7 +317,7 @@
                         <div class='item-ieltd'><a href='#'>Luyện thi <span>IELTS</span></a></div>
                         <div class='lt-img'>
                             <div class='span6'>
-                                <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-book.png' />
+                                <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-book.png' />
                             </div>
                             <div class='span6'>
                                 <div class='ttd'><a href='#'>Tra từ điển</a></div>
@@ -346,37 +346,37 @@
                             <ul>
                                 <li>
                                     <a href='#'>
-                                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                         <p>Bài 1: What are...</p>
                                     </a>
                                 </li>
                                 <li><a href='#'>
                                         <a href='#'>
-                                            <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                            <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                             <p>Bài 2: What are...</p>
                                         </a>
                                 </li>
                                 <li>
                                     <a href='#'>
-                                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                         <p>Bài 3: What did...</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href='#'>
-                                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                         <p>Bài 3: What did...</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href='#'>
-                                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                         <p>Bài 3: What did...</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href='#'>
-                                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                         <p>Bài 3: What did...</p>
                                     </a>
                                 </li>
@@ -407,37 +407,37 @@
                             <ul>
                                 <li>
                                     <a href='#'>
-                                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                         <p>Bài 1: What are...</p>
                                     </a>
                                 </li>
                                 <li><a href='#'>
                                         <a href='#'>
-                                            <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                            <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                             <p>Bài 2: What are...</p>
                                         </a>
                                 </li>
                                 <li>
                                     <a href='#'>
-                                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                         <p>Bài 3: What did...</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href='#'>
-                                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                         <p>Bài 3: What did...</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href='#'>
-                                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                         <p>Bài 3: What did...</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href='#'>
-                                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                         <p>Bài 3: What did...</p>
                                     </a>
                                 </li>
@@ -538,7 +538,7 @@
                             <div class='box-ul-body-video'>
                                 <ul id='sty-video'>
                                     <li>
-                                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                         <a href='#'>
                                             Snow white and the huntsma (2012)
                                         </a>
@@ -547,7 +547,7 @@
                                         </p>
                                     </li>
                                     <li>
-                                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                         <a href='#'>
                                             Snow white and the huntsma (2012)
                                         </a>
@@ -556,7 +556,7 @@
                                         </p>
                                     </li>
                                     <li>
-                                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                         <a href='#'>
                                             Snow white and the huntsma (2012)
                                         </a>
@@ -565,7 +565,7 @@
                                         </p>
                                     </li>
                                     <li>
-                                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                         <a href='#'>
                                             Snow white and the huntsma (2012)
                                         </a>
@@ -574,7 +574,7 @@
                                         </p>
                                     </li>
                                     <li>
-                                        <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/demo-video.png' />
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
                                         <a href='#'>
                                             Snow white and the huntsma (2012)
                                         </a>
@@ -607,7 +607,7 @@
                         <div class='box-body idoms-scroll'>
                             <ul class='idoms'>
                                 <li>
-                                    Do not protect yourself by a fence, but rather by your friends.<span class='vlum'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-volume.png' /></span>
+                                    Do not protect yourself by a fence, but rather by your friends.<span class='vlum'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-volume.png' /></span>
                                     <p>Czech Proverb</p>
                                 </li>
                                 <li>
@@ -615,23 +615,23 @@
                                     <p>Benjamin Franklin</p>
                                 </li>
                                 <li>
-                                    Your intellect may be confused, but your emotions will never lie to you <span class='vlum'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-volume.png' /></span>
+                                    Your intellect may be confused, but your emotions will never lie to you <span class='vlum'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-volume.png' /></span>
                                     <p>Benjamin Franklin</p>
                                 </li>
                                 <li>
-                                    Your intellect may be confused, but your emotions will never lie to you <span class='vlum'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-volume.png' /></span>
+                                    Your intellect may be confused, but your emotions will never lie to you <span class='vlum'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-volume.png' /></span>
                                     <p> Benjamin Franklin</p>
                                 </li>
                                 <li>
-                                    Your intellect may be confused, but your emotions will never lie to you <span class='vlum'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-volume.png' /></span>
+                                    Your intellect may be confused, but your emotions will never lie to you <span class='vlum'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-volume.png' /></span>
                                     <p> Benjamin Franklin</p>
                                 </li>
                                 <li>
-                                    Your intellect may be confused, but your emotions will never lie to you <span class='vlum'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-volume.png' /></span>
+                                    Your intellect may be confused, but your emotions will never lie to you <span class='vlum'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-volume.png' /></span>
                                     <p> Benjamin Franklin</p>
                                 </li>
                                 <li>
-                                    Your intellect may be confused, but your emotions will never lie to you <span class='vlum'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-volume.png' /></span>
+                                    Your intellect may be confused, but your emotions will never lie to you <span class='vlum'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-volume.png' /></span>
                                     <p> Benjamin Franklin</p>
                                 </li>
                             </ul>
@@ -641,7 +641,7 @@
                 <div class='span4 game'>
                     <div class='row-fluid game-title'>
                         <div class='span4'>
-                            <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-game.png' />
+                            <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-game.png' />
                         </div>
                         <div class='span8 text-game'>
                             <a href='#'>trò chơi tiếng anh</a>
@@ -649,12 +649,12 @@
                     </div>
                     <div class='row-fluid game-body'>
                         <ul class='ul-game'>
-                            <li><a href='#'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/item-game.png' /><p>Building word</p></a></li>
-                            <li><a href='#'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-game-2.png' /><p>Building word</p></a></li>
-                            <li><a href='#'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/item-game.png' /><p>Building word</p></a></li>
-                            <li><a href='#'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-game-2.png' /><p>Building word</p></a></li>
-                            <li><a href='#'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/item-game.png' /><p>Building word</p></a></li>
-                            <li><a href='#'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-game-2.png' /><p>Building word</p></a></li>
+                            <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/item-game.png' /><p>Building word</p></a></li>
+                            <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-game-2.png' /><p>Building word</p></a></li>
+                            <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/item-game.png' /><p>Building word</p></a></li>
+                            <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-game-2.png' /><p>Building word</p></a></li>
+                            <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/item-game.png' /><p>Building word</p></a></li>
+                            <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-game-2.png' /><p>Building word</p></a></li>
                         </ul>
                     </div>
                 </div><!-- end tro cho tieng anh -->
@@ -674,7 +674,7 @@
                         <div class='row-fluid list-member'>
                             <ul>
                                 <li>
-                                    <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-member.png' />
+                                    <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-member.png' />
                                     <div class='info-mem'>
                                         <span class='name'><a href='#'>Hoang_tu_co_don</a></span><br />
                                         - Danh hiệu: <font color='red'>Kiến chúa</font><br />
@@ -682,7 +682,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-member.png' />
+                                    <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-member.png' />
                                     <div class='info-mem'>
                                         <span class='name'><a href='#'>Hoang_tu_co_don</a></span><br />
                                         - Danh hiệu: <font color='red'>Kiến chúa</font><br />
@@ -690,7 +690,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-member.png' />
+                                    <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-member.png' />
                                     <div class='info-mem'>
                                         <span class='name'><a href='#'>Hoang_tu_co_don</a></span><br />
                                         - Danh hiệu: <font color='red'>Kiến chúa</font><br />
@@ -698,7 +698,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-member.png' />
+                                    <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-member.png' />
                                     <div class='info-mem'>
                                         <span class='name'><a href='#'>Hoang_tu_co_don</a></span><br />
                                         - Danh hiệu: <font color='red'>Kiến chúa</font><br />
@@ -706,7 +706,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-member.png' />
+                                    <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-member.png' />
                                     <div class='info-mem'>
                                         <span class='name'><a href='#'>Hoang_tu_co_don</a></span><br />
                                         - Danh hiệu: <font color='red'>Kiến chúa</font><br />
@@ -714,7 +714,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/icon-member.png' />
+                                    <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-member.png' />
                                     <div class='info-mem'>
                                         <span class='name'><a href='#'>Hoang_tu_co_don</a></span><br />
                                         - Danh hiệu: <font color='red'>Kiến chúa</font><br />
@@ -726,12 +726,12 @@
                     </div>
                     <div class='row-fluid logo-footer'>
                         <ul>
-                            <li><a href='#'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/logo-123.png' /></a></li>
-                            <li><a href='#'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/logo-123.png' /></a></li>
-                            <li><a href='#'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/logo-123.png' /></a></li>
-                            <li><a href='#'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/logo-123.png' /></a></li>
-                            <li><a href='#'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/logo-123.png' /></a></li>
-                            <li><a href='#'><img src='<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/logo-123.png' /></a></li>
+                            <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/logo-123.png' /></a></li>
+                            <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/logo-123.png' /></a></li>
+                            <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/logo-123.png' /></a></li>
+                            <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/logo-123.png' /></a></li>
+                            <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/logo-123.png' /></a></li>
+                            <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/logo-123.png' /></a></li>
                         </ul>
                     </div><!-- end list box 123 -->
                 </div><!-- end list box member -->

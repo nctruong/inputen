@@ -28,15 +28,15 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
         </div><!-- end header-at-->
         <div class='row-fluid'>
             <div class="control-group">
-                <label class="control-label" for="username">
+                <label class="control-label" for="fullname">
                     <?php echo $form->labelEx($model, 'fullname'); ?>
                 </label>
                 <div class="controls">
                     <?php
-                    echo $form->textField($model, 'username', array('size' => 60, 'maxlength' => 128, 'class' =>
+                    echo $form->textField($model, 'fullname', array('size' => 60, 'maxlength' => 128, 'class' =>
                         'span9', 'placeholder' => 'Họ tên'));
                     ?>
-                    <?php echo $form->error($model, 'username'); ?>
+                    <?php echo $form->error($model, 'fullname'); ?>
                 </div>
             </div>
             <div class="control-group">
