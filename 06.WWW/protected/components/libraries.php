@@ -36,6 +36,12 @@ class Libraries {
             return 0;
         return ($user->premium=='') ? 0 : $user->premium;
     }
+    public function filterContent($content){
+        echo $content;   
+    }
+    public function isEnable($id){
+        return count((Content::model()->findAll("category_id = ".$id)));
+    }
     public function getCmt($id){
         $item = Comment::model()->findAllByAttributes(array('content_id' => $id));
         return count($item);
