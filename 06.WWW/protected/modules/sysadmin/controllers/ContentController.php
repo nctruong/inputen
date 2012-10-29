@@ -65,7 +65,7 @@ class ContentController extends MiisSysadminController {
         if (isset($_POST['Content'])) {
             
             $model->attributes = $_POST['Content'];
-
+            $model->title = CHtml::encode($model->title);
             if ($model->save())
                 $this->redirect(array('index'));
         }
@@ -83,6 +83,7 @@ class ContentController extends MiisSysadminController {
 
         if (isset($_POST['Content'])) {
             $model->attributes = $_POST['Content'];
+            $model->title = htmlspecialchars($model->title);
             if ($model->save())
                 $this->redirect(array('index'));
         }
