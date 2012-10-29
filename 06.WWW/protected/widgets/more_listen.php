@@ -28,7 +28,6 @@ class More_listen extends MiisWidget {
         foreach ($id as $k) {
             $arr_id[] = $k->id;
             $data['category_'][$k->id] = $k->slug;
-            
         }
         $this->own = Content::model()->find(array(
             'condition' => 'id < :pid and category_id = :cid ',

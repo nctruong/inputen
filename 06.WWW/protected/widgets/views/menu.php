@@ -5,8 +5,8 @@
                     <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/bai-hoc.html'; ?>'>Bài học</a></li>
                     <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/tham-khao.html'; ?>'>Tham khảo</a></li>
                     <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/hoc-qua-clip.html'; ?>'>Học qua clip</a></li>
-                    <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/site/hocvachoi.html'; ?>'>Học và chơi</a></li>
-                    <li><a href='#'>Bài test</a></li>
+                    <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/hoc-va-choi.html'; ?>'>Học và chơi</a></li>
+                    <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/bai-test.html'; ?>'>Bài test</a></li>
                     <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/hoc-offline.html'; ?>'>Học offline</a></li>
                     <li><a href='#'>Video</a></li>
                     <li><a href='#'>T.A Phổ thông</a></li>
