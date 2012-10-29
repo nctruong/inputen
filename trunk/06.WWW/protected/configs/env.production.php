@@ -79,21 +79,14 @@ return array(
                 'tin-tuc/<title:.*?>-<tid:\d+>/<slug:.*?>-<id:\d+>' => array('news/view/', 'urlSuffix' => '.html'),
                 'tin-tuc/<slug:.*>-<id:\d+>' => 'news/viewlist/',
                
-                
-                
-                
-                
-                
-                
-                
-                //news
-               // 'tin-tuc' => 'news',
-                //'tin-tuc/<controller:\w+>' => 'news/<controller>',
-                //'tin-tuc/<controller:\w+>/<action:\w+>' => 'news/<controller>/<action>',
                  //clip
                 'hoc-qua-clip' => 'clip',
                 'hoc-qua-clip/<controller:\w+>' => 'news/<controller>',
                 'hoc-qua-clip/<controller:\w+>/<action:\w+>' => 'news/<controller>/<action>',
+                
+                '<controller:\w+>/<id:\d+>'=>'<controller>/view',
+                '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+                '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
                 
                 // sysadmin module
                 'sysadmin' => 'sysadmin',

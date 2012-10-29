@@ -1,3 +1,4 @@
+
 <?php
 $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'id' => 'adminForm',
@@ -18,6 +19,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 
     <?php echo $form->textAreaRow($model, 'desc', array('rows' => 6, 'cols' => 50, 'class' => 'span8')); ?>
 
+    
     <?php echo $form->textFieldRow($model, 'order', array('class' => 'span5')); ?>
 
     <?php echo $form->dropDownListRow($model, 'parent', Category::getCategories(), array('class' => 'span3')); ?>
