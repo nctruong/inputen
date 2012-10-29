@@ -27,7 +27,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
              <?php
             $this->widget('ext.tinymce.TinyMce', array(
                 'model' => $model,
-                'attribute' => 'content',
+                'attribute' => 'title',
                 // Optional config
                 'compressorRoute' => 'tinyMce/compressor',
                 'spellcheckerRoute' => 'tinyMce/spellchecker',
