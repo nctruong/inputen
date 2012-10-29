@@ -19,22 +19,16 @@ class MemberController extends MiisController {
 
         $model = new Member;
         if (isset($_POST['Member'])) {
-
-//            echo '<pre>';
-//            print_r($_POST);
-//            die();
             $model->attributes = $_POST['Member'];
-            $model->fullname = 'Trần Tuấn'; //tao test ti tu them vao form...
-//            echo '<pre>';
-//            print_r($model->attributes);
-//            die();
-//            die('m bug tu tu thi no ra chu co cai khi kho^ gi');
-            if ($model->save()) {
-                die('save thanh cong');
-                $this->redirect(array('index'));
+            if ($model->validate()) {
+                $model->repass = md5($model->repass);
+                $model->password = md5($model->password);
+                if ($model->save()) {
+                    $this->redirect(array(Yii::app()->getBaseUrl()));
+                }
             }
-            die('m bug tu tu thi no ra chu co cai khi kho^ gi');
         }
+
 
         $this->render('register', array('model' => $model));
     }
@@ -74,8 +68,8 @@ class MemberController extends MiisController {
 
     public function actionLogout() {
         if (isset($this->_session['isLogin'])) {
-            $this->_session->destroy('isLogin');
-            $this->_session->destroy('login_id');
+            //   $this->_session->destroy('isLogin');
+            //  $this->_session->destroy('login_id');
         }
     }
 

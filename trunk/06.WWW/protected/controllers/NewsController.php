@@ -1,32 +1,31 @@
 <?php
 
 class NewsController extends MiisController {
-
-    public function actionIndex() {
-        $category = $this->getParam('category','');
-        var_dump($category);exit;
-        $this->render('index');
+    public $title;
+    function init(){
+           
     }
-    
-    public function actionList() {
-        $category = $this->getParam('category','');
-        echo Yii::app()->getBasePath();
-        var_dump($category);exit;
-        $this->render('index');
-        
-               
+    public function actionIndex() { 
+        $this->title = 'Tin tá»©c';  
+        $data =  Category::model()->findAll('taxonomy_id=1');
+        $this->render('index',array('category' => $data));        
     }
-    
-    public function actionDetail() {
-        $category = $this->getParam('category','');
-        $id = $this->getParam('id','');
-        var_dump($category);
-        var_dump($id);
-        exit;
-        $this->render('index');
+    public function actionViewlist($id=''){
+        $root = Category::model()->findByPk($id);
+        $this->title = $root->title;
+        $items = Content::model()->findAll(array("condition"=>"state = 1 and category_id = ".$id));
+        $listcat = Category::model()->findAll(array("condition"=>"state = 1 and taxonomy_id = ".$root->taxonomy_id));
+        $this->render("viewlist",array('root'=>$root,'items' => $items,'listcat'=>$listcat));
     }
-    
-    /**
+    public function actionView($id='') {
+        $data = array();
+        $data['item'] = Content::model()->findbyPk($id);
+        Content::model()->updateByPk($id,array('view'=>($data['item']->view + 1)));
+        $this->title = $data['item']->title;
+        $this->render('view',$data);                               
+    }
+ 
+     /*
      * This is the action to handle external exceptions.
      */
     public function actionError() {
