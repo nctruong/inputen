@@ -36,22 +36,26 @@ class Comments extends MiisWidget {
                 $model = new Comment;
                 $model->attributes = $_POST['Comment'];
                 $comment = htmlspecialchars($model->comment);
-                foreach ($img2 as $k => $v) {
-                    $comment = str_replace("(:" . $v . ":)", "<img src='" . Yii::app()->getBaseUrl(true) . "/data/emoticon/" . $v . ".gif'>", $comment);
+                if($comment != '' & strlen($comment) > 10){
+                    foreach ($img2 as $k => $v) {
+                        $comment = str_replace("(:" . $v . ":)", "<img src='" . Yii::app()->getBaseUrl(true) . "/data/emoticon/" . $v . ".gif'>", $comment);
+                    }
+                    $model->comment = $comment;
+                    $returnValue = preg_replace('(:emo33:)', '<img src="emo33.gif">', '', -1, $count);
+                    $model->content_id = $this->c_id;
+                    $model->mem_id = $this->u_id;
+                    $model->mem_username = $this->_session['login_name'];
+                    $model->created_date = new CDbExpression('NOW()');
+                    $model->state = 1;
+                    $model->save();
+                    $stt = 1;
+                }else{
+                    $class = 'red bold';
                 }
-                $model->comment = $comment;
-                $returnValue = preg_replace('(:emo33:)', '<img src="emo33.gif">', '', -1, $count);
-                $model->content_id = $this->c_id;
-                $model->mem_id = $this->u_id;
-                $model->mem_username = $this->_session['login_name'];
-                $model->created_date = new CDbExpression('NOW()');
-                $model->state = 1;
-                $model->save();
-                $stt = 1;
             }
         }
         $comments_item = Comment::model()->findAll('content_id = ' . $this->c_id);
-        $this->render('comments', array('items' => $items, 'stt' => $stt, 'login' => $this->u_id, 'comments_item' => $comments_item));
+        $this->render('comments', array('items' => $items, 'stt' => $stt, 'login' => $this->u_id, 'comments_item' => $comments_item,'class'=>@$class));
     }
 
 }

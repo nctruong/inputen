@@ -91,7 +91,7 @@
                 <div class="row-fluid editor">
                     <textarea rows="7"  <?php if ($stt != 0) echo 'readonly="readonly"' ?> id="display_text" name="Comment[comment]" style="width:700px"></textarea>
                 </div>
-                <div class="row-fluid send">    
+                <div class="row-fluid send <?php echo @$class ?>">    
                     Nội dung phản hồi ít nhất 10 kí tự. Mỗi lần đăng phản hồi cách nhau ít nhất 30 giây <button <?php if($stt != 0) echo "onclick='return false'"; ?> class="btn btn-danger floatR">Thêm phản hồi</button>
                 </div>
                 <input type="hidden" name="cmt_ajax" value="submit">
@@ -99,7 +99,7 @@
 
             <?php } else { ?>
                 <div class="row-fluid margin_topbot10">
-                    <div class="span9 offset4 red">
+                    <div class="span9 offset4 red ">
                         Bạn phải đăng nhập mới viết được phản hồi cho bài học này
                     </div>
                     <div class="span10 offset3 center">
