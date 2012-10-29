@@ -60,8 +60,8 @@ abstract class MiisSysadminController extends MiisController {
             ), // Resources
             array('label' => 'Resources', 'icon' => 'icon-inbox icon-white', 'url' => Yii::app()->baseUrl . '/sysadmin/resource.html', 'active' => $this->id == 'resource' ? true : false,
                 'items' => array(
-                    array('label' => 'Create Resource', 'url' => Yii::app()->baseUrl . '/sysadmin.html', 'active' => $this->id == 'create' ? true : false),
-                    array('label' => 'Manage Resources', 'url' => Yii::app()->baseUrl . '/sysadmin.html', 'active' => $this->id == 'resource' ? true : false),
+                    //array('label' => 'Create Resource', 'url' => Yii::app()->baseUrl . '/sysadmin/.html', 'active' => $this->id == 'create' ? true : false),
+                    array('label' => 'Manage Resources', 'url' => Yii::app()->baseUrl . '/sysadmin/resources.html', 'active' => $this->id == 'resource' ? true : false),
                 )
             ), // Comments
             array('label' => 'Comments', 'icon' => 'icon-comment icon-white', 'url' => Yii::app()->baseUrl . '/sysadmin.html', 'active' => $this->id == 'comments' ? true : false,
