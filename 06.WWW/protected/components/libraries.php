@@ -25,6 +25,17 @@ class Libraries {
             return $new_chuoi;
         }
     }
+    public function check($s){
+        echo "<pre>";
+        print_r($s);
+        echo "</pre>";
+    }
+    public function get_vip($id){
+        $user = Member::model()->findByPk($id);
+        if(!is_array($user))
+            return 0;
+        return ($user->premium=='') ? 0 : $user->premium;
+    }
     public function getCmt($id){
         $item = Comment::model()->findAllByAttributes(array('content_id' => $id));
         return count($item);

@@ -11,12 +11,8 @@ abstract class MiisController extends CController {
         // create a sessio object
         $this->_session = new CHttpSession;
         $this->_session->open();
-        
         $theme = 'default';
-        Yii::app()->setTheme(file_exists(dirname(__FILE__) . '/../../themes/' . $theme) ? $theme : 'default');
-        Yii::app()->session['isLogin'] = 1;
-        Yii::app()->session['login_id'] = 1;
-        
+        Yii::app()->setTheme(file_exists(dirname(__FILE__) . '/../../themes/' . $theme) ? $theme : 'default');        
         return true;
     }
 
