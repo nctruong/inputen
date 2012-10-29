@@ -1,5 +1,27 @@
+<?php
+//
+//Libraries::check($page['pages']);
+//             $this->widget('CLinkPager', array(
+//            'currentPage'=>'tin-tuc',
+//            'itemCount'=>$page['item_count'],
+//            'pageSize'=>$page['page_size'],
+//            'maxButtonCount'=>5,
+//            //'nextPageLabel'=>'My text >',
+//            'header'=>'',
+//        'htmlOptions'=>array('class'=>'pages'),
+//        ));
+//
 
-            <div id='sub-nav' class='row-fluid'>
+
+
+
+
+
+
+
+?>
+
+<div id='sub-nav' class='row-fluid'>
                 <div id='title' class='span9'>
                     Tin tức
                 </div>
@@ -11,9 +33,9 @@
               
                 <div id='en-left' class='span4'>
                       <?php
-                    $total = count($category);
                     $i = 0 ;
-                    foreach($category as $row){ $i++;?>
+                    foreach($category as $row){ 
+                    if(Libraries::isEnable($row->id)){  $i++;?>
 
                         <div class='en-box row-fluid'>
                         <div class='row-fluid en-box-title'>
@@ -42,8 +64,14 @@
                        ?>
                     
                     <?php }
+                    }
                 ?>
                 </div>
+           
+     <?php
+     
+   
+                ?>
                 <div id='en-right' class='span3'>
                     <?php $this->widget('search'); ?>
                     <?php $this->widget('login'); ?>
