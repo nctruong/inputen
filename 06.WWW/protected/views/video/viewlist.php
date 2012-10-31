@@ -2,7 +2,7 @@
     <div class='page3'>
         <div class='title_ab span4'>
             <span class="row-fluid span12 title_small">THỂ LOẠI</span>
-            <span class="row-fluid span12 title_big">THAM KHẢO</span>           
+            <span class="row-fluid span12 title_big">BÀI HỌC</span>           
         </div>
         <div id='' class='span8 en-title-pg2'>
             <?php
@@ -15,7 +15,7 @@
                         echo "</div>";
                         echo "<div class='row-fluid'>";
                     }
-                    echo "<a  href='".Yii::app()->getBaseUrl(true)."/tham-khao/".$v->slug."-".$v->id.".html'>".$v->title."</a>";
+                    echo "<a  href='".Yii::app()->getBaseUrl(true)."/.$this->root_slug./".$v->slug."-".$v->id.".html'>".$v->title."</a>";
                     if($i < $total){
                         echo "/";
                     }
@@ -50,12 +50,12 @@
                     ?>
                     <div class="en-box row-fluid">
                     <div class="row-fluid en-box-title">
-                       <a class='title-listen' href="<?php echo Yii::app()->getBaseUrl(true)."/tham-khao/".$root->slug."-".$root->id."/".$v->slug."-".$v->id.".html"?>" title="<?php echo $v->title ?>"><?php echo $v->title ?></a>
+                       <a class='title-listen' href="<?php echo Yii::app()->getBaseUrl(true)."/".$this->root_slug."/".$root->slug."-".$root->id."/".$v->slug."-".$v->id.".html"?>" title="<?php echo $v->title ?>"><?php echo $v->title ?></a>
                     </div>
                     <div class="row-fluid en-box-feature "><!-- .en-box-feature -->
                         <div class="row-fluid">
                             <div class="span8 offset2" >
-                                <a href="<?php echo Yii::app()->getBaseUrl(true)."/tham-khao/".$root->slug."-".$root->id."/".$v->slug."-".$v->id.".html"?>" class="thumbnail" title="<?php echo $v->title ?>" ><img class="" src="<?php echo Libraries::getImage($v->content) ?>" /></a>
+                                <a href="<?php echo Yii::app()->getBaseUrl(true)."/".$this->root_slug."/".$root->slug."-".$root->id."/".$v->slug."-".$v->id.".html"?>" class="thumbnail" title="<?php echo $v->title ?>" ><img class="" src="<?php echo Libraries::getImage($v->content) ?>" /></a>
                             </div>
                         </div>
                         <div class="row-fluid box-feature">

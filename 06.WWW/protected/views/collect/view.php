@@ -32,7 +32,7 @@ if ($item->premium == 1) {
                 </div><!-- end .page-wrapper-top-->    		
                 <div class="page-wrapper-main">
                     <?php
-                    Libraries::filterContent($item->content);
+                    echo $item->content;
                     ?>
                 </div><!-- end .page-wrapper-main -->
                 <div class="clearfix"></div>
@@ -53,7 +53,8 @@ if ($item->premium == 1) {
                 <div class="clearfix"></div>
             </div><!-- end page-obj -->
         </div> <!-- end #page-wrapper-->
-        <?php $this->widget('more_listen', array('p_id' => $item->id, 'c_id' => $item->category_id,'tax_id' => $this->root_id)); ?>
+        <div class="row-fluid margin_topbot10"></div>
+        <?php //$this->widget('more_listen', array('p_id' => $item->id, 'c_id' => $item->category_id,'r_slug' => 'bai-hoc')); -->?> 
         <?php $this->widget('comments',array('c_id' => $item->id)) ?>
         
         </div><!-- end span9 -->

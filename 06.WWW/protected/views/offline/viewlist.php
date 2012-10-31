@@ -1,30 +1,4 @@
-<div id='sub-nav' class='row-fluid'>
-    <div class='page3'>
-        <div class='title_ab span4'>
-            <span class="row-fluid span12 title_small">THỂ LOẠI</span>
-            <span class="row-fluid span12 title_big">BÀI HỌC</span>           
-        </div>
-        <div id='' class='span8 en-title-pg2'>
-            <?php
-                $total = count($listcat);
-                echo "<div class='row-fluid'>";
-                $i=0;
-                foreach($listcat as $k=>$v){
-                    $i++;
-                    if($i==round($total/2)){
-                        echo "</div>";
-                        echo "<div class='row-fluid'>";
-                    }
-                    echo "<a  href='".Yii::app()->getBaseUrl(true)."/bai-hoc/".$v->slug."-".$v->id.".html'>".$v->title."</a>";
-                    if($i < $total){
-                        echo "/";
-                    }
-                }
-                echo "</div>";  
-            ?>
-        </div>
-    </div>
-</div><!-- end #sub-nav -->
+<div class="row-fluit"></div><!-- end #sub-nav -->
 <div id='wrap-en' class='row-fluid'>
 
     <div class="span9" id='wrap-body'>

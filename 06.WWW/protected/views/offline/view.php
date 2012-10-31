@@ -53,7 +53,7 @@ if ($item->premium == 1) {
                 <div class="clearfix"></div>
             </div><!-- end page-obj -->
         </div> <!-- end #page-wrapper-->
-        <?php $this->widget('more_listen', array('p_id' => $item->id, 'c_id' => $item->category_id)); ?>
+        <?php $this->widget('more_listen', array('p_id' => $item->id, 'c_id' => $item->category_id,'tax_id' => $this->root_id)); ?>
         
         <?php $this->widget('comments',array('c_id' => $item->id)) ?>
         

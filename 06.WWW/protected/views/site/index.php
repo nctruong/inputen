@@ -233,7 +233,7 @@
                         </ul>
                     </div>
                 </div><!-- end mid box block 1 -->
-                <div class='span3'>
+                <div class='span3 ' style="width:200px">
                    <?php $this->widget('support') ?>
                    <?php $this->widget('support2') ?>
                 </div>

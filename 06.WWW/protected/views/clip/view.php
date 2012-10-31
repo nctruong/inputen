@@ -32,6 +32,21 @@ if ($item->premium == 1) {
                 </div><!-- end .page-wrapper-top-->    		
                 <div class="page-wrapper-main">
                     <?php
+                        if($item->video!='' & $item->content != ''){?>
+                    <div class='row_fluid '>
+                        <div class='span7 video_div'>
+                                <?php echo $item->video?>
+                        </div>
+                        <div class='span5 stranslate_div'>
+                                <?php echo $item->translate ?>
+                        </div>
+                        <div class="clear" style="clear:both"></div>
+                    </div>
+                    
+                        <?php 
+                        }
+                    ?>
+                    <?php
                     echo $item->content;
                     ?>
                 </div><!-- end .page-wrapper-main -->
@@ -53,10 +68,8 @@ if ($item->premium == 1) {
                 <div class="clearfix"></div>
             </div><!-- end page-obj -->
         </div> <!-- end #page-wrapper-->
-        <?php $this->widget('more_listen', array('p_id' => $item->id, 'c_id' => $item->category_id, 'r_slug' => 'hoc-qua-clip')); ?>
-        
+        <?php $this->widget('more_listen', array('p_id' => $item->id, 'c_id' => $item->category_id, 'tax_id' => $this->root_id)); ?>
         <?php $this->widget('comments',array('c_id' => $item->id)) ?>
-        
         </div><!-- end span9 -->
     <div id='en-right' class='span3'>
         <?php $this->widget('search'); ?>
