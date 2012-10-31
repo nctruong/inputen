@@ -19,9 +19,57 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 
     <?php echo $form->textFieldRow($model, 'slug', array('class' => 'span5', 'maxlength' => 255)); ?>
     <?php echo $form->textAreaRow($model, 'desc', array('rows' => 3, 'class' => 'span5')); ?>
+     <div class="control-group ">        
+
+
+        <label for="Contents_content" class="control-label required">Video</label>
+        <div class="controls">
+            <?php
+            $this->widget('ext.tinymce.TinyMce', array(
+                'model' => $model,
+                'attribute' => 'video',
+                // Optional config
+                'compressorRoute' => 'tinyMce/compressor',
+                'spellcheckerRoute' => 'tinyMce/spellchecker',
+                'fileManager' => array(
+                    'class' => 'ext.elFinder.TinyMceElFinder',
+                    'connectorRoute' => 'sysadmin/elfinder/connector',
+                ),
+                'htmlOptions' => array(
+                    'rows' => 6,
+                    'cols' => 60,
+                ),
+            ));
+            ?>
+
+        </div>
+    </div>
+
+     <div class="control-group ">        
+
+
+        <label for="Contents_content" class="control-label required">Translate</label>
+        <div class="controls">
+            <?php
+            $this->widget('ext.tinymce.TinyMce', array(
+                'model' => $model,
+                'attribute' => 'translate',
+                // Optional config
+                'compressorRoute' => 'tinyMce/compressor',
+                'spellcheckerRoute' => 'tinyMce/spellchecker',
+                'fileManager' => array(
+                    'class' => 'ext.elFinder.TinyMceElFinder',
+                    'connectorRoute' => 'sysadmin/elfinder/connector',
+                ),
+                'htmlOptions' => array(
+                    'rows' => 6,
+                    'cols' => 60,
+                ),
+            ));
+            ?>
+        </div>
+    </div>
     <div class="control-group ">        
-
-
         <label for="Contents_content" class="control-label required">content <span class="required">*</span></label>
         <div class="controls">
             <?php
