@@ -8,9 +8,9 @@
                     <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/hoc-va-choi.html'; ?>'>Học và chơi</a></li>
                     <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/bai-test.html'; ?>'>Bài test</a></li>
                     <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/hoc-offline.html'; ?>'>Học offline</a></li>
-                    <li><a href='#'>Video</a></li>
-                    <li><a href='#'>T.A Phổ thông</a></li>
-                    <li><a href='#'>Chấm điểm</a></li>
-                    <li><a href='#' class='li-last'>Diễn đàn</a></li>
+                    <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/video.html'; ?>'>Video</a></li>
+                    <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/tieng-anh-pho-thong.html'; ?>'>T.A Phổ thông</a></li>
+                    <li><a href='#' class="li-last">Chấm điểm</a></li>
+                    <!-- <li><a href='#' class='li-last'>Diễn đàn</a></li> -->
                 </ul>
             </div><!-- end #menu-bar -->
