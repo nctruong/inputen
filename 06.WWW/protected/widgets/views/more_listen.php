@@ -24,28 +24,29 @@
 </div><!-- end .row-fluid -->
 <div class="clearfix"></div>
 <div id="bottom-page">
-    <?php if(count($same_thread) > 0){  foreach($same_thread as $v => $k) { ?>
-    <div class="row-fluid same-type type">
-        <span>CÙNG THỂ LOẠI</span>
-    </div><!-- end .row-fluid same-type -->
-    
-    <div class="row-fluid type-item type">
-        <div class="span2">
-            <a href="">
-                <img src="<?php echo Yii::app()->getBaseUrl() ?>/data/img/type.jpg" />
-            </a>
-        </div>
-        <div class="span10">
-            <div class="row-fluid title">
-                <a href="<?php echo Yii::app()->getBaseUrl(true)?>/<?php echo $this->r_slug ?>/<?php echo $category_[$k->category_id]."-".$k->category_id."/".$k->slug."-".$k->id?>.html"><?php echo $k->title ?></a>
-            </div><!-- end .title -->
-            <div class="row-fluid">
-                Trong phần học này chúng ta sẽ được học các bài ngữ pháp tiếng Anh thường được sử dụng ...
-            </div><!-- end .row-fluid -->                        
-        </div>
-    </div><!-- end .row-fluid -->
-    <?php 
+    <?php if (count($same_thread) > 0) { ?>
+        <div class="row-fluid same-type type">
+            <span>CÙNG THỂ LOẠI</span>
+        </div><!-- end .row-fluid same-type -->
+        <?php foreach ($same_thread as $v => $k) { ?>    
+            <div class="row-fluid type-item type">
+                <div class="span2">
+                    <a href="">
+                        <img src="<?php echo Yii::app()->getBaseUrl() ?>/data/img/type.jpg" />
+                    </a>
+                </div>
+                <div class="span10">
+                    <div class="row-fluid title">
+                        <a href="<?php echo Yii::app()->getBaseUrl(true) ?>/<?php echo $this->r_slug ?>/<?php echo $category_[$k->category_id] . "-" . $k->category_id . "/" . $k->slug . "-" . $k->id ?>.html"><?php echo $k->title ?></a>
+                    </div><!-- end .title -->
+                    <div class="row-fluid">
+                        Trong phần học này chúng ta sẽ được học các bài ngữ pháp tiếng Anh thường được sử dụng ...
+                    </div><!-- end .row-fluid -->                        
+                </div>
+            </div><!-- end .row-fluid -->
+        <?php
     }
- } ?>
-    
+}
+?>
+
 </div>

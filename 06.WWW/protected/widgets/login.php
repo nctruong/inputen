@@ -13,10 +13,14 @@ class Login extends MiisWidget {
 
     public function run() {
         parent::run();
-        
+        $user = array();
+        if($this->_session['isLogin']==1 & $this->_session['login_id'] > 0){
+            $user = Member::model()->findByPk($this->_session['login_id']);
+            
+        }
+        //$this->_session['login_id']
         $user_login = new UserLoginForm;
-        
-        $this->render('login',array('iUser' => $user_login));
+        $this->render('login',array('iUser' => $user_login,'user' => $user));
     }
 
 }

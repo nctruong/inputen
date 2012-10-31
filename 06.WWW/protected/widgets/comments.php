@@ -16,6 +16,10 @@ class Comments extends MiisWidget {
     }
     public function run() {
         parent::run();
+        $act = '';
+        if($_POST){
+            $act = $_POST['act'];
+        }
         $data = Yii::app()->getBasePath() . '/../data/emoticon/';
         $images = glob($data . '*.gif');
         $items = array();
@@ -32,7 +36,7 @@ class Comments extends MiisWidget {
             $stt = count(Comment::model()->findAll(array('condition' => 'content_id = ' . $this->c_id . ' and mem_id = ' . $this->u_id)));
         }
         if ($stt == 0) {
-            if (isset($_POST['cmt_ajax'])) {
+            if ($act=='submit') {
                 $model = new Comment;
                 $model->attributes = $_POST['Comment'];
                 $comment = htmlspecialchars($model->comment);
@@ -54,7 +58,19 @@ class Comments extends MiisWidget {
                 }
             }
         }
-        $comments_item = Comment::model()->findAll('content_id = ' . $this->c_id);
+        $condition = "content_id = ".$this->c_id;
+        if($act == 'view'){
+            $name = $_POST['filter_name'];
+            $type = $_POST['filter_type'];
+            $order = array();
+            if($name != '')
+                $condition .=" and mem_username like '%".$name."%'";
+            if($type == 1)
+                $order[] = "order by mem_id";
+            if($type == 1)
+                $order[] = "order by mem_id desc";
+        }
+        $comments_item = Comment::model()->findAll($condition);
         $this->render('comments', array('items' => $items, 'stt' => $stt, 'login' => $this->u_id, 'comments_item' => $comments_item,'class'=>@$class));
     }
 

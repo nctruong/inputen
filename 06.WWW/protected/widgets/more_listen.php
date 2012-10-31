@@ -9,6 +9,7 @@ class More_listen extends MiisWidget {
 
     public $p_id;
     public $c_id;
+    public $tax_id;
     public $r_slug;
     public $own;
     public $new;
@@ -20,6 +21,7 @@ class More_listen extends MiisWidget {
     public function run() {
         parent::run();
         $data = array();
+        $this->r_slug = Taxonomy::model()->findByPk($this->tax_id)->slug;
         $current = Content::model()->findByPk($this->p_id);
         $data['cat'] = Category::model()->findByPk($this->c_id);
         $id = Category::model()->findAll(array('condition' => 'taxonomy_id =  '.$data['cat']->taxonomy_id));
@@ -40,8 +42,8 @@ class More_listen extends MiisWidget {
         
         $data['same_thread'] = Content::model()->findAll(array('condition' => 'id != :pid and category_id in ( :cid ) and state = 1',
                                                                'params' => array(':pid' => $this->p_id, ':cid' => implode(",", $arr_id)),
+                                                               'order' => 'rand()',
                                                                'limit' => 3
-                                                               
                                                           ));
         if (count($this->own) == 0) {
             $this->own = $current;
