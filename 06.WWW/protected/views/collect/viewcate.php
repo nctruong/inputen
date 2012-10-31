@@ -2,7 +2,7 @@
     <div class='page3'>
         <div class='title_ab span4'>
             <span class="row-fluid span12 title_small">THỂ LOẠI</span>
-            <span class="row-fluid span12 title_big"><?php echo $sroot->name ?>-<?php echo $parent->title?></span>           
+            <span class="row-fluid span12 title_big"><?php echo $sroot->name ?></span>           
         </div>
         
     </div>
