@@ -32,7 +32,22 @@ if ($item->premium == 1) {
                         <div class="row-fluid line"></div>       
                     </div><!-- end .row-fluid -->    
                 </div><!-- end .page-wrapper-top-->    		
-                <div class="page-wrapper-main">
+               <div class="page-wrapper-main">
+                    <?php if ($item->video != '' & $item->content != '') { ?>
+                        <div class='row_fluid '>
+                            <div class='span7 video_div'>
+                                <?php echo $item->video ?>
+                            </div>
+                            <div class='span5 stranslate_div'>
+                                <center><button class='enab_tip btn'>Bật lời dịch</button></center>
+                                <?php echo $item->translate ?>
+                            </div>
+                            <div class="clear" style="clear:both"></div>
+                        </div>
+
+                        <?php
+                    }
+                    ?>
                     <?php
                     echo $item->content;
                     ?>
