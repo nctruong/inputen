@@ -57,7 +57,7 @@ class MemberController extends MiisController {
         if (isset($_POST['UserLoginForm'])) {
             $iUser_login->attributes = $_POST['UserLoginForm'];
             if ($iUser_login->validate() && $iUser_login->login()) {
-                $this->redirect(Yii::app()->getBaseUrl(true));
+                $this->redirect($_SERVER['HTTP_REFERER']);
                 
             } else {
                 Yii::app()->user->setFlash('error', 'Sai username hoặc password.');
@@ -72,7 +72,7 @@ class MemberController extends MiisController {
               $this->_session->destroy('isLogin');
               $this->_session->destroy('login_id');
         }
-        $this->redirect(Yii::app()->getBaseUrl(true));
+        $this->redirect($_SERVER['HTTP_REFERER']);
         
     }
 

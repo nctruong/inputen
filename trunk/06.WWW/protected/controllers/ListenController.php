@@ -1,5 +1,4 @@
 <?php
-
 class ListenController extends MiisController {
 
     public $title;

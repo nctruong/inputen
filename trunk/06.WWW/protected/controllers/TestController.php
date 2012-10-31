@@ -1,6 +1,7 @@
 <?php
 
 class TestController extends MiisController {
+    
 
     public $title;
     public $root_id;
