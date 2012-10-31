@@ -47,8 +47,22 @@ return array(
                 'thanh-vien' => 'member',
                 'thanh-vien/dang-ky' => 'member/register',
                 'thanh-vien/dang-nhap' => 'member/login',
-                'hoc-qua-clip/<controller:\w+>/<action:\w+>' => 'news/<controller>/<action>',
-                                
+                'thanh-vien/<id:\d+>' => 'member/detail',
+                
+                
+                
+                'video' => 'video',
+                'video/<title:.*?>-<tid:\d+>/<slug:.*?>-<id:\d+>' => array('video/view/', 'urlSuffix' => '.html'),
+                'video/<slug:.*>-<id:\d+>' => 'video/viewlist/',
+
+                'tieng-anh-pho-thong' => 'collect',
+                'tieng-anh-pho-thong/<slug:.*?>-<sid:\d+>/lop/<title:.*?>-<tid:\d+>' => array('collect/viewcate/', 'urlSuffix' => '.html'),                
+                'tieng-anh-pho-thong/<title:.*?>-<pid:\d+>/<slug:.*?>-<cid:\d+>/<slug2:.*?>-<id:\d+>' => array('collect/view/', 'urlSuffix' => '.html'),
+                'tieng-anh-pho-thong/<slug:.*>-<id:\d+>' => 'collect/viewlist/',
+                
+
+                
+                
                 
                 'bai-hoc' => 'listen',
                 'bai-hoc/<title:.*?>-<tid:\d+>/<slug:.*?>-<id:\d+>' => array('listen/view/', 'urlSuffix' => '.html'),
