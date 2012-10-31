@@ -7,23 +7,8 @@ class SiteController extends MiisController {
     }
     public function actionIndex() {
         $this->title = 'Trang chủ TiengAnh123';
-        $this->render('index');
-    }
-    public function ActionTintuc() {
-        $this->title = 'Tin tức';        
-        $this->render('news');
-    }
-//    public function ActionBaihoc() {                
-//        $this->title = 'Bài học';        
-//        $this->render('baihoc');
-//    }
-    public function ActionHocquaclip() {                
-        $this->title = 'Học qua clip';        
-        $this->render('video');
-    }
-    public function ActionHocvachoi() {                
-        $this->title = 'Học và chơi';        
-        $this->render('study');
+        $lich_hoc = Content::model()->findAll("category_id = 47 and state = 1");
+        $this->render('index',array('lich_hoc'=>$lich_hoc));
     }
     /**
      * This is the action to handle external exceptions.

@@ -9,6 +9,7 @@ class CollectController extends MiisController {
         $this->root_id = 10;
         $this->root_slug = 'tieng-anh-pho-thong';
         $this->sroot = Taxonomy::model()->findByPk($this->root_id);
+        $this->title = $this->sroot->name;
     }
     public function actionViewcate(){
         $idparent = Yii::app()->request->getparam('sid');
@@ -28,7 +29,7 @@ class CollectController extends MiisController {
     }
     public function actionIndex() {
         
-        $this->title = 'Bài học';        
+               
         $criteria=new CDbCriteria;
         $criteria->addCondition(array('taxonomy_id =  :cid', 'state = :stt','parent = 0'));    
         $criteria->params = array(':cid' => $this->root_id,':stt' => 1);
