@@ -14,9 +14,12 @@ class MemberController extends MiisController {
 
         $this->render('index', array('model' => $model));
     }
+    public function actionDetail(){
+        $id = Yii::app()->request->getParam("id");
+        echo $id;
+    }
 
     public function actionRegister() {
-
         $model = new Member;
         if (isset($_POST['Member'])) {
             $model->attributes = $_POST['Member'];
@@ -28,8 +31,6 @@ class MemberController extends MiisController {
                 }
             }
         }
-
-
         $this->render('register', array('model' => $model));
     }
 
@@ -57,8 +58,8 @@ class MemberController extends MiisController {
             $iUser_login->attributes = $_POST['UserLoginForm'];
             if ($iUser_login->validate() && $iUser_login->login()) {
                 $this->redirect(Yii::app()->getBaseUrl(true));
+                
             } else {
-                //display error
                 Yii::app()->user->setFlash('error', 'Sai username hoặc password.');
             }
         }
@@ -68,9 +69,11 @@ class MemberController extends MiisController {
 
     public function actionLogout() {
         if (isset($this->_session['isLogin'])) {
-            //   $this->_session->destroy('isLogin');
-            //  $this->_session->destroy('login_id');
+              $this->_session->destroy('isLogin');
+              $this->_session->destroy('login_id');
         }
+        $this->redirect(Yii::app()->getBaseUrl(true));
+        
     }
 
 }

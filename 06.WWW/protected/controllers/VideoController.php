@@ -1,19 +1,21 @@
 <?php
 
-class ListenController extends MiisController {
+class VideoController extends MiisController {
 
     public $title;
     public $root_id;
+    public $root_slug;
 
     function init() {
-        $this->root_id = 2;
+        $this->root_id = 9;
+        $this->root_slug = 'video';
     }
 
     public function actionIndex() {
         $this->title = 'Bài học';
         $criteria = new CDbCriteria;
         $criteria->addCondition(array('taxonomy_id =  :cid', 'state = :stt'));
-        $criteria->params = array(':cid' => 2, ':stt' => 1);
+        $criteria->params = array(':cid' => $this->root_id, ':stt' => 1);
         $data = Category::model()->findAll($criteria);
         $total = 0;
         foreach ($data as $k => $v) {
@@ -45,9 +47,11 @@ class ListenController extends MiisController {
                 $data['root_cat'] = Taxonomy::model()->findbyPk($data['cat']->taxonomy_id);
                 $this->title = $data['item']->title;
                 Content::model()->updateByPk($id, array('view' => ($data['item']->view + 1)));
+                $data['comment_model'] = Comment::model()->findAll(array('condition' => 'content_id = :cid and state = 1', 'params' => array(':cid' => $id)));
                 if ($data['item']->category_id != $cid) {
                     throw new CHttpException(404, 'PAGE NOT FOUND.');
                 }
+
                 $this->render('view', $data);
             } else {
                 throw new CHttpException(404, 'PAGE NOT FOUND.');
