@@ -5,7 +5,7 @@
             <span class="row-fluid span12 title_big"><?php echo $cat->title ?></span>           
         </div>
         <div id='' class='span6 page3_2'>
-            <?php echo $cat->desc ?>
+            <?php  echo $cat->desc ?>
         </div>
     </div>
 </div><!-- end #sub-nav -->
@@ -31,7 +31,9 @@ if ($item->premium == 1) {
                     </div><!-- end .row-fluid -->    
                 </div><!-- end .page-wrapper-top-->    		
                 <div class="page-wrapper-main">
+                    
                     <?php
+                    
                     Libraries::filterContent($item->content);
                     ?>
                 </div><!-- end .page-wrapper-main -->
@@ -53,7 +55,7 @@ if ($item->premium == 1) {
                 <div class="clearfix"></div>
             </div><!-- end page-obj -->
         </div> <!-- end #page-wrapper-->
-        <?php $this->widget('more_listen', array('p_id' => $item->id, 'c_id' => $item->category_id,'r_slug' => 'bai-test')); ?>
+        <?php $this->widget('more_listen', array('p_id' => $item->id, 'c_id' => $item->category_id,'tax_id' => $this->root_id)); ?>
         <?php $this->widget('comments',array('c_id' => $item->id)) ?>
         
         </div><!-- end span9 -->

@@ -36,7 +36,6 @@
                     $i = 0 ;
                     foreach($category as $row){ 
                     if(Libraries::isEnable($row->id)){  $i++;?>
-
                         <div class='en-box row-fluid'>
                         <div class='row-fluid en-box-title'>
                            <a class='title_cate' href="<?php echo Yii::app()->getBaseUrl(true) ?>/tin-tuc/<?php echo $row->slug."-".$row->id.".html" ?>"><?php echo  $row->title; ?></a>

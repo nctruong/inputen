@@ -1,7 +1,7 @@
 <?php
 $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'id' => 'user-form',
-    'htmlOptions' => array('class' => 'form-horizontal'),
+    'htmlOptions' => array('class' => 'form-horizontal','enctype' => 'multipart/form-data'),
     'enableClientValidation' => true,
     'clientOptions' => array(
         'validateOnSubmit' => true,

@@ -1,3 +1,11 @@
+<div id="sub-nav" class="row-fluid">
+                <div id="title" class="span9">
+                   VIDEO
+                </div>
+                <div id="image-title" class="span3">
+                    <img src="<?php echo Yii::app()->getBaseUrl(true)?>/themes/default/assets/img/image-sub.png">
+                </div>
+</div>
 <div id='wrap-en' class='row-fluid'>
     <div class="span9" id='wrap-body'>
         <div class='row-fluid header-at'>
@@ -7,14 +15,15 @@
                 <?php
                 $i = 0;
                 foreach ($category as $row) {
-                    if(Libraries::isEnable($row->id)){  $i++;
+                    if(Libraries::isEnable($row->id)){ 
+                    $i++;
                     ?>
                     <div class="en-box row-fluid">
                         <div class="row-fluid en-box-title">
-                            <?php echo "<a class='title_cate' href='" . Yii::app()->getBaseUrl(true) . "/hoc-offline/" . $row->slug . "-" . $row->id . ".html'>" . $row->title . "</a>" ?>
+                            <?php echo "<a class='title_cate' href='" . Yii::app()->getBaseUrl(true) . "/".$this->root_slug."/" . $row->slug . "-" . $row->id . ".html'>" . $row->title . "</a>" ?>
                         </div>
                         <?php
-                        $this->widget('sub_news', array('cat_id' => $row->id, 'type' => 'listen', 'slug' => 'hoc-offline'))
+                        $this->widget('sub_news', array('cat_id' => $row->id, 'type' => 'listen', 'slug' => $this->root_slug))
                         ?>
                     </div><!-- end .en-box //ngu phap -->
                     <?php
@@ -22,7 +31,7 @@
                         echo "</div>";
                         echo "<div id='en-mid' class='span6 pag2'>";
                     }
-                    }
+                }
                 }
                 ?>
             </div>

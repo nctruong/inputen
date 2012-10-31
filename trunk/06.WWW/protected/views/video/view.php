@@ -21,8 +21,10 @@
                             <span class="vip"><?php
 if ($item->premium == 1) {
     echo 'Bài học vip';
+    
 }
 ?></span>
+                            
                         </div>
                         <div class="span3 iconx-container">
                             <div class="iconx-cmt"><?php echo count($comment_model)?></div><div class="iconx-view"><?php echo ($item->view + 1)?></div>
@@ -32,7 +34,7 @@ if ($item->premium == 1) {
                 </div><!-- end .page-wrapper-top-->    		
                 <div class="page-wrapper-main">
                     <?php
-                    Libraries::filterContent($item->content);
+                    echo $item->content;
                     ?>
                 </div><!-- end .page-wrapper-main -->
                 <div class="clearfix"></div>
@@ -53,7 +55,9 @@ if ($item->premium == 1) {
                 <div class="clearfix"></div>
             </div><!-- end page-obj -->
         </div> <!-- end #page-wrapper-->
+        
         <?php $this->widget('more_listen', array('p_id' => $item->id, 'c_id' => $item->category_id,'tax_id' => $this->root_id)); ?>
+        
         <?php $this->widget('comments',array('c_id' => $item->id)) ?>
         
         </div><!-- end span9 -->
