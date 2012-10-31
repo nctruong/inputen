@@ -4,9 +4,10 @@
     </div><!-- end .row-fluid -->
     <div class="row-fluid  margin_topbot10 type">
         <div class="row-fluid align_right">
-                <input class="input-medium" name="filter_name" type="text" value="<?php echo @$_POST['filter_name']?>" /><select class="span2 input-mini" name='filter_type'><option value="1" selected="selected">Mới nhất</option><option value="0" >Cũ hơn</option></select>&nbsp;<button class="btn" onclick="$('.cmt_').val('view')">Tìm bài viết</button>
+            <input class="input-medium" name="filter_name" type="text" value="<?php echo @$_POST['filter_name'] ?>" /><select class="span2 input-mini" name='filter_type'><option value="1" selected="selected">Mới nhất</option><option value="0" >Cũ hơn</option></select>&nbsp;<button class="btn" style="margin-bottom:9px" onclick="$('.cmt_').val('view')">Tìm bài viết</button>
         </div>   
-        <?php if (count($comments_item) > 0) {
+        <?php
+        if (count($comments_item) > 0) {
             foreach ($comments_item as $k => $v) {
                 ?>
                 <div class="comment-item span10 margin_topbot10 offset2">
@@ -40,8 +41,9 @@
                         <a href=""><img src="<?php echo Yii::app()->theme->getBaseUrl() ?>/assets/img/no-avt.png"></a>
                     </div><!-- end avatar -->
                 </div><!-- end .comment-item -->
-    <?php }
-} ?>
+            <?php }
+        }
+        ?>
         <div class="clearfix"></div>
         <!--    <div class='span10 offset2 align_right'>               
                 <div class="pagination">
@@ -101,7 +103,7 @@
                     <div class="span10 offset3 center">
                         <form>
                             <button class="btn btn-primary">Đăng nhập</button>
-                            <button class="btn btn-primary">Đăng ký</button>
+                            <a class="btn btn-primary" href="<?php echo Yii::app()->getBaseUrl()?>/thanh-vien/dang-ky.html" >Đăng ký</a>
                         </form>
                     </div>
                 </div>
