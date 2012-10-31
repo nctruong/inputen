@@ -12,6 +12,8 @@ return array(
         'application.models.*',
         'application.components.*',
      ),
+     //set language
+    'sourceLanguage'=>'vi',
     'modules' => array(
         'members',
         'sysadmin',
