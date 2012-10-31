@@ -4,9 +4,12 @@ class LernController extends MiisController {
 
     public $title;
     public $root_id;
+    public $sroot;
 
     function init() {
         $this->root_id = 6;
+        $this->sroot = Taxonomy::model()->findByPk($this->root_id);
+        
     }
     public function actionIndex() {
         $this->title = 'Học và chơi';
