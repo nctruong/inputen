@@ -1,14 +1,20 @@
 <div id="sub-nav" class="row-fluid">
                 <div id="title" class="span9">
-                   VIDEO
+                   <?php echo $this->sroot->name; ?>
                 </div>
                 <div id="image-title" class="span3">
                     <img src="<?php echo Yii::app()->getBaseUrl(true)?>/themes/default/assets/img/image-sub.png">
                 </div>
 </div>
 <div id='wrap-en' class='row-fluid'>
-
-                <div id='en-left' class='span5'>
+    
+    <div class="span9 collect_link">
+        <ul>
+            <?php $i=5; foreach($category as $k){ $i++;?>
+            <li><a class='cls<?php echo $i?>' title ="<?php echo $k->title?>" href="<?php echo Yii::app()->getBaseUrl(true) ?>/tieng-anh-pho-thong/<?php echo $k->slug . "-" . $k->id . ".html" ?>"></a></li>
+            <?}?>
+        </ul>
+<!--                <div id='en-left' class='span5'>
                     <?php
                     $i = 0;
                     foreach ($category as $row) {
@@ -31,7 +37,7 @@
                                 $this->widget('sub_news', array('cat_id' => $row->id, 'slug' => 'tieng-anh-pho-thong', 'type'=>'collect'))
                                 ?>
 
-                            </div><!-- end .en-box //ngu phap -->       
+                            </div> end .en-box //ngu phap        
                             <?php
                             if ($i == round($total / 2)) {
                                 echo "</div>";
@@ -43,9 +49,10 @@
                         <?php
                     }
                     ?>
-                </div>
+                </div>-->
 
                 <?php ?>
+    </div>
                 <div id='en-right' class='span3'>
                 <?php $this->widget('search'); ?>
                     <?php $this->widget('login'); ?>
