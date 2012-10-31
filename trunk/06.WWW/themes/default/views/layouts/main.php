@@ -12,6 +12,8 @@
             <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/en-style.css" rel="stylesheet"/>
             <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/page2.css" rel="stylesheet"/>            
             <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/row.css" rel="stylesheet"/>            
+                      
+            
                         
     </head>
     <body>
@@ -30,7 +32,7 @@
                     <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/site/hocvachoi.html'; ?>'>Học và chơi</a></li>
                     <li><a href='#'>Bài test</a></li>
                     <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/hoc-offline.html'; ?>'>Học offline</a></li>
-                    <li><a href='#'>Video</a></li>
+                     <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/video.html'; ?>'>Video</a></li>
                     <li><a href='#'>T.A Phổ thông</a></li>
                     <li><a href='#'>Chấm điểm</a></li>
                     <li><a href='#' class='li-last'>Diễn đàn</a></li>
@@ -85,7 +87,8 @@
                 </div>
             </div>
         </div><!-- end #footer-info -->
-
+        <a class="tip" href="javascript:void(0)" title="This is the title|The first set of contents comes after the first delimiter in the title.|In this case, the delimiter is a pipe">
+hehheeheh</a>
     </body>
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery-1.7.1.min.js"></script>
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery-ui-1.8.0.min.js" type='text/javascript'></script>
@@ -94,6 +97,53 @@
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery.mCustomScrollbar.js"></script>
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/cufon-yui.js"></script>
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/League_Gothic_400.font.js"></script>
-    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/script.js"></script>    
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/script.js"></script>       
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/chilltip-packed.js"></script>
+    
+    <script>
+        function remove_title(){
+            $("div.stranslate_div a,a.tip").each(function(){  
+                tam_tit = $(this).attr("title");
+                $(this).attr("alt",tam_tit);
+                $(this).attr('title','');
+            })
+        }
+        $().ready(function(){
+            //$('a.tip').cluetip({splitTitle: '|'});
+            remove_title();
+            $(".enab_tip").click(function(){
+                if($(this).text()=='Tắt lời dịch'){
+                        $(this).text("Bật lời dịch");
+                        $("div.stranslate_div a,a.tip").unbind("hover");
+                        remove_title();
+                }else{
+                        $("div.stranslate_div a,a.tip").each(function(){
+                            tam_tit = $(this).attr("alt");
+                            $(this).attr("title",tam_tit);
+                        })
+                        $(this).text("Tắt lời dịch");
+                         <?php if($this->_session['isLogin']){?>
+                        $("div.stranslate_div a,a.tip").ChillTip().hover(function(){
+                           $(this).css("background","#FCD116");
+                        },function(){$(this).css("background","none");});
+                        <?php } else { ?>
+                        $("div.stranslate_div a,a.tip").ChillTip().hover(function(){ $(this).css("background","#FCD116");
+                        },function(){$(this).css("background","none");});
+                            $("div.stranslate_div a").each(function(){
+                                $(this).attr("title",'Bạn phải là thành viên VIP mới xem được lời dịch này');
+                            })
+                        <?php }?> 
+                }
+            })
+            
+           
+        })
+         </script>
+        
+        
+        
+    ?>
+    
+    
 </html>
 

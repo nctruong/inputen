@@ -468,7 +468,43 @@ div.stranslate_div{
     width:40% !important;
     padding:10px;
 }
+div.collect_link ul{
+    margin-left: 10px;
+}
+div.collect_link ul li a{
+    background:url('../img/collect.png') no-repeat;
+    width:157px;
+    height:155px;
+    float:left;
+    margin:5px;
 
+    padding:5px 2px;
+    
+}
+div.collect_link ul li a.cls6{
+    background-position: -7px -10px;
+}
+div.collect_link ul li a.cls7{
+    background-position: -183px -10px;
+}
+div.collect_link ul li a.cls8{
+    background-position: -356px -10px;
+}
+div.collect_link ul li a.cls9{
+    background-position: -529px -10px;
+}
+div.collect_link ul li a.cls10{
+    background-position: -8px -200px;
+}
+div.collect_link ul li a.cls11{
+    background-position: -183px -200px;
+}
+div.collect_link ul li a.cls12{
+    background-position: -356px -200px;
+}
+div.collect_link ul li a.cls13{
+    background-position: -529px -200px;
+}
 
 
 
