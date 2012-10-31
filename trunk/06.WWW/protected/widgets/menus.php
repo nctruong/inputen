@@ -5,7 +5,11 @@ class Menus extends MiisWidget {
      }
      public function run() {
         parent::run();
-        $model = Taxonomy::model();
-        $this->render('menu');
+        
+        $criteria = new CDbCriteria();
+        $criteria->order='t.id ASC';
+        
+        $menus = Taxonomy::model()->findAll($criteria);
+        $this->render('menu', array('menus' => $menus, 'total' => count($menus)));
      }
 }

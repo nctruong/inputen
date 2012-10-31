@@ -19,22 +19,6 @@ class TinyMceController extends CController {
         );
     }
 
-        // in view
-//        $this->widget('ext.tinymce.TinyMce', array(
-//            'model' => $model,
-//            'attribute' => 'tinyMceArea',
-//            // Optional config
-//            'compressorRoute' => 'tinyMce/compressor',
-//            'spellcheckerRoute' => 'tinyMce/spellchecker',
-//            'fileManager' => array(
-//                'class' => 'ext.elFinder.TinyMceElFinder',
-//                'connectorRoute'=>'admin/elfinder/connector',
-//            ),
-//            'htmlOptions' => array(
-//                'rows' => 6,
-//                'cols' => 60,
-//            ),
-//        ));
 }
 
 ?>

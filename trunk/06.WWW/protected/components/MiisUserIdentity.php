@@ -24,7 +24,7 @@ class MiisUserIdentity extends CUserIdentity {
             
                     
             $this->_id = $user->id;
-            //$this->setState('lastLoginTime', $user->last_login);
+            
             $this->errorCode = self::ERROR_NONE;
         }
         return !$this->errorCode;
