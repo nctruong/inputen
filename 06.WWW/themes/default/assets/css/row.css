@@ -252,6 +252,9 @@ button.icon-heart{
 .align_left{
 	text-align:left;
 }
+.align_center{
+	text-align:center;
+}
 .navigator span{
 	color:#7C7C7C;
 	font-size:15px;
@@ -454,8 +457,17 @@ a.title_cate:hover{
 .bold{
     font-weight:bold;
 }
-
-
+div.video_div{
+    max-height: 650px;
+    /* overflow: scroll; */
+}
+div.stranslate_div{
+    height:650px;
+    overflow-y: scroll;
+    border:1px solid #ccc;
+    width:40% !important;
+    padding:10px;
+}
 
 
 
