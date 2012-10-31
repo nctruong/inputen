@@ -18,11 +18,11 @@
                     <div class=" row-fluid relative">
                         <div class="span10">
                             <span class="title"><?php echo $item->title ?></span>  							
-                            <span class="vip"><?php
+                           <p> <span class="vip"><?php
 if ($item->premium == 1) {
     echo 'Bài học vip';
 }
-?></span>
+?></span></p>
                         </div>
                         <div class="span3 iconx-container">
                             <div class="iconx-cmt"><?php echo count($comment_model)?></div><div class="iconx-view"><?php echo ($item->view + 1)?></div>
@@ -31,8 +31,23 @@ if ($item->premium == 1) {
                     </div><!-- end .row-fluid -->    
                 </div><!-- end .page-wrapper-top-->    		
                 <div class="page-wrapper-main">
+                    <?php if ($item->video != '' & $item->content != '') { ?>
+                        <div class='row_fluid '>
+                            <div class='span7 video_div'>
+                                <?php echo $item->video ?>
+                            </div>
+                            <div class='span5 stranslate_div'>
+                                <center><button class='enab_tip btn'>Bật lời dịch</button></center>
+                                <?php echo $item->translate ?>
+                            </div>
+                            <div class="clear" style="clear:both"></div>
+                        </div>
+
+                        <?php
+                    }
+                    ?>
                     <?php
-                    Libraries::filterContent($item->content);
+                    echo $item->content;
                     ?>
                 </div><!-- end .page-wrapper-main -->
                 <div class="clearfix"></div>
