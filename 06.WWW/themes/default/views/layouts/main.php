@@ -9,6 +9,7 @@
                 <link href="css/ie.css" rel="stylesheet">
             <![endif]--> 
             <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/jquery.mCustomScrollbar.css" rel="stylesheet"/>
+            
             <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/en-style.css" rel="stylesheet"/>
             <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/page2.css" rel="stylesheet"/>            
             <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/row.css" rel="stylesheet"/>            
@@ -87,8 +88,6 @@
                 </div>
             </div>
         </div><!-- end #footer-info -->
-        <a class="tip" href="javascript:void(0)" title="This is the title|The first set of contents comes after the first delimiter in the title.|In this case, the delimiter is a pipe">
-hehheeheh</a>
     </body>
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery-1.7.1.min.js"></script>
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery-ui-1.8.0.min.js" type='text/javascript'></script>
@@ -99,6 +98,7 @@ hehheeheh</a>
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/League_Gothic_400.font.js"></script>
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/script.js"></script>       
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/chilltip-packed.js"></script>
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/bootbox.min.js"></script>
     
     <script>
         function remove_title(){
@@ -134,16 +134,8 @@ hehheeheh</a>
                             })
                         <?php }?> 
                 }
-            })
-            
-           
+            }) 
         })
          </script>
-        
-        
-        
-    ?>
-    
-    
 </html>
 
