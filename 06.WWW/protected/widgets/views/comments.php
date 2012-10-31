@@ -102,7 +102,7 @@
                     </div>
                     <div class="span10 offset3 center">
                         <form>
-                            <button class="btn btn-primary">Đăng nhập</button>
+                            <button class="btn btn-primary login_btn">Đăng nhập</button>
                             <a class="btn btn-primary" href="<?php echo Yii::app()->getBaseUrl()?>/thanh-vien/dang-ky.html" >Đăng ký</a>
                         </form>
                     </div>
@@ -110,3 +110,21 @@
 <?php } ?>
         </div>
 </form>   
+<div id="myModal" class="modal hide fade" style="width:250px">
+    <!-- dialog contents -->
+    <div class="modal-body">
+        <div class="row-fluid margin_topbot10"> 
+    <div class="top_login">
+    </div><!--end .top_login-->
+    <div class="body_login">
+                    <form class="form-vertical" id="verticalForm" action="http://localhost/06.WWW/thanh-vien/dang-nhap.html" method="post">            <label for="UserLoginForm_username" class="required">Username <span class="required">*</span></label><input placeholder="Tên đăng nhập" class="span12" name="UserLoginForm[username]" id="UserLoginForm_username" type="text"><span class="help-block error" id="UserLoginForm_username_em_" style="display: none"></span>            <label for="UserLoginForm_password" class="required">Password <span class="required">*</span></label><input placeholder="**********" class="span12" name="UserLoginForm[password]" id="UserLoginForm_password" type="password"><span class="help-block error" id="UserLoginForm_password_em_" style="display: none"></span>
+            <button class="btn btn-primary btn-small btn" type="submit" name="yt0">Đăng nhập</button>            <div class="checkbox"> <label class="checkbox" for="UserLoginForm_rememberMe"><input id="ytUserLoginForm_rememberMe" type="hidden" value="0" name="UserLoginForm[rememberMe]"><input name="UserLoginForm[rememberMe]" id="UserLoginForm_rememberMe" value="1" type="checkbox">
+Remember me<span class="help-block error" id="UserLoginForm_rememberMe_em_" style="display: none"></span></label> <br> <a href="#">Quên mật khẩu?</a>
+            </div>
+            </form>            <div id="yw0"></div>    </div><!--end .body_login-->
+</div>
+        
+    </div>
+    <!-- dialog buttons -->
+    <div class="modal-footer"><a href="#" class="btn primary">OK</a></div>
+</div>
