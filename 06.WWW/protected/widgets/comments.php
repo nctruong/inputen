@@ -18,7 +18,7 @@ class Comments extends MiisWidget {
         parent::run();
         $act = '';
         if($_POST){
-            $act = $_POST['act'];
+            $act = @$_POST['act'];
         }
         $data = Yii::app()->getBasePath() . '/../data/emoticon/';
         $images = glob($data . '*.gif');
