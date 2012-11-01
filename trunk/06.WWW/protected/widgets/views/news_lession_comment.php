@@ -1,41 +1,72 @@
 <div class='span6'>
     <div class='block-info'>
         <ul class='block-info-title'>
-            <li class='active'><a href='#'>Bài học mới</a></li>
-            <li><a href='#'>Phản hồi mới</a></li>
-            <li><a href='#'>Tin tức mới</a></li>
+            <li class='active'><a href='tab1"'>Bài học mới</a></li>
+            <li><a href='tab2'>Phản hồi mới</a></li>
+            <li><a href='tab3'>Tin tức mới</a></li>
         </ul>
         <div class='block-info-body'>
+            <div class="_tab" id="tab1">
             <ul>
-                <li>
-                    <a href='#'>animal at play</a>
-                    <p>Animal</p>
+                <?php $i=0; foreach($listen as $k) {?>
+                <?php
+                 if($i==(count($listen) - 1)){
+                            echo "<li style='boder:0px'>";
+                        }else{
+                            echo "<li>";
+                        }
+                ?>
+                    <a href='<?php echo Yii::app()->getBaseUrl(true)?>/<?php echo $k->category->taxonomy->slug ?>/<?php echo $k->category->slug."-".$k->category->id."/".$k->slug."-".$k->id?>.html'><?php echo $k->title?></a>
+                    <p><?php echo Libraries::Cutstring($k->desc, 65)?></p>
                 </li>
-                <li>
-                    <a href='#'>Getting News From Around the World With Today’s Front Pages</a>
-                    <p>Luyện nghe tiếng Anh qua tin tức</p>
-                </li>
-                <li>
-                    <a href='#'>Rio+20 Brings Attention to Sustainable Development</a>
-                    <p>Luyện nghe tiếng Anh qua video VOA</p>
-                </li>
-                <li>
-                    <a href='#'>The award belongs to the winners.</a>
-                    <p>Học ngữ pháp qua phân tích câu</p>
-                </li>
-                <li>
-                    <a href='#'>14/07/2012: Your weekly address</a>
-                    <p>Tổng thống Mỹ Obamav</p>
-                </li>
-                <li>
-                    <a href='#'>LVE THE PUZZLE</a>
-                    <p>Funny Q & A</p>
-                </li>
-                <li>
-                    <a href='#'>Listening & Writing Advanced - 25</a>
-                    <p>Listening & Writing - Advanced</p>
-                </li>
+                <?php $i++; } ?>
             </ul>
+            </div>
+            <div class="_tab" id="tab2" style="display:none">
+                <ul>
+                <?php
+                    $i=0;
+                    foreach($comments as $k){
+                        $tax = $options[$i]['taxonomy'];
+                        $category = $options[$i]['category'];
+                        $parent = $options[$i]['parent'];
+                        $content = $options[$i]['content'];
+                        $url = Yii::app()->getBaseUrl()."/".$tax->slug."/";
+                        if(is_array($parent)){
+                            $url .= "lop/".$parent->id."/";
+                        }
+                        $url .= $category->slug."-".$category->id."/".$content->slug."-".$content->id.".html";
+                        if($i==(count($comments) - 1)){
+                            echo "<li style='boder:0px'>";
+                        }else{
+                            echo "<li>";
+                        }
+                        echo "<a href='".$url."'>".($k->comment)."</a>";
+                        echo "<p><a href=''>".$k->member->username."</a>(<i>".$k->created_date."</i>)</p></li>";
+                        $i++;
+                    }
+                ?>
+                </ul>
+                <div class='clear'></div>
+            </div>
+             <div class="_tab" id="tab3" style="display: none">
+            <ul>
+                <?php $i=0; foreach($news as $k) {?>
+                 <?php
+                 if($i==(count($news) - 1)){
+                            echo "<li style='boder:0px'>";
+                        }else{
+                            echo "<li>";
+                        }
+                ?>
+                    <a href='<?php echo Yii::app()->getBaseUrl(true)?>/<?php echo $k->category->taxonomy->slug ?>/<?php echo $k->category->slug?>-<?php echo $k->category->id?>/<?php echo $k->slug."-".$k->id?>.html'><?php echo $k->title?></a>
+                    <p><?php echo Libraries::Cutstring($k->desc, 65)?></p>
+                </li>
+                <?php $i++; } ?>
+            </ul>
+            </div>
+            
         </div>
+        
     </div><!-- end block info -->
 </div>

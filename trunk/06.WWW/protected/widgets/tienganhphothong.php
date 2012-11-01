@@ -13,8 +13,8 @@ class Tienganhphothong extends MiisWidget {
 
     public function run() {
         parent::run();
-        
-        $this->render('tienganhphothong');
+        $data = Category::model()->findAll("taxonomy_id = 10");
+        $this->render('tienganhphothong',array("data" => $data));
     }
 
 }

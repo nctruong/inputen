@@ -51,7 +51,10 @@ class Comments extends MiisWidget {
                     $model->mem_username = $this->_session['login_name'];
                     $model->created_date = new CDbExpression('NOW()');
                     $model->state = 1;
-                    $model->save();
+                    if($model->save()){
+                       $mem = Member::model()->findByPk($this->u_id);
+                       Member::model()->updateByPk($this->u_id,array('point' => ($mem->point + 1)));
+                    }
                     $stt = 1;
                 }else{
                     $class = 'red bold';

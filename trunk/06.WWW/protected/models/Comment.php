@@ -64,8 +64,8 @@ class Comment extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    'Member' => array(self::BELONGS_TO,'Member', 'member_id'),
-                    'Content' => array(self::BELONGS_TO,'Content', 'content_id')
+                    'member' => array(self::BELONGS_TO,'Member', 'mem_id'),
+                    'content' => array(self::BELONGS_TO,'Content', 'content_id')
 		);
 	}
 
