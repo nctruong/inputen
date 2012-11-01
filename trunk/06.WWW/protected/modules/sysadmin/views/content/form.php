@@ -18,33 +18,22 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     <?php echo $form->textFieldRow($model, 'title', array('class' => 'span5', 'maxlength' => 255)); ?>
 
     <?php echo $form->textFieldRow($model, 'slug', array('class' => 'span5', 'maxlength' => 255)); ?>
-    <div class="control-group">
-        <label class="control-label">Mô tả</label>
-        <div class="controls">
+<!--    <div class="control-group">
+        <label class="control-label">Mô tả</label>-->
+        <!-- <div class="controls">
              <?php
-                        $this->widget('ext.tinymce.TinyMce', array(
-                            'model' => $model,
-                            'attribute' => 'desc',
-                            'defaultSettings'=>'',
-                                           // Optional config
-                            'htmlOptions' => array(
-                                'rows' => 2,
-                                'cols' => 40,
-                            ),
-                        ));
+//                        $this->widget('ext.tinymce.TinyMce', array(
+//                            'model' => $model,
+//                            'attribute' => 'desc',                                           // Optional config
+//                            'htmlOptions' => array(
+//                                'rows' => 2,
+//                                'cols' => 40,
+//                            ),
+//                        ));
                         ?>
             
-        </div>
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        </div-->
+<!--    </div>-->
     
     <?php echo $form->textAreaRow($model, 'desc', array('rows' => 3, 'class' => 'span5')); ?>
     <div class="control-group">
@@ -53,7 +42,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
             <select onchange="$('.ctrl').slideUp();$('div.op_'+$(this).val()).slideDown()" name="sl">
                 <option value='0'>Chọn trang</option>
                 <option value='1'>Tất cả</option>
-                <option value='2'>Tin tức - Học offline</option>
+                <option value='2'>Rút gọn</option>
             </select>
         </div>
         <Br>
@@ -108,7 +97,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
                     </div>
                 </div>
             </div>
-            <div class="op_2 ctrl" style="display:none">
+            <div class="op_2 op_1 ctrl" style="display:none">
                 <div class="control-group ">        
                     <label for="Contents_content" class="control-label required">content <span class="required">*</span></label>
                     <div class="controls">
