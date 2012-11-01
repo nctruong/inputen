@@ -18,21 +18,34 @@
                     <div class=" row-fluid relative">
                         <div class="span10">
                             <span class="title"><?php echo $item->title ?></span>  							
-                            <span class="vip"><?php
-if ($item->premium == 1) {
-    echo 'Bài học vip';
-}
-?></span>
+                            <p><span class="vip"><?php
+            if ($item->premium == 1) {
+                echo 'Bài học vip';
+            }
+            ?></span></p>
                         </div>
                         <div class="span3 iconx-container">
-                            <div class="iconx-cmt"><?php echo Libraries::getCmt($item->id)?></div><div class="iconx-view"><?php echo ($item->view + 1)?></div>
+                            <div class="iconx-cmt"><?php echo Libraries::getCmt($item->id) ?></div><div class="iconx-view"><?php echo ($item->view + 1) ?></div>
                         </div>
                         <div class="row-fluid line"></div>       
                     </div><!-- end .row-fluid -->    
                 </div><!-- end .page-wrapper-top-->    		
                 <div class="page-wrapper-main">
-                    
-                    
+                    <?php if ($item->video != '' & $item->content != '') { ?>
+                        <div class='row_fluid '>
+                            <div class='span7 video_div'>
+                                <?php echo $item->video ?>
+                            </div>
+                            <div class='span5 stranslate_div'>
+                                <center><button class='enab_tip btn'>Bật lời dịch</button></center>
+                                <?php echo $item->translate ?>
+                            </div>
+                            <div class="clear" style="clear:both"></div>
+                        </div>
+
+                        <?php
+                    }
+                    ?>
                     <?php
                     echo $item->content;
                     ?>
@@ -55,10 +68,9 @@ if ($item->premium == 1) {
                 <div class="clearfix"></div>
             </div><!-- end page-obj -->
         </div> <!-- end #page-wrapper-->
-        <?php $this->widget('more_listen', array('p_id' => $item->id, 'c_id' => $item->category_id,'tax_id' => $this->root_id)); ?>
-        <?php $this->widget('comments',array('c_id' => $item->id)) ?>
-        
-        </div><!-- end span9 -->
+        <?php $this->widget('more_listen', array('p_id' => $item->id, 'c_id' => $item->category_id, 'tax_id' => $this->root_id)); ?>
+        <?php $this->widget('comments', array('c_id' => $item->id)) ?>
+    </div><!-- end span9 -->
     <div id='en-right' class='span3'>
         <?php $this->widget('search'); ?>
         <?php $this->widget('login'); ?>

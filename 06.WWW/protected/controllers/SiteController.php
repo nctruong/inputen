@@ -8,6 +8,7 @@ class SiteController extends MiisController {
     public function actionIndex() {
         $this->title = 'Trang chủ TiengAnh123';
         $lich_hoc = Content::model()->findAll("category_id = 47 and state = 1");
+        $phothong = Content::model()->findAll("category_id = 47 and state = 1");
         $this->render('index',array('lich_hoc'=>$lich_hoc));
     }
     /**

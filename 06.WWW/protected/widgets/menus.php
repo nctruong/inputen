@@ -8,6 +8,7 @@ class Menus extends MiisWidget {
         
         $criteria = new CDbCriteria();
         $criteria->order='t.id ASC';
+        $criteria->condition = 'state = 1';
         
         $menus = Taxonomy::model()->findAll($criteria);
         $this->render('menu', array('menus' => $menus, 'total' => count($menus)));
