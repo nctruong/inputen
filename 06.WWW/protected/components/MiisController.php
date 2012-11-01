@@ -40,5 +40,5 @@ abstract class MiisController extends CController {
     protected function isAuth() {
         
     }
-
+    
 }

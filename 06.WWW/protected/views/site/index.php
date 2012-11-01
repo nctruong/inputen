@@ -1,92 +1,89 @@
 
-<div id='sub-nav-header' class="row-fluid">
-    <div class='span6 sub-nav-header-left'>
-        lịch khai giảng các lớp tiếng anh chất lượng cao tại tienganh123
-    </div>
-    <div class='span6 sub-nav-header-right'>
-        <div class='text-search'>Tìm kiếm bài học</div>
-        <div class='text-field'>
-            <form action='#' method='get'>
-                <input type="text" name="kw" />
-                <button type='submit'>Tìm kiếm</button>
-            </form>
-        </div>
-    </div>
-</div><!-- end #sub-nav-header -->
-<div class='row-fluid block-home-1'>
-    <div class='span6 box-course'>
-        <ul class='box-class' id='class' >
-            <?php
-            if (count($lich_hoc) > 0) {
-                $i=0;
-                foreach ($lich_hoc as $key) {
-                    $i++;
-                    ?>
+
+        <div id='sub-nav-header' class="row-fluid">
+            <div class='span6 sub-nav-header-left'>
+                lịch khai giảng các lớp tiếng anh chất lượng cao tại tienganh123
+            </div>
+            <div class='span6 sub-nav-header-right'>
+                <div class='text-search'>Tìm kiếm bài học</div>
+                <div class='text-field'>
+                    <form action='#' method='get'>
+                        <input type="text" name="kw" />
+                        <button type='submit'>Tìm kiếm</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div><!-- end #sub-nav-header -->
+        <div class='row-fluid block-home-1'>
+            <div class='span6 box-course'>
+                <ul class='box-class' id='class' >
                     <li>
                         <div class='box-class-title'>
-                            <a href='<?php echo Yii::app()->getBaseUrl()?>/hoc-offline/lich-khai-giang-47/<?php echo $key->slug.'-'.$key->id ?>.html'><?php echo $i?>. <?php echo $key->title?></a>
+                            <a href='#'>1. Tiếng anh cơ sở - GV Việt</a>
                         </div>
                         <div class='box-class-info'>
                             <div class='box-class-open'>
-                            <?php echo $key->desc ?>    
-                            
+                                Khai giảng: Sáng 18/7, Tối 3/8/2012
+
                             </div>
-                        </div>
-                    </li>
-                <?php
-                }
-            }
-            ?>
-        </ul><!-- end .box-class -->
-        <div class='child-study'>
-            <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/child-study.png' />
-        </div>
-    </div>
-    <div class='span3' id='challenger'>
-        <div class='img-cup'>
-            <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/img-cup.png' />
-        </div>
-        <div class='challenger'>
-            <div class='challenger-title'>
-                CHALLENGER TEST
-            </div>
-            <div class='challenger-info'>
-                <div class='challenger-info-title'>
-                    Bảng xếp hạng lần 27
-                </div>
-                <ul class='chanllenger-info-body'>
-                    <li>
-                        <div class='row-fluid challenger-row'>
-                            <div class='span3'>
-                                <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-cup.png' />
+
+                            <div class='box-class-date'>
+                                Lịch học: Sáng 9h-10h30 Thứ 2,4,6; tối 19h30 Thứ 2,4,6
+
                             </div>
-                            <div class='span9 in'>
-                                <div class='row grey name'><a href=''>Angle's Smile</a></div>
-                                <div class='row blue mark'>(+3)</div>
-                            </div>
+
                         </div>
                     </li>
                     <li>
-                        <div class='row-fluid challenger-row'>
-                            <div class='span3'>
-                                <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-cup.png' />
+                        <div class='box-class-title'>
+                            <a href='#'>2. Phát âm cơ bản - GV Việt</a>
+                        </div>
+                        <div class='box-class-info'>
+                            <div class='box-class-open'>
+                                Khai giảng: Sáng 31/7/2012, Tối 1/8/2011 
+
                             </div>
-                            <div class='span9 in'>
-                                <div class='row grey name'><a href='#'>hMinh</a></div>
-                                <div class='row blue mark'>(+10)</div>
+
+                            <div class='box-class-date'>
+                                Lịch học: Sáng 9h-10h30 thứ 3,5,7; tối 19h30 Thứ 2,4,6
+
                             </div>
+
                         </div>
                     </li>
                     <li>
-                        <div class='row-fluid challenger-row'>
-                            <div class='span3'>
-                                <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-cup.png' />
+                        <div class='box-class-title'>
+                            <a href='#'>3. Ngữ pháp và từ vựng cơ bản - GV Việt</a>
+                        </div>
+                        <div class='box-class-info'>
+                            <div class='box-class-open'>
+                                Khai giảng: Sáng 1/8, tối 11/8/2012 
                             </div>
-                            <div class='span9 in'>
-                                <div class='row grey name'><a href='#'>mTuan</a></div>
-                                <div class='row blue mark'>(+10)</div>
+
+                            <div class='box-class-date'>
+                                Lịch học: 9h-1Oh30 thứ 2,4,6 ; 19h30 Tối 3,5,7
                             </div>
                         </div>
+
+                    </li>
+                    <li>
+                        <div class='box-class-title'>
+                            <a href='#'>4. Ngữ pháp và từ vựng cơ bản - GV Việt</a>
+                        </div>
+                        <div class='box-class-info'>
+                            <div class='box-class-open'>
+                                Khai giảng: Sáng 1/8, tối 11/8/2012 
+                            </div>
+                            <div class='box-class-date'>
+                                Lịch học: 9h-1Oh30 thứ 2,4,6 ; 19h30 Tối 3,5,7
+                            </div>
+                        </div>
+                    </li>
+                </ul><!-- end .box-class -->
+                <div class='child-study'>
+                    <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/child-study.png' />
                     </li>
                 </ul><!-- end .chanllenger-info-body -->
                 <div class='challenger-info-title clearfix'>
@@ -552,7 +549,14 @@
                             </p>
                         </li>
                     </ul>
+>>>>>>> .r153
                 </div>
+
+            </div>
+            <div class='span3' id='challenger'>
+                <div class='img-cup'>
+                    <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/img-cup.png' />
+=======
                 <div class="pagination">
                     <ul class="yiiPager mt_10">
                         <li class="previous disabled"><a href="/yii/card/index.php/sysadmin/categorycard/index.html">←</a></li>
@@ -564,7 +568,17 @@
                         <li class=""><a href="/yii/card/index.php/sysadmin/categorycard/index.html?CategoryCard_page=4">6</a></li>
                         <li class="next"><a href="/yii/card/index.php/sysadmin/categorycard/index.html?CategoryCard_page=2">→</a></li>
                     </ul>
+>>>>>>> .r153
                 </div>
+
+                <div class='challenger'>
+                    <div class='challenger-title'>
+                        CHALLENGER TEST
+                    </div>
+                    <div class='challenger-info'>
+                        <div class='challenger-info-title'>
+                            Bảng xếp hạng lần 27
+=======
             </div>
         </div>
     </div><!-- end hoc qua phim -->
@@ -648,7 +662,120 @@
                             <span class='name'><a href='#'>Hoang_tu_co_don</a></span><br />
                             - Danh hiệu: <font color='red'>Kiến chúa</font><br />
                             - Bài viết: 1121
+>>>>>>> .r153
                         </div>
+
+                        <ul class='chanllenger-info-body'>
+                            <li>
+                                <div class='row-fluid challenger-row'>
+                                    <div class='span3'>
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-cup.png' />
+                                    </div>
+                                    <div class='span9 in'>
+                                        <div class='row grey name'><a href=''>Angle's Smile</a></div>
+                                        <div class='row blue mark'>(+3)</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class='row-fluid challenger-row'>
+                                    <div class='span3'>
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-cup.png' />
+                                    </div>
+                                    <div class='span9 in'>
+                                        <div class='row grey name'><a href='#'>hMinh</a></div>
+                                        <div class='row blue mark'>(+10)</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class='row-fluid challenger-row'>
+                                    <div class='span3'>
+                                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-cup.png' />
+                                    </div>
+                                    <div class='span9 in'>
+                                        <div class='row grey name'><a href='#'>mTuan</a></div>
+                                        <div class='row blue mark'>(+10)</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul><!-- end .chanllenger-info-body -->
+                        <div class='challenger-info-title clearfix'>
+                            Thi đấu lần 27
+                        </div>                                        
+                    </div>
+                </div>
+            </div><!-- end #challenger -->
+            <div class='span3'>
+                <!--  login widgets -->
+                <?php $this->widget('login') ?>
+                <!-- end login widgets -->
+
+            </div>
+        </div><!-- end .block-home-1 --> 
+        <div class='hr clearfix'></div>
+        <div class='row-fluid block-home-2'>
+            <div class='span6'>
+                <?php $this->widget('tienganhphothong'); ?>
+                <?php $this->widget('tienganhtreem'); ?>
+                <?php $this->widget('tienganhgiaotiepcoban'); ?>
+            </div><!-- end right box block 1 -->
+            <div class='span3'>
+                <?php $this->widget('luyentaptienganh'); ?>
+            </div><!-- end mid box block 1 -->
+            <div class='span3 ' style="width:200px">
+                <?php $this->widget('support') ?>
+                <?php $this->widget('support2') ?>
+            </div>
+        </div><!-- end .block-home-2 -->
+        <div class='ads row-fluid'>
+            <div class='span6 ctv'>
+                <a href='#'>Tuyển CTV và đại lý phân phối thẻ trên toàn quốc</a>
+            </div>
+            <div class='span6 ctv-img'>
+                <a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/chat-room.png' /></a>
+            </div>
+        </div><!-- end ads -->
+        <div class='hr clearfix'></div>
+        <div class='row-fluid block-home-3'>
+            <?php $this->widget('news_lession_comment'); ?>
+
+            <?php $this->widget('buy_card'); ?>
+
+            <?php $this->widget('newsletter_exam'); ?>
+        </div><!-- end block-home-3 -->
+        <div class='hr clearfix'></div>
+        <div class='row-fluid block-home-4'>
+            <?php $this->widget('study_by_clip'); ?>
+            <!-- tieng anh hoc qua video clip -->
+            <?php $this->widget('study_by_cnn'); ?>
+
+            <?php $this->widget('study_by_music'); ?>
+            <!-- hoc tieng anh qua bai hat -->
+        </div><!-- end block-home-4 -->
+        <div class='hr clearfix'></div>
+        <div class='row-fluid block-home-5'>
+            <?php $this->widget('study_by_film'); ?>
+            <!-- end hoc qua phim -->
+            <?php $this->widget('danhngon'); ?>
+            <!-- end danh ngon tieng anh -->
+            <?php $this->widget('box_game'); ?>
+            <!-- end tro cho tieng anh -->
+        </div><!-- end block home 5 -->
+        <div class='hr clearfix'></div>
+        <div class='row-fluid block-home-6'>
+            <div class='span9 block-member'>
+                <?php $this->widget('top_member'); ?>
+
+                <?php $this->widget('bottom_logos'); ?>
+                <!-- end list box 123 -->
+            </div>
+            <!-- end list box member -->
+            <?php $this->widget('member_question'); ?>
+            <!-- end cau hoi va cau tra loi cua thanh vien -->
+        </div><!-- end block member  -->
+
+=======
                     </li>
                     <li>
                         <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-member.png' />
@@ -746,3 +873,4 @@
     </div><!-- end cau hoi va cau tra loi cua thanh vien -->
 </div><!-- end block member  -->
 
+>>>>>>> .r153
