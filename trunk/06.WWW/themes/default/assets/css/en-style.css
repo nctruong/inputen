@@ -96,13 +96,15 @@ ul {
     text-align: justify;
 }
 .en-box-img {
-    border: 2px solid #007ABA;
-    box-shadow: -2px 2px #CCCCCC;
+    box-shadow:1px 1px 2px #CCCCCC;
+    
     float: left;
-    height: 100px;
     margin-left: -1px;
-    padding: 1px;
-    width: 64px;
+    padding: 3px;
+    width: 100px;
+}
+.span4 .en-box-desc ul li {
+    width:92%;
 }
 .en-box-desc ul li {
     background: url("../img/li-book.png") no-repeat scroll 0 0 transparent;
@@ -113,6 +115,7 @@ ul {
     height: 23px;
     padding-left: 26px;
     width: 100%;
+    overflow:hidden;
 }
 .en-box-desc ul {
     border-top: 1px solid white;
@@ -141,6 +144,9 @@ ul {
     margin-left: -1px;
     padding: 1px;
     width: 90px;
+}
+.en-box-img{
+    margin-right:10px;
 }
 #footer-menu {
     background: none repeat scroll 0 0 #015B7E;
