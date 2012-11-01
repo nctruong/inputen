@@ -73,6 +73,7 @@ abstract class MiisSysadminController extends MiisController {
                 'items' => array(
                     array('label' => 'Create Member', 'url' => Yii::app()->baseUrl . '/sysadmin/member/create.html', 'active' => $this->id == 'member' && $this->action->id == 'create' ? true : false),
                     array('label' => 'Mangage Members', 'url' => Yii::app()->baseUrl . '/sysadmin/member.html', 'active' => $this->id == 'member' && $this->action->id == 'index' ? true : false),
+                    array('label' => 'Mangage Newsletters', 'url' => Yii::app()->baseUrl . '/sysadmin/newsletters.html', 'active' => $this->id == 'newsletters' && $this->action->id == 'index' ? true : false),
                 )
             ), // Settings
             array('label' => 'Settings', 'icon' => 'icon-wrench icon-white', 'url' => Yii::app()->baseUrl . '/sysadmin/setting.html', 'active' => $this->id == 'setting' ? true : false)

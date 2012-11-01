@@ -21,5 +21,22 @@ class SiteController extends MiisController {
                 $this->render('error', $error);
         }
     }
+    
+   public function actionNewsletters() {
+
+        if (isset($_POST['FrmNewslettters'])) {
+
+            $newsletter = new Newsletters;
+            $newsletter->attributes = $_POST['FrmNewslettters'];
+            if ($newsletter->validate()) {
+                $newsletter->save();
+                Yii::app()->user->setFlash('success', '<strong>Tin nhắn!</strong> Đăng ký nhận tin thành công');
+                $this->redirect(Yii::app()->getBaseUrl(true));
+            } else {
+                Yii::app()->user->setFlash('error', '<strong>Tin nhắn!</strong> Địa chỉ mail này đã được đăng kí nhận tin nhắn');
+                $this->redirect(Yii::app()->getBaseUrl(true));
+            }
+        }
+    }
 
 }
