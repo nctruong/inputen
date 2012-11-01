@@ -466,13 +466,19 @@ div.video_div{
     /* overflow: scroll; */
 }
 div.stranslate_div{
-    max-height:500px;
+    height:400px;
     border:1px solid #ccc;
     width:40% !important;
     padding:10px 0px;
     padding-left:10px;
-    overflow-y: scroll;
 }
+.mCSB_scrollTools .mCSB_draggerRail {
+width: 7px !important;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+width: 5px !important;
+}
+
 div.collect_link ul{
     margin-left: 10px;
 }
@@ -510,7 +516,9 @@ div.collect_link ul li a.cls12{
 div.collect_link ul li a.cls13{
     background-position: -529px -200px;
 }
-
+#tab2 a img{
+    width:25px !important;
+}
 
 
 

@@ -96,46 +96,46 @@
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery.mCustomScrollbar.js"></script>
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/cufon-yui.js"></script>
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/League_Gothic_400.font.js"></script>
-    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/script.js"></script>       
-    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/chilltip-packed.js"></script>
-    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/bootbox.min.js"></script>
-    
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/script.js"></script>   
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/chilltip-packed.js"></script>    
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery.base64.min.js"></script>    
+    <script>var LOG = ('<?php echo base64_encode($this->_session['isLogin']) ?>');</script>
     <script>
-        function remove_title(){
-            $("div.stranslate_div a,a.tip").each(function(){  
-                tam_tit = $(this).attr("title");
-                $(this).attr("alt",tam_tit);
-                $(this).attr('title','');
-            })
-        }
-        $().ready(function(){
-            //$('a.tip').cluetip({splitTitle: '|'});
-            remove_title();
-            $(".enab_tip").click(function(){
-                if($(this).text()=='Tắt lời dịch'){
-                        $(this).text("Bật lời dịch");
-                        $("div.stranslate_div a,a.tip").unbind("hover");
-                        remove_title();
-                }else{
-                        $("div.stranslate_div a,a.tip").each(function(){
-                            tam_tit = $(this).attr("alt");
-                            $(this).attr("title",tam_tit);
-                        })
-                        $(this).text("Tắt lời dịch");
-                         <?php if($this->_session['isLogin']){?>
-                        $("div.stranslate_div a,a.tip").ChillTip().hover(function(){
-                           $(this).css("background","#FCD116");
-                        },function(){$(this).css("background","none");});
-                        <?php } else { ?>
-                        $("div.stranslate_div a,a.tip").ChillTip().hover(function(){ $(this).css("background","#FCD116");
-                        },function(){$(this).css("background","none");});
-                            $("div.stranslate_div a").each(function(){
-                                $(this).attr("title",'Bạn phải là thành viên VIP mới xem được lời dịch này');
-                            })
-                        <?php }?> 
-                }
-            }) 
-        })
+//        function remove_title(){
+//            $("div.stranslate_div a,a.tip").each(function(){  
+//                tam_tit = $(this).attr("title");
+//                $(this).attr("alt",tam_tit);
+//                $(this).attr('title','');
+//            })
+//        }
+//        $().ready(function(){
+//            //$('a.tip').cluetip({splitTitle: '|'});
+//            remove_title();
+//            $(".enab_tip").click(function(){
+//                if($(this).text()=='Tắt lời dịch'){
+//                        $(this).text("Bật lời dịch");
+//                        $("div.stranslate_div a,a.tip").unbind("hover");
+//                        remove_title();
+//                }else{
+//                        $("div.stranslate_div a,a.tip").each(function(){
+//                            tam_tit = $(this).attr("alt");
+//                            $(this).attr("title",tam_tit);
+//                        })
+//                        $(this).text("Tắt lời dịch");
+//                         <?php if($this->_session['isLogin']){?>
+//                        $("div.stranslate_div a,a.tip").ChillTip().hover(function(){
+//                           $(this).css("background","#FCD116");
+//                        },function(){$(this).css("background","none");});
+//                        <?php } else { ?>
+//                        $("div.stranslate_div a,a.tip").ChillTip().hover(function(){ $(this).css("background","#FCD116");
+//                        },function(){$(this).css("background","none");});
+//                            $("div.stranslate_div a").each(function(){
+//                                $(this).attr("title",'Bạn phải là thành viên VIP mới xem được lời dịch này');
+//                            })
+//                        <?php }?> 
+//                }
+//            }) 
+//        })
          </script>
 </html>
 

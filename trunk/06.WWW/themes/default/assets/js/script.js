@@ -10,6 +10,16 @@ function remove_title(){
     })
 }
 $().ready(function(){
+    $('.block-info ul.block-info-title a').click(function(){
+        id = $(this).attr("href");
+        $(".block-info-body div._tab").fadeOut();
+        $(".block-info-body div#"+id).fadeIn();
+        $('.block-info ul.block-info-title li').each(function(){
+            $(this).removeClass("active");
+        })
+        $(this).parent().addClass('active');
+        return false;
+    }); 
     $(".stranslate_div").mCustomScrollbar({
         scrollInertia:0
     });
