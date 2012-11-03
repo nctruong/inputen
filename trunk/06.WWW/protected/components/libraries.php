@@ -40,7 +40,7 @@ class Libraries {
         echo $content;   
     }
     public static function isEnable($id){
-        return count((Content::model()->findAll("category_id = ".$id)));
+        return count((Content::model()->findAll("category_id = ".$id." and state = 1")));
     }
     public static function getCmt($id){
         $item = Comment::model()->findAllByAttributes(array('content_id' => $id));
