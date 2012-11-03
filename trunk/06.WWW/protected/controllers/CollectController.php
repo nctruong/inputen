@@ -48,6 +48,7 @@ class CollectController extends MiisController {
         $this->render("viewlist",array('root'=>$root,'items' => $items,'sroot'=>$this->sroot));
     }
     public function actionView() {
+        
         $pid = Yii::app()->request->getParam('pid');
         $cid = Yii::app()->request->getParam('cid');
         $id = Yii::app()->request->getParam('id');

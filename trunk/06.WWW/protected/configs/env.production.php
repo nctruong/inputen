@@ -44,6 +44,9 @@ return array(
                 'members' => 'members',
                 'members/<controller:\w+>' => 'members/<controller>',
                 'members/<controller:\w+>/<action:\w+>' => 'members/<controller>/<action>',
+                'member' => 'members',
+                'member/<controller:\w+>' => 'members/<controller>',
+                'member/<controller:\w+>/<action:\w+>' => 'members/<controller>/<action>',
                 //listen 
                 // member
                 'thanh-vien' => 'member',
@@ -80,6 +83,7 @@ return array(
                 'tin-tuc/<slug:.*>-<id:\d+>' => 'news/viewlist/',
                 //clip
                 'hoc-qua-clip' => 'clip',
+                'hoc-qua-clip/<slug:.*?>/<id_cat:\d+>/page/<page:\d+>' =>'clip/ajax',
                 'hoc-qua-clip/<controller:\w+>' => 'news/<controller>',
                 'hoc-qua-clip/<controller:\w+>/<action:\w+>' => 'news/<controller>/<action>',
                 

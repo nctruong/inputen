@@ -32,8 +32,9 @@ class News_lession_comment extends MiisWidget {
             $options[$i]['category'] = Category::model()->findByPk($options[$i]['content']->category_id);
             $options[$i]['parent'] = '';
             if($options[$i]['category']->parent != 0){
-               $options[$i]['parent'] = Category::model()->findByPk($options[$i]['category']->parent);
+               $options[$i]['parent'] = Category::model()->findByPk($options[$i]['category']->parent);               
             }
+            
             $options[$i]['taxonomy'] = Taxonomy::model()->findByPk($options[$i]['category']->taxonomy_id);
             $i++;
         }

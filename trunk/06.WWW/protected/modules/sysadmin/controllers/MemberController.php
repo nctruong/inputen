@@ -81,7 +81,9 @@ class MemberController extends MiisSysadminController
             // $this->performAjaxValidation($model);
 
             if (isset($_POST['Member'])) {
+                
                 $model->attributes = $_POST['Member'];
+                
                 if ($model->save())
                     $this->redirect(array('index'));
             }
@@ -136,7 +138,7 @@ class MemberController extends MiisSysadminController
                     MiisToolbarHelper::cancel();
                     break;
                 case 'update':
-                    MiisToolbarHelper::title('Chỉnh sữa');
+                    MiisToolbarHelper::title('Chỉnh sửa');
                     MiisToolbarHelper::save();
                     MiisToolbarHelper::cancel();
                     break;

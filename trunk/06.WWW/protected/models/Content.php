@@ -46,10 +46,10 @@ class Content extends CActiveRecord {
             array('title, slug,  state, category_id', 'required'),
             array('premium, view, state, comment_status, category_id', 'numerical', 'integerOnly' => true),
             array('title, slug', 'length', 'max' => 255),
-            array('excerpt, desc, keywords,video,translate,content, created_date', 'safe'),
+            array('excerpt, desc, keywords,video,image,translate,content, created_date', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, video,translate,title, slug, excerpt, content, desc, premium, keywords, created_date, view, state, comment_status, category_id', 'safe', 'on' => 'search'),
+            array('id,image, video,translate,title, slug, excerpt, content, desc, premium, keywords, created_date, view, state, comment_status, category_id', 'safe', 'on' => 'search'),
         );
     }
 
@@ -83,6 +83,7 @@ class Content extends CActiveRecord {
             'state' => 'State',
             'comment_status' => 'Comment Status',
             'category_id' => 'Category',
+            'image'       => 'Image'
         );
     }
 

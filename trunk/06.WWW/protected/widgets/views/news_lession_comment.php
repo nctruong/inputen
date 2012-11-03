@@ -1,11 +1,11 @@
 <div class='span6'>
     <div class='block-info'>
-        <ul class='block-info-title'>
+        <ul class='block-info-title block_listen_news_comment'>
             <li class='active'><a href='tab1"'>Bài học mới</a></li>
             <li><a href='tab2'>Phản hồi mới</a></li>
             <li><a href='tab3'>Tin tức mới</a></li>
         </ul>
-        <div class='block-info-body'>
+        <div class='block-info-body scroll_over'>
             <div class="_tab" id="tab1">
             <ul>
                 <?php $i=0; foreach($listen as $k) {?>
@@ -22,18 +22,19 @@
                 <?php $i++; } ?>
             </ul>
             </div>
-            <div class="_tab" id="tab2" style="display:none">
+            <div class="_tab emoticon_home" id="tab2" style="display:none">
                 <ul>
                 <?php
                     $i=0;
                     foreach($comments as $k){
                         $tax = $options[$i]['taxonomy'];
                         $category = $options[$i]['category'];
+                        $parent = array();
                         $parent = $options[$i]['parent'];
                         $content = $options[$i]['content'];
-                        $url = Yii::app()->getBaseUrl()."/".$tax->slug."/";
-                        if(is_array($parent)){
-                            $url .= "lop/".$parent->id."/";
+                        $url = Yii::app()->getBaseUrl()."/".$tax->slug."/";                        
+                        if(count($parent) > 0){                        // echo "<pre>";
+                           // print_r($parent);
                         }
                         $url .= $category->slug."-".$category->id."/".$content->slug."-".$content->id.".html";
                         if($i==(count($comments) - 1)){
@@ -41,7 +42,7 @@
                         }else{
                             echo "<li>";
                         }
-                        echo "<a href='".$url."'>".($k->comment)."</a>";
+                        echo "<a href='".$url."' class='normal'>".($k->comment)."</a>";
                         echo "<p><a href=''>".$k->member->username."</a>(<i>".$k->created_date."</i>)</p></li>";
                         $i++;
                     }
