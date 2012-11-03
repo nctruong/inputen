@@ -99,6 +99,14 @@
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/script.js"></script>   
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/chilltip-packed.js"></script>    
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery.base64.min.js"></script>    
+    <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/highslide/highslide.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->getBaseUrl(); ?>/highslide/highslide.css" />
+    <script type="text/javascript">
+    // override Highslide settings here
+    // instead of editing the highslide.js file
+        hs.graphicsDir = '<?php echo Yii::app()->getBaseUrl(); ?>/highslide/graphics/';
+        var base_url = '<?php echo Yii::app()->getBaseUrl(true)?>';
+    </script>
     <script>var LOG = ('<?php echo base64_encode($this->_session['isLogin']) ?>');</script>
     <script>
 //        function remove_title(){
