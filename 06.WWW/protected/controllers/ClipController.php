@@ -29,6 +29,15 @@ class ClipController extends MiisController {
         $listcat = Category::model()->findAll(array("condition"=>"state = 1 and taxonomy_id = ".$root->taxonomy_id));
         $this->render("viewlist",array('root'=>$root,'items' => $items,'listcat'=>$listcat));
     }
+    public function Actionajax(){
+        $slug = Yii::app()->request->getParam('slug',false);
+        $cat_id = Yii::app()->request->getParam('id_cat',false);    
+        $page = Yii::app()->request->getParam('page',1);        
+        
+        $data['data'] = Content::model()->findAll(array("condition"=>"state = 1 and category_id = ".$cat_id,"order"=>"id desc","limit"=>6,"offset"=>(($page-1)*6)));
+        $this->renderPartial("pagin_home",$data);
+        
+    }
     public function actionView($id='') {
         $cid = Yii::app()->request->getParam('tid');
         $category = Category::model()->findByPk($cid);

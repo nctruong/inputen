@@ -4,66 +4,144 @@
     </div>
     <div class='block-info'>
         <ul class='block-info-title' id='ul-study'>
-            <li class='active ul-first'><a href='#'>Tiếng anh giao tiếp</a></li>
-            <li><a href='#'>Học với người nổi tiếng</a></li>
-            <li class='ul-last'><a href='#'>Youtube</a></li>
+            <li class='active ul-first'><a href='tab'>Tiếng anh giao tiếp</a></li>
+            <li><a href='tab1'>Học với người nổi tiếng</a></li>
+            <li class='ul-last'><a href='tab2'>Youtube</a></li>
         </ul>
-        <div class='ul-type2'>
-            <div class='info-by-video'>
-                <a href='#'>101 bài tiếng anh giao tiếp cơ bản</a>
+        <div class="video_show_case">
+        <!-- video 1 -->
+        <div class='ul-type2 relative _tab' id="tab">
+            <div class="info_video_1">
+                <div class='info-by-video'>
+                    <a href='#'>101 bài tiếng Anh giao tiếp cơ bản</a>
+                </div>
+                <div class="place_ajax_list_video">
+                    <ul class="list_pagin_video">
+
+                        <?php foreach ($giaotiep as $k) { ?>
+                            <li>
+                                <?php $cat = $k->category; ?>
+                                <a href='<?php echo Yii::app()->getBaseUrl(true) . "/" . $cat->taxonomy->slug . "/" . $cat->slug . "-" . $cat->id . "/" . $k->slug . "-" . $k->id . ".html" ?>'>
+                                    <?php
+                                    $img = $k->image;
+                                    if ($img == '') {
+                                        $img = Yii::app()->getBaseUrl(true) . '/uploads/Image/no_image.gif';
+                                    }
+                                    ?>
+                                    <img class="image_box_most_video" src='<?php echo $img ?>' />
+                                    <center><p class="desc_block_video"><?php echo ($k->desc) ?></p></center>
+                                </a>
+                            </li>
+                        <?php } ?> 
+
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+                <?php
+                if ($count_gt > count($giaotiep)) {
+                    echo '<center><div class="pagination pt2">';
+                    echo '<ul class="yiiPager pagin_home_n1" id="yw2">';
+                    for ($i = 1; $i <= ceil($count_gt / 6); $i++) {
+                        echo "<li class=''><a href='" . Yii::app()->getBaseUrl(true) . "/" . $cat->taxonomy->slug . "/" . $cat->slug . "/" . $cat->id . "' rel='" . $i . "'>" . $i . "</a></li>";
+                    }
+
+                    echo '</ul>';
+                    echo '</div></center>';
+                }
+                ?>
             </div>
-            <ul>
-                <li>
-                    <a href='#'>
-                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
-                        <p>Bài 1: What are...</p>
-                    </a>
-                </li>
-                <li><a href='#'>
-                        <a href='#'>
-                            <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
-                            <p>Bài 2: What are...</p>
-                        </a>
-                </li>
-                <li>
-                    <a href='#'>
-                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
-                        <p>Bài 3: What did...</p>
-                    </a>
-                </li>
-                <li>
-                    <a href='#'>
-                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
-                        <p>Bài 3: What did...</p>
-                    </a>
-                </li>
-                <li>
-                    <a href='#'>
-                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
-                        <p>Bài 3: What did...</p>
-                    </a>
-                </li>
-                <li>
-                    <a href='#'>
-                        <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/demo-video.png' />
-                        <p>Bài 3: What did...</p>
-                    </a>
-                </li>
-            </ul>
         </div>
-        <div class="pagination pt2">
-            <ul class="yiiPager" id="yw2">
-                <li class="previous disabled"><a href="/yii/card/index.php/sysadmin/categorycard/index.html">←</a></li>
-                <li class=" active"><a href="/yii/card/index.php/sysadmin/categorycard/index.html">1</a></li>
-                <li class=""><a href="/yii/card/index.php/sysadmin/categorycard/index.html?CategoryCard_page=2">2</a></li>
-                <li class=""><a href="/yii/card/index.php/sysadmin/categorycard/index.html?CategoryCard_page=3">3</a></li>
-                <li class=""><a href="/yii/card/index.php/sysadmin/categorycard/index.html?CategoryCard_page=4">4</a></li>
-                <li class=""><a href="/yii/card/index.php/sysadmin/categorycard/index.html?CategoryCard_page=5">5</a></li>
-                <li class=""><a href="/yii/card/index.php/sysadmin/categorycard/index.html?CategoryCard_page=6">6</a></li>
-                <li class=""><a href="/yii/card/index.php/sysadmin/categorycard/index.html?CategoryCard_page=7">7</a></li>
-                <li class="next"><a href="/yii/card/index.php/sysadmin/categorycard/index.html?CategoryCard_page=2">→</a></li>
-            </ul>
+        <!-- video 2 -->
+         <div class='ul-type2 relative _tab' id="tab1" style="display: none">
+            <div class="info_video_1">
+                <div class='info-by-video'>
+                    <a href='#'>Học tiếng Anh với người nổi tiếng</a>
+                </div>
+                <div class="place_ajax_list_video">
+                    <ul class="list_pagin_video">
+
+                        <?php foreach ($noitieng as $k) { ?>
+                            <li>
+                                <?php $cat = $k->category; ?>
+                                <a href='<?php echo Yii::app()->getBaseUrl(true) . "/" . $cat->taxonomy->slug . "/" . $cat->slug . "-" . $cat->id . "/" . $k->slug . "-" . $k->id . ".html" ?>'>
+                                    <?php
+                                    $img = $k->image;
+                                    if ($img == '') {
+                                        $img = Yii::app()->getBaseUrl(true) . '/uploads/Image/no_image.gif';
+                                    }
+                                    ?>
+                                    <img class="image_box_most_video" src='<?php echo $img ?>' />
+                                    <center><p class="desc_block_video"><?php echo ($k->desc) ?></p></center>
+                                </a>
+                            </li>
+                        <?php } ?> 
+
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+                <?php
+                if ($count_nt > count($noitieng)) {
+                    echo '<center><div class="pagination pt2">';
+                    echo '<ul class="yiiPager pagin_home_n1" id="yw2">';
+                    for ($i = 1; $i <= ceil($count_nt / 6); $i++) {
+                        echo "<li class=''><a href='" . Yii::app()->getBaseUrl(true) . "/" . $cat->taxonomy->slug . "/" . $cat->slug . "/" . $cat->id . "' rel='" . $i . "'>" . $i . "</a></li>";
+                    }
+
+                    echo '</ul>';
+                    echo '</div></center>';
+                }
+                ?>
+            </div>
         </div>
+
+        
+        
+         <!-- video 3 -->
+         <div class='ul-type2 relative _tab' id="tab2" style="display:none">
+            <div class="info_video_1">
+                <div class='info-by-video'>
+                    <a href='#'>Học tiếng Anh qua Youtube</a>
+                </div>
+                <div class="place_ajax_list_video">
+                    <ul class="list_pagin_video">
+
+                        <?php foreach ($youtube as $k) { ?>
+                            <li>
+                                <?php $cat = $k->category; ?>
+                                <a href='<?php echo Yii::app()->getBaseUrl(true) . "/" . $cat->taxonomy->slug . "/" . $cat->slug . "-" . $cat->id . "/" . $k->slug . "-" . $k->id . ".html" ?>'>
+                                    <?php
+                                    $img = $k->image;
+                                    if ($img == '') {
+                                        $img = Yii::app()->getBaseUrl(true) . '/uploads/Image/no_image.gif';
+                                    }
+                                    ?>
+                                    <img class="image_box_most_video" src='<?php echo $img ?>' />
+                                    <center><p class="desc_block_video"><?php echo ($k->desc) ?></p></center>
+                                </a>
+                            </li>
+                        <?php } ?> 
+
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+                <?php
+                if ($count_ytb > count($youtube)) {
+                    echo '<center><div class="pagination pt2">';
+                    echo '<ul class="yiiPager pagin_home_n1" id="yw2">';
+                    for ($i = 1; $i <= ceil($count_ytb / 6); $i++) {
+                        echo "<li class=''><a href='" . Yii::app()->getBaseUrl(true) . "/" . $cat->taxonomy->slug . "/" . $cat->slug . "/" . $cat->id . "' rel='" . $i . "'>" . $i . "</a></li>";
+                    }
+
+                    echo '</ul>';
+                    echo '</div></center>';
+                }
+                ?>
+            </div>
+        </div>
+      
+        
+        <img class='ax_load' src="<?php echo Yii::app()->getBaseUrl(true) ?>/themes/default/assets/img/325.gif">
         <div class='clearfix'></div>
+        </div>
     </div><!-- end block info -->
 </div>

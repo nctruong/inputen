@@ -92,7 +92,7 @@
                 <div class="row-fluid send <?php echo @$class ?>">    
                     Nội dung phản hồi ít nhất 10 kí tự. Mỗi lần đăng phản hồi cách nhau ít nhất 30 giây <button <?php if ($stt != 0) echo "onclick='return false'"; ?> class="btn btn-danger floatR">Thêm phản hồi</button>
                 </div>
-                <input type="hidden" name="act" class="cmt_" value="submit">
+                
 
 
 <?php } else { ?>
@@ -108,23 +108,21 @@
                     </div>
                 </div>
 <?php } ?>
+                <input type="hidden" name="act" class="cmt_" value="submit">
         </div>
 </form>   
 <div id="myModal" class="modal hide fade" style="width:250px;margin-left:-80px">
     <!-- dialog contents -->
-    <div class="modal-body">
-        <div class="row-fluid margin_topbot10"> 
-    <div class="top_login">
-    </div><!--end .top_login-->
+    
     <div class="body_login">
                     <form class="form-vertical" id="verticalForm" action="<?php echo Yii::app()->getBaseUrl()?>/thanh-vien/dang-nhap.html" method="post">            <label for="UserLoginForm_username" class="required">Username <span class="required">*</span></label><input placeholder="Tên đăng nhập" class="span12" name="UserLoginForm[username]" id="UserLoginForm_username" type="text"><span class="help-block error" id="UserLoginForm_username_em_" style="display: none"></span>            <label for="UserLoginForm_password" class="required">Password <span class="required">*</span></label><input placeholder="**********" class="span12" name="UserLoginForm[password]" id="UserLoginForm_password" type="password"><span class="help-block error" id="UserLoginForm_password_em_" style="display: none"></span>
             <button class="btn btn-primary btn-small btn" type="submit" name="yt0">Đăng nhập</button>            <div style="display:none" class="checkbox"> <label class="checkbox" for="UserLoginForm_rememberMe"><input id="ytUserLoginForm_rememberMe" type="hidden" value="0" name="UserLoginForm[rememberMe]"><input name="UserLoginForm[rememberMe]" id="UserLoginForm_rememberMe" value="1" type="checkbox">
 Remember me<span class="help-block error" id="UserLoginForm_rememberMe_em_" style="display: none"></span></label> <br> <a href="#">Quên mật khẩu?</a>
             </div>
-            </form>            <div id="yw0"></div>    </div><!--end .body_login-->
-</div>
+            </form>            <div id="yw0"></div>  <a href="javascript:void(0)" title="Close" class="primary icon-remove close_x" ></a>  </div><!--end .body_login-->
+
         
-    </div>
+
     <!-- dialog buttons -->
-    <div class="modal-footer"><a href="javascript:void(0)" title="Close" class="primary icon-remove"></a></div>
+    
 </div>
