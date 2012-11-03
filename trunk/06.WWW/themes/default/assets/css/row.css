@@ -516,11 +516,47 @@ div.collect_link ul li a.cls12{
 div.collect_link ul li a.cls13{
     background-position: -529px -200px;
 }
-#tab2 a img{
+.emoticon_home a img{
     width:25px !important;
 }
+li.last{border:0 !important}
+img.image_box_most_video{
+    width:111px;
+    height:78px;
+}
+p.desc_block_video{
+   height:20px;
+   overflow:hidden;
+}
+.scroll_over{
+    height:364px;
+    overflow: hidden;
+}
+.ax_load{
+position: absolute;
+left: 46%;
+top: 139%;
+display: none;
+}
+.place_ajax_list_video{
+    
+}
+.normal{
+    font-weight: normal !important;
+}
+#myModal{
+    background: #fff !important;
+    padding:2px;
+}
+.body_login .close_x{
+    position:absolute;
+    top: 7px;
+right: 9px;
 
-
+}
+.body_login{
+    border-radius:7px;
+}
 
 
 

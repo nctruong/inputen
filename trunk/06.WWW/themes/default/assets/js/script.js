@@ -9,18 +9,124 @@ function remove_title(){
         i++;
     })
 }
-$().ready(function(){
-    $('.block-info ul.block-info-title a').click(function(){
+
+
+
+
+
+
+
+
+
+function showLoader(){
+    
+}
+//hide loading bar
+function hideLoader1(){
+//$('.list_pagin_video').fadeOut(200);
+    
+}	
+$(".pagin_home_n1 li a").click(function(){
+    
+    //show the loading bar
+    showLoader();
+
+    url = $(this).attr("href");
+    
+    page_num = $(this).attr("rel");
+    x = $(this).parent().parent().parent().parent().prev().find("ul");
+    x.load(url+"/page/"+page_num);
+    return false;
+    //;
+    
+//$("#resn").load("data1.php?page=" + this.className, hideLoader1);
+});
+	
+// by default first time this will execute
+function tab(control,source){
+    $(control+' a').click(function(){
+        
         id = $(this).attr("href");
-        $(".block-info-body div._tab").fadeOut();
-        $(".block-info-body div#"+id).fadeIn();
-        $('.block-info ul.block-info-title li').each(function(){
-            $(this).removeClass("active");
-        })
-        $(this).parent().addClass('active');
+        
+        if($(source+" div#"+id).css("display")=='none'){
+            $(source+' div._tab').hide();
+            $(source+" div#"+id).fadeIn();
+            $(this).parent().parent().find("li").each(function(){
+                $(this).removeClass("active");
+            })
+            $(this).parent().addClass('active');
+        }
         return false;
     }); 
-    $(".stranslate_div").mCustomScrollbar({
+    
+    
+    
+}
+$().ready(function(){
+       
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    $("a").each(function(){
+        if($(this).attr("href")=='#'){
+            $(this).click(function(){
+                //alert("Phần này đang hoàn thành");
+                return false;
+            })
+        }
+    })
+    
+    
+    
+    tab('ul.music_block_tab_control','.music_block_tab');
+    tab('ul.block_listen_news_comment','.block-info-body');
+    tab('ul#ul-study','.video_show_case');
+    
+    
+    //    $('ul.music_block_tab_control a').click(function(){
+    //        id = $(this).attr("href");
+    //        $(".music_block_tab div._tab").hide();
+    //        $(".music_block_tab div#"+id).fadeIn();
+    //        $(this).parent().parent().find("li").each(function(){
+    //            $(this).removeClass("active");
+    //        })
+    //        $(this).parent().addClass('active');
+    //        return false;
+    //    }); 
+    //    
+    //    
+    //    
+    //    
+    //    
+    //    
+    //    $('ul.block_listen_news_comment a').click(function(){
+    //        id = $(this).attr("href");
+    //        $(".block-info-body div._tab").hide();
+    //        $(".block-info-body div#"+id).fadeIn();
+    //        $(this).parent().parent().find("li").each(function(){
+    //            $(this).removeClass("active");
+    //        })
+    //        $(this).parent().addClass('active');
+    //        return false;
+    //    }); 
+    $(".stranslate_div,.scroll_over").mCustomScrollbar({
         scrollInertia:0
     });
     remove_title();
@@ -78,7 +184,6 @@ $().ready(function(){
     $('.login_btn').click(function(){
         $("#myModal").bind("show", function() {    // wire up the OK button to dismiss the modal when shown
             $("#myModal a.primary").on("click", function(e) {
-                console.log("button pressed");   // just as an example...
                 $("#myModal").modal('hide');     // dismiss the dialog
             });
         });
