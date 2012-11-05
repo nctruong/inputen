@@ -4,35 +4,14 @@
     </div>
     <div class='box sty-idoms'>
         <div class='box-body idoms-scroll'>
-            <ul class='idoms'>
+            <ul class='idoms '>
+                <?php
+                foreach($danhngon as $k){ ?>
                 <li>
-                    Do not protect yourself by a fence, but rather by your friends.<span class='vlum'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-volume.png' /></span>
-                    <p>Czech Proverb</p>
-                </li>
-                <li>
-                    Lost time is never found again
-                    <p>Benjamin Franklin</p>
-                </li>
-                <li>
-                    Your intellect may be confused, but your emotions will never lie to you <span class='vlum'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-volume.png' /></span>
-                    <p>Benjamin Franklin</p>
-                </li>
-                <li>
-                    Your intellect may be confused, but your emotions will never lie to you <span class='vlum'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-volume.png' /></span>
-                    <p> Benjamin Franklin</p>
-                </li>
-                <li>
-                    Your intellect may be confused, but your emotions will never lie to you <span class='vlum'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-volume.png' /></span>
-                    <p> Benjamin Franklin</p>
-                </li>
-                <li>
-                    Your intellect may be confused, but your emotions will never lie to you <span class='vlum'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-volume.png' /></span>
-                    <p> Benjamin Franklin</p>
-                </li>
-                <li>
-                    Your intellect may be confused, but your emotions will never lie to you <span class='vlum'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-volume.png' /></span>
-                    <p> Benjamin Franklin</p>
-                </li>
+                    <a class='danhngon_block' href="javascript:void(0)" title="<?php echo $k->dictionary?>"><?php echo $k->title?></a> <span class='vlum'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-volume.png' /></span>
+                    <p><?php echo $k->author?></p>            
+                    </li>
+                <?php } ?>
             </ul>
         </div>
     </div><!-- end .box -->

@@ -5,10 +5,20 @@
     <div class='span6 sub-nav-header-right'>
         <div class='text-search'>Tìm kiếm bài học</div>
         <div class='text-field'>
-            <form action='#' method='get'>
-                <input type="text" name="kw" />
-                <button type='submit'>Tìm kiếm</button>
-            </form>
+            
+                
+    <form name="cse" id="searchbox_demo" action="http://www.google.com/cse">
+<input type="hidden" name="cref" value="" />
+<input type="hidden" name="ie" value="utf-8" />
+<input type="hidden" name="hl" value="" />
+<input name="q" type="text" class="search_query_input"/>
+<button type='submit'>Tìm kiếm</button>
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/tools/onthefly?form=searchbox_demo&lang="> 
+</script>
+            
+            
+            
         </div>
     </div>
 </div><!-- end #sub-nav-header -->
@@ -126,7 +136,7 @@
 <div class='row-fluid block-home-5'>
     <?php $this->widget('study_by_film'); ?>
     <!-- end hoc qua phim -->
-    <?php $this->widget('danhngon'); ?>
+    <?php $this->widget('danhngons'); ?>
     <!-- end danh ngon tieng anh -->
     <?php $this->widget('box_game'); ?>
     <!-- end tro cho tieng anh -->

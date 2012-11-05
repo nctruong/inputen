@@ -40,6 +40,16 @@ abstract class MiisSysadminController extends MiisController {
                     array('label' => 'Mangage Taxonomy', 'url' => Yii::app()->baseUrl . '/sysadmin/taxonomy.html', 'active' => $this->id == 'taxonomy' && $this->action->id == 'index' ? true : false),
                 )
             ), // Contents
+              array('label' => 'Options', 'icon' => 'icon-book icon-white', 'url' => 'javascript:void(0)', 'active' => ($this->id == 'support' | $this->id == 'danhngon')  ? true : false,
+               'items' => array(
+                    array('label' => 'Support', 'url' => Yii::app()->baseUrl . '/sysadmin/supports.html', 'active' => $this->id == 'support' ? true : false),
+                    array('label' => 'Danh ngôn', 'url' => Yii::app()->baseUrl . '/sysadmin/danhngon.html', 'active' => $this->id == 'danhngon' ? true : false),
+                    //array('label' => 'Create HocQuaClip', 'url' => Yii::app()->baseUrl . '/sysadmin/hocquaclip/create.html', 'active' => $this->id == 'create' ? true : false),
+                    //array('label' => 'Mangage HocQuaClip', 'url' => Yii::app()->baseUrl . '/sysadmin/hocquaclip.html', 'active' => $this->id == 'hocquaclip' ? true : false),
+                )
+            ), // Pages
+            
+            
             array('label' => 'Contents', 'icon' => 'icon-book icon-white', 'url' => Yii::app()->baseUrl . '/sysadmin/content.html', 'active' => $this->id == 'content' ? true : false,
 //                'items' => array(
 //                    array('label' => 'Create BaiHoc', 'url' => Yii::app()->baseUrl . '/sysadmin/baihoc/create.html', 'active' => $this->id == 'create' ? true : false),

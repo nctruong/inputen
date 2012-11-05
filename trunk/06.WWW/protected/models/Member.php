@@ -57,7 +57,7 @@ class Member extends CActiveRecord {
             array('fullname', 'length', 'max' => 150),
             array('address', 'length', 'max' => 255),
             array('school', 'length', 'max' => 250),
-            array('dob, created_date', 'safe'),
+            array('dob, ,avatar,hidden_dob,hidden_address,point, created_date', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             array('id, username, email, fullname, dob, gender, address, school, country, premium, created_date, blocked', 'safe', 'on' => 'search'),

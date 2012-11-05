@@ -31,6 +31,9 @@ return array(
         'errorHandler' => array(
             'errorAction' => 'site/error',
         ),
+        'counter' => array(
+            'class' => 'UserCounter',
+        ),
         'bootstrap' => array(
             'class' => 'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
         ),
@@ -83,7 +86,8 @@ return array(
                 'tin-tuc/<slug:.*>-<id:\d+>' => 'news/viewlist/',
                 //clip
                 'hoc-qua-clip' => 'clip',
-                'hoc-qua-clip/<slug:.*?>/<id_cat:\d+>/page/<page:\d+>' =>'clip/ajax',
+                'hoc-qua-clip/<slug:.*?>/<id_cat:\d+>/page/<page:\d+>' =>'clip/ajax',                
+                'hoc-qua-clip/<slug:.*?>/<id_cat:\d+>/<type:.*?>/page/<page:\d+>' =>'clip/ajax',                
                 'hoc-qua-clip/<controller:\w+>' => 'news/<controller>',
                 'hoc-qua-clip/<controller:\w+>/<action:\w+>' => 'news/<controller>/<action>',
                 
