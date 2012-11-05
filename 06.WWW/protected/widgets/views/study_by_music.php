@@ -12,7 +12,7 @@
             <ul id='sty-music'>
                 <?php foreach($new_music as $k){ ?>
                 <li>
-                    <a href="<?php echo Yii::app()->getBaseUrl(true)."/".$k->category->taxonomy->slug."/".$k->category->slug."-".$k->category->id."/".$k->slug."-".$k->id.".html"?>"><?php echo $k->title?></a>
+                    <a title="<?php echo $k->title?>" href="<?php echo Yii::app()->getBaseUrl(true)."/".$k->category->taxonomy->slug."/".$k->category->slug."-".$k->category->id."/".$k->slug."-".$k->id.".html"?>"><?php echo $k->title?></a>
                     <p>Nghe: <?php echo $k->view?></p>
                 </li>
                 <?php } ?>
@@ -23,7 +23,7 @@
             <ul id='sty-music'>
                 <?php foreach($hot_music as $k){ ?>
                 <li>
-                    <a href="<?php echo Yii::app()->getBaseUrl(true)."/".$k->category->taxonomy->slug."/".$k->category->slug."-".$k->category->id."/".$k->slug."-".$k->id.".html"?>"><?php echo $k->title?></a>
+                    <a title="<?php echo $k->title?>" href="<?php echo Yii::app()->getBaseUrl(true)."/".$k->category->taxonomy->slug."/".$k->category->slug."-".$k->category->id."/".$k->slug."-".$k->id.".html"?>"><?php echo $k->title?></a>
                     <p>Nghe: <?php echo $k->view?></p>
                 </li>
                 <?php } ?>

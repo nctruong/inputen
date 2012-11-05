@@ -20,6 +20,7 @@ class ClipController extends MiisController {
         $this->render('index',array('category' => $data,'total'=>$total));                       
     }
     public function actionViewlist($id=''){
+        sleep(3);
         $root = Category::model()->findByPk($id);
         if($root->taxonomy_id != $this->root_id){
              throw new CHttpException(404,'PAGE NOT FOUND.');
@@ -33,9 +34,16 @@ class ClipController extends MiisController {
         $slug = Yii::app()->request->getParam('slug',false);
         $cat_id = Yii::app()->request->getParam('id_cat',false);    
         $page = Yii::app()->request->getParam('page',1);        
-        
-        $data['data'] = Content::model()->findAll(array("condition"=>"state = 1 and category_id = ".$cat_id,"order"=>"id desc","limit"=>6,"offset"=>(($page-1)*6)));
-        $this->renderPartial("pagin_home",$data);
+        $type = Yii::app()->request->getParam('type',false);        
+        switch($type){
+            case 'five':
+                $data['data'] = Content::model()->findAll(array("condition"=>"state = 1 and category_id = ".$cat_id,"order"=>"id desc","limit"=>5,"offset"=>(($page-1)*5)));
+                break;
+            default:
+                $data['data'] = Content::model()->findAll(array("condition"=>"state = 1 and category_id = ".$cat_id,"order"=>"id desc","limit"=>6,"offset"=>(($page-1)*6)));
+                break;
+        }
+               $this->renderPartial("clip_1",$data);
         
     }
     public function actionView($id='') {

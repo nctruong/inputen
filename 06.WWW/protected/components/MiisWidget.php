@@ -14,6 +14,7 @@ abstract class MiisWidget extends CWidget {
     public $_id_pho_thong = 10;
     public function init() {
         parent::init();
+        Yii::app()->counter->refresh();
         $this->_session=new CHttpSession;
         $this->_session->open();
     }

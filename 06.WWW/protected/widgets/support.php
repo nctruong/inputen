@@ -13,7 +13,8 @@ class Support extends MiisWidget {
 
     public function run() {
         parent::run();
-        $this->render('support');
+        $data['data'] = Supports::model()->findAll(array("condition"=>"state = 1","order"=>"'order' desc"));
+        $this->render('support',$data);
     }
 
 }

@@ -82,8 +82,9 @@ class MemberController extends MiisSysadminController
 
             if (isset($_POST['Member'])) {
                 
-                $model->attributes = $_POST['Member'];
-                
+                $model->attributes = $_POST['Member'];               
+                //$model->validate();
+                $model->repass = $model->password;
                 if ($model->save())
                     $this->redirect(array('index'));
             }

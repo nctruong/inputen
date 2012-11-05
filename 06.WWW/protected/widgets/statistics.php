@@ -12,7 +12,12 @@ class Statistics extends MiisWidget {
     }
     public function run() {
         parent::run();
-        $this->render('statistics');
+        $data['user']['total'] = Member::model()->count();
+        $data['user']['new'] = Member::model()->find(array("order"=>"id desc"));
+        
+        
+                
+        $this->render('statistics',$data);
     }
 
 }

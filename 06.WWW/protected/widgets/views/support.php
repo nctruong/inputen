@@ -5,9 +5,18 @@
       <div class="title_support">Hỗ trợ trực tuyến</div>
       <div class="body_right">
          <ul class="none_list_style">
-            <li>Giáo viên 1: <img  src="<?php echo Yii::app()->theme->GetBaseUrl()?>/assets/img/yahoo.jpg"></li>
-            <li>Giáo viên 2: <img  src="<?php echo Yii::app()->theme->GetBaseUrl()?>/assets/img/yahoo.jpg"></li>
-            <li>Giáo viên 3: <img  src="<?php echo Yii::app()->theme->GetBaseUrl()?>/assets/img/yahoo.jpg"></li>
+             <?php
+                foreach($data as $k){
+                    switch($k->type){
+                        case 0:
+                            echo "<li>".$k->name.": <a href='ymsgr:sendim?".$k->nick."'><img src='http://opi.yahoo.com/online?u=".$k->nick."&amp;m=g&amp;t=2&amp;l=us' border='0' style='height:18px'></a></li>";
+                            break;
+                        case 1:
+                            echo "<li>".$k->name.": <a href='ymsgr:sendim?".$k->nick."' title='".$k->name."'><img src='http://opi.yahoo.com/online?u=".$k->nick."&amp;m=g&amp;t=2&amp;l=us' border='0' style='height:18px'></a></li>";
+                            break;
+                    }
+                }
+             ?>
          </ul>
     </div>
 </div><!--end .suport-->
