@@ -13,6 +13,11 @@
             <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/en-style.css" rel="stylesheet"/>
             <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/page2.css" rel="stylesheet"/>            
             <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/row.css" rel="stylesheet"/>            
+            <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/highslide/highslide.css" rel="stylesheet"/> 
+            <script src="<?php echo Yii::app()->getBaseUrl(true); ?>/highslide/highslide-with-html.min.js"></script>
+            <style>
+                .highslide-credits{display:none;}
+            </style>
 
 
 
@@ -23,24 +28,30 @@
             <div id="top" class="row-fluid">
                 <img class="logo" src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/logo.png">
             </div><!-- end #top -->
-            <!--            <div id='en-nav' class='row-fluid'>
-                            <ul>
-                                <li><a href='<?php echo Yii::app()->getBaseUrl(true); ?>'>Home</a></li>
-                                <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/tin-tuc.html'; ?>'>Tin tức</a></li>
-                                <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/bai-hoc.html'; ?>'>Bài học</a></li>
-                                <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/tham-khao.html'; ?>'>Tham khảo</a></li>
-                                <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/hoc-qua-clip.html'; ?>'>Học qua clip</a></li>
-                                <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/site/hocvachoi.html'; ?>'>Học và chơi</a></li>
-                                <li><a href='#'>Bài test</a></li>
-                                <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/hoc-offline.html'; ?>'>Học offline</a></li>
-                                 <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/video.html'; ?>'>Video</a></li>
-                                <li><a href='#'>T.A Phổ thông</a></li>
-                                <li><a href='#'>Chấm điểm</a></li>
-                                <li><a href='#' class='li-last'>Diễn đàn</a></li>
-                            </ul>
-                        </div> end #menu-bar -->
+
             <?php
             $this->widget("menus");
+            ?>
+
+            <?php
+            $this->widget('bootstrap.widgets.TbAlert', array(
+                'block' => true, // display a larger alert block?
+                'fade' => true, // use transitions?
+                'closeText' => '&times;', // close link text - if set to false, no close link is displayed
+                'alerts' => array(// configurations per alert type
+                    'success' => array('block' => true, 'fade' => true, 'closeText' => '&times;'), // success, info, warning, error or danger
+                ),
+            ));
+            ?>
+            <?php
+            $this->widget('bootstrap.widgets.TbAlert', array(
+                'block' => true, // display a larger alert block?
+                'fade' => true, // use transitions?
+                'closeText' => '&times;', // close link text - if set to false, no close link is displayed
+                'alerts' => array(// configurations per alert type
+                    'error' => array('block' => true, 'fade' => true, 'closeText' => '&times;'), // success, info, warning, error or danger
+                ),
+            ));
             ?>
 
 
@@ -53,15 +64,15 @@
                 <div class='span2'></div>
                 <div id='en-nav' class='row-fluid span10'>
                     <ul>
-                        <li><a href='#' class='li-first'>Home</a></li>
-                        <li><a href='#'>Phát âm tiếng anh</a></li>
-                        <li><a href='#'>Đọc tiếng anh</a></li>
-                        <li><a href='#'>Luyện thi toiec</a></li>
-                        <li><a href='#'>Từ vựng tiếng anh</a></li>
-                        <li><a href='#'>Ngữ pháp tiếng anh</a></li>
-                        <li><a href='#'>Nghe tiếng anh</a></li>
-                        <li><a href='#'>Tiếng anh thương mại</a></li>
-                        <li><a href='#' class='li-last'>Qui định sử dụng</a></li>
+                        <li><a href='#' class='li-first highslide'>Home</a></li>
+                        <li><a href='#' class='highslide' >Phát âm tiếng anh</a></li>
+                        <li><a class='highslide' href='#'>Đọc tiếng anh</a></li>
+                        <li><a class='highslide' href='#'>Luyện thi toiec</a></li>
+                        <li><a class='highslide' href='#'>Từ vựng tiếng anh</a></li>
+                        <li><a class='highslide' href='#'>Ngữ pháp tiếng anh</a></li>
+                        <li><a class='highslide'href='#'>Nghe tiếng anh</a></li>
+                        <li><a class='highslide'href='#'>Tiếng anh thương mại</a></li>
+                        <li><a class='highslide' href='#' class='li-last'>Qui định sử dụng</a></li>
                     </ul>
                 </div><!-- end #menu-bar -->
             </div>
@@ -88,6 +99,29 @@
                 </div>
             </div>
         </div><!-- end #footer-info -->
+        <div class="highslide-html-content" id="highslide-html">
+            <div class="highslide-header">
+                <ul>
+                    <li class="highslide-move">
+                        <a href="#" onclick="return false">Move</a>
+                    </li>
+                    <li class="highslide-close">
+                        <a href="#" onclick="return hs.close(this)">Close</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="highslide-body">
+                <b>Hiện tại trang web đang trong quá trình hoàn thiện, Vui lòng quay lại sau, Thanks.</b>
+            </div>
+            <div class="highslide-footer">
+                <div>
+                    <span class="highslide-resize" title="Resize">
+                        <span></span>
+                    </span>
+                </div>
+            </div>
+        </div><!-- end hightlight -->
+
     </body>
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery-1.7.1.min.js"></script>
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery-ui-1.8.0.min.js" type='text/javascript'></script>
@@ -97,53 +131,14 @@
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/cufon-yui.js"></script>
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/League_Gothic_400.font.js"></script>
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/script.js"></script>   
-    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/chilltip-packed.js"></script>    
-    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery.base64.min.js"></script>    
-    <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/highslide/highslide.js"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->getBaseUrl(); ?>/highslide/highslide.css" />
-    <script type="text/javascript">
-        // override Highslide settings here
-    // instead of editing the highslide.js file
-    hs.graphicsDir = '<?php echo Yii::app()->getBaseUrl(); ?>/highslide/graphics/';
-    var base_url = '<?php echo Yii::app()->getBaseUrl(true) ?>';
-    </script>
-    <script>var LOG = ('<?php echo base64_encode($this->_session['isLogin']) ?>');</script>
     <script>
-    //        function remove_title(){
-    //            $("div.stranslate_div a,a.tip").each(function(){  
-    //                tam_tit = $(this).attr("title");
-    //                $(this).attr("alt",tam_tit);
-    //                $(this).attr('title','');
-    //            })
-    //        }
-    //        $().ready(function(){
-    //            //$('a.tip').cluetip({splitTitle: '|'});
-    //            remove_title();
-    //            $(".enab_tip").click(function(){
-    //                if($(this).text()=='Tắt lời dịch'){
-    //                        $(this).text("Bật lời dịch");
-    //                        $("div.stranslate_div a,a.tip").unbind("hover");
-    //                        remove_title();
-    //                }else{
-    //                        $("div.stranslate_div a,a.tip").each(function(){
-    //                            tam_tit = $(this).attr("alt");
-    //                            $(this).attr("title",tam_tit);
-    //                        })
-    //                        $(this).text("Tắt lời dịch");
-    //                         <?php if ($this->_session['isLogin']) { ?>
-        //                        $("div.stranslate_div a,a.tip").ChillTip().hover(function(){
-        //                           $(this).css("background","#FCD116");
-        //                        },function(){$(this).css("background","none");});
-        //                        <?php } else { ?>
-        //                        $("div.stranslate_div a,a.tip").ChillTip().hover(function(){ $(this).css("background","#FCD116");
-        //                        },function(){$(this).css("background","none");});
-        //                            $("div.stranslate_div a").each(function(){
-        //                                $(this).attr("title",'Bạn phải là thành viên VIP mới xem được lời dịch này');
-        //                            })
-        //                        <?php } ?> 
-    //                }
-    //            }) 
-    //        })
+        $(document).ready(function(){
+            $('a.highslide').click(function(e){
+                return hs.htmlExpand(this, { contentId: 'highslide-html' } );
+               
+            });
+            
+        });
     </script>
 </html>
 
