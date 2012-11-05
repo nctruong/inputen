@@ -18,36 +18,40 @@ function remove_title(){
 
 
 
-function showLoader(){
-    
-}
+
 //hide loading bar
 function hideLoader1(){
 //$('.list_pagin_video').fadeOut(200);
     
 }	
 $(".pagin_home_n1 li a").click(function(){
-    
     //show the loading bar
-    showLoader();
-
     url = $(this).attr("href");
-    
     page_num = $(this).attr("rel");
     x = $(this).parent().parent().parent().parent().prev().find("ul");
-    x.load(url+"/page/"+page_num);
+    if(x == 'unbd')
+        alert($(this).parent().parent().parent().parent().prev().attr("id"));
+    x.css("opacity",0);
+    s_parent = x.parent().parent().parent().parent();
+    load_obj = s_parent.find("img.ax_load");
+    load_obj.fadeIn();
+    num = ($(this).attr("name")) ? 0 : $(this).attr("name");
+    $.ajax({
+        url:url+"/page/"+page_num,
+        type:'post',
+        success:function(html){
+            x.html(html);
+            load_obj.hide();
+            x.css("opacity",1);
+        }            
+    })	
     return false;
-    //;
-    
-//$("#resn").load("data1.php?page=" + this.className, hideLoader1);
 });
 	
 // by default first time this will execute
 function tab(control,source){
     $(control+' a').click(function(){
-        
         id = $(this).attr("href");
-        
         if($(source+" div#"+id).css("display")=='none'){
             $(source+' div._tab').hide();
             $(source+" div#"+id).fadeIn();
@@ -63,7 +67,13 @@ function tab(control,source){
     
 }
 $().ready(function(){
-       
+    $(".hitstat embed").css("border:1px solid #ccc");
+    $("input.search_query_input").css({"padding":"4px"});
+    $(".danhngon_block").ChillTip().hover(function(){
+        $(this).css({"background":"#FCD116"});
+    },function(){
+        $(this).css("background","none");
+    });
     
     
     
@@ -98,6 +108,8 @@ $().ready(function(){
     tab('ul.music_block_tab_control','.music_block_tab');
     tab('ul.block_listen_news_comment','.block-info-body');
     tab('ul#ul-study','.video_show_case');
+    tab('ul.list_video_trailer','.list_video_trailer_component');    
+    
     
     
     //    $('ul.music_block_tab_control a').click(function(){
