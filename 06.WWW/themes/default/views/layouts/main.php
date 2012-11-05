@@ -9,13 +9,13 @@
                 <link href="css/ie.css" rel="stylesheet">
             <![endif]--> 
             <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/jquery.mCustomScrollbar.css" rel="stylesheet"/>
-            
+
             <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/en-style.css" rel="stylesheet"/>
             <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/page2.css" rel="stylesheet"/>            
             <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/row.css" rel="stylesheet"/>            
-                      
-            
-                        
+
+
+
     </head>
     <body>
 
@@ -23,32 +23,32 @@
             <div id="top" class="row-fluid">
                 <img class="logo" src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/logo.png">
             </div><!-- end #top -->
-<!--            <div id='en-nav' class='row-fluid'>
-                <ul>
-                    <li><a href='<?php echo Yii::app()->getBaseUrl(true); ?>'>Home</a></li>
-                    <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/tin-tuc.html'; ?>'>Tin tức</a></li>
-                    <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/bai-hoc.html'; ?>'>Bài học</a></li>
-                    <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/tham-khao.html'; ?>'>Tham khảo</a></li>
-                    <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/hoc-qua-clip.html'; ?>'>Học qua clip</a></li>
-                    <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/site/hocvachoi.html'; ?>'>Học và chơi</a></li>
-                    <li><a href='#'>Bài test</a></li>
-                    <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/hoc-offline.html'; ?>'>Học offline</a></li>
-                     <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/video.html'; ?>'>Video</a></li>
-                    <li><a href='#'>T.A Phổ thông</a></li>
-                    <li><a href='#'>Chấm điểm</a></li>
-                    <li><a href='#' class='li-last'>Diễn đàn</a></li>
-                </ul>
-            </div> end #menu-bar -->
+            <!--            <div id='en-nav' class='row-fluid'>
+                            <ul>
+                                <li><a href='<?php echo Yii::app()->getBaseUrl(true); ?>'>Home</a></li>
+                                <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/tin-tuc.html'; ?>'>Tin tức</a></li>
+                                <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/bai-hoc.html'; ?>'>Bài học</a></li>
+                                <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/tham-khao.html'; ?>'>Tham khảo</a></li>
+                                <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/hoc-qua-clip.html'; ?>'>Học qua clip</a></li>
+                                <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/site/hocvachoi.html'; ?>'>Học và chơi</a></li>
+                                <li><a href='#'>Bài test</a></li>
+                                <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/hoc-offline.html'; ?>'>Học offline</a></li>
+                                 <li><a href='<?php echo Yii::app()->getBaseUrl(true) . '/video.html'; ?>'>Video</a></li>
+                                <li><a href='#'>T.A Phổ thông</a></li>
+                                <li><a href='#'>Chấm điểm</a></li>
+                                <li><a href='#' class='li-last'>Diễn đàn</a></li>
+                            </ul>
+                        </div> end #menu-bar -->
             <?php
-                $this->widget("menus");
+            $this->widget("menus");
             ?>
 
-            
-<?php echo $content ?>
-            
-            
+
+            <?php echo $content ?>
+
+
         </div><!-- end #container -->            
- <div class='container-fluid' id='footer-menu'>
+        <div class='container-fluid' id='footer-menu'>
             <div class='row-fluid' id='top-footer'>
                 <div class='span2'></div>
                 <div id='en-nav' class='row-fluid span10'>
@@ -102,48 +102,48 @@
     <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/highslide/highslide.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->getBaseUrl(); ?>/highslide/highslide.css" />
     <script type="text/javascript">
-    // override Highslide settings here
+        // override Highslide settings here
     // instead of editing the highslide.js file
-        hs.graphicsDir = '<?php echo Yii::app()->getBaseUrl(); ?>/highslide/graphics/';
-        var base_url = '<?php echo Yii::app()->getBaseUrl(true)?>';
+    hs.graphicsDir = '<?php echo Yii::app()->getBaseUrl(); ?>/highslide/graphics/';
+    var base_url = '<?php echo Yii::app()->getBaseUrl(true) ?>';
     </script>
     <script>var LOG = ('<?php echo base64_encode($this->_session['isLogin']) ?>');</script>
     <script>
-//        function remove_title(){
-//            $("div.stranslate_div a,a.tip").each(function(){  
-//                tam_tit = $(this).attr("title");
-//                $(this).attr("alt",tam_tit);
-//                $(this).attr('title','');
-//            })
-//        }
-//        $().ready(function(){
-//            //$('a.tip').cluetip({splitTitle: '|'});
-//            remove_title();
-//            $(".enab_tip").click(function(){
-//                if($(this).text()=='Tắt lời dịch'){
-//                        $(this).text("Bật lời dịch");
-//                        $("div.stranslate_div a,a.tip").unbind("hover");
-//                        remove_title();
-//                }else{
-//                        $("div.stranslate_div a,a.tip").each(function(){
-//                            tam_tit = $(this).attr("alt");
-//                            $(this).attr("title",tam_tit);
-//                        })
-//                        $(this).text("Tắt lời dịch");
-//                         <?php if($this->_session['isLogin']){?>
-//                        $("div.stranslate_div a,a.tip").ChillTip().hover(function(){
-//                           $(this).css("background","#FCD116");
-//                        },function(){$(this).css("background","none");});
-//                        <?php } else { ?>
-//                        $("div.stranslate_div a,a.tip").ChillTip().hover(function(){ $(this).css("background","#FCD116");
-//                        },function(){$(this).css("background","none");});
-//                            $("div.stranslate_div a").each(function(){
-//                                $(this).attr("title",'Bạn phải là thành viên VIP mới xem được lời dịch này');
-//                            })
-//                        <?php }?> 
-//                }
-//            }) 
-//        })
-         </script>
+    //        function remove_title(){
+    //            $("div.stranslate_div a,a.tip").each(function(){  
+    //                tam_tit = $(this).attr("title");
+    //                $(this).attr("alt",tam_tit);
+    //                $(this).attr('title','');
+    //            })
+    //        }
+    //        $().ready(function(){
+    //            //$('a.tip').cluetip({splitTitle: '|'});
+    //            remove_title();
+    //            $(".enab_tip").click(function(){
+    //                if($(this).text()=='Tắt lời dịch'){
+    //                        $(this).text("Bật lời dịch");
+    //                        $("div.stranslate_div a,a.tip").unbind("hover");
+    //                        remove_title();
+    //                }else{
+    //                        $("div.stranslate_div a,a.tip").each(function(){
+    //                            tam_tit = $(this).attr("alt");
+    //                            $(this).attr("title",tam_tit);
+    //                        })
+    //                        $(this).text("Tắt lời dịch");
+    //                         <?php if ($this->_session['isLogin']) { ?>
+        //                        $("div.stranslate_div a,a.tip").ChillTip().hover(function(){
+        //                           $(this).css("background","#FCD116");
+        //                        },function(){$(this).css("background","none");});
+        //                        <?php } else { ?>
+        //                        $("div.stranslate_div a,a.tip").ChillTip().hover(function(){ $(this).css("background","#FCD116");
+        //                        },function(){$(this).css("background","none");});
+        //                            $("div.stranslate_div a").each(function(){
+        //                                $(this).attr("title",'Bạn phải là thành viên VIP mới xem được lời dịch này');
+        //                            })
+        //                        <?php } ?> 
+    //                }
+    //            }) 
+    //        })
+    </script>
 </html>
 
