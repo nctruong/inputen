@@ -621,6 +621,9 @@ ul.ul1 li:hover {
     color: #015B7E;
     font-size: 31px;
 }
+.block-info{
+	position:relative;
+}
 .block-info ul.block-info-title li:hover, .block-info ul.block-info-title li.active {
     background: none repeat scroll 0 0 #840202;
 }
@@ -989,6 +992,11 @@ div.pt2 {
 .cnn .ul-type2 ul li {
     float: left;
 }
+.cnn .ul-type2 ul li a img{
+    width:111px;
+    height:78px;
+}
+
 .study-by-cnn {
     float: left;
     margin-left: 47px !important;
@@ -1094,7 +1102,7 @@ div.pt2 {
     color: orange;
     float: left;
     font-weight: bold;
-    width: 190px;
+    width: 305px;
 }
 #sty-video li a:hover{color: #840202;}
 #sty-video li {
@@ -1102,12 +1110,19 @@ div.pt2 {
     width: 100%;
     margin-top:5px;
     border-bottom: 1px solid #ccc;
+    padding: 7px 0px;
+}
+#sty-video li img{
+    width:117px;
+    height:84px;
 }
 #sty-video li p {
     color: #646464;
     font-weight: bold;
     font-size: 12px;
     font-family: arial;
+    height:80px;
+    overflow: hidden;
 }
 .mt_10{margin: 6px 3px;}
 .box {
@@ -1122,6 +1137,9 @@ div.pt2 {
     height: 523px;
     padding-right: 0px;
     overflow: hidden;
+}
+.sty-idoms a{
+    padding:2px;
 }
 .box-title {
     text-transform: uppercase;

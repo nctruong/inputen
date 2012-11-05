@@ -535,8 +535,9 @@ p.desc_block_video{
 .ax_load{
 position: absolute;
 left: 46%;
-top: 139%;
-display: none;
+top: 44%;
+display:none;
+
 }
 .place_ajax_list_video{
     
@@ -556,6 +557,17 @@ right: 9px;
 }
 .body_login{
     border-radius:7px;
+}
+.pagin_study_by_clip{
+	
+	
+}
+
+.pagin_home_n1 li{
+	margin:0px;
+}
+.list_pagin_video{
+	float:left;
 }
 
 
