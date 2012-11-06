@@ -13,6 +13,9 @@
 .page3{
 	line-height:50px;
 }
+.hide{
+    display: none;
+}
 .floatL{
 	float:left;
 }
@@ -569,8 +572,25 @@ right: 9px;
 .list_pagin_video{
 	float:left;
 }
-
-
+/**
+  **************************top 
+*/
+#top{
+    position: relative;
+    height: 125px;
+}
+#top .logo{
+    position: absolute;
+    top:0px;
+}
+.total_reply ul li{
+    border-bottom:1px solid #ccc;
+    padding-left:5px;
+    margin-left:5px;
+    width:90%;
+    float:left;
+    
+}
 
 .br{
 	border:1px solid red;

@@ -1023,7 +1023,6 @@ div.pt2 {
     float: left;
     height: 349px;
     margin-top: 10px;
-    overflow: hidden;
     padding: 10px;
     width: 92%;
 }
@@ -1251,6 +1250,7 @@ span.name a {
 .mem-body{
     height: 356px;
     padding:5px;
+    overflow-y:scroll;
 }
 .mem-body ul li {
     float: left;
