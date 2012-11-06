@@ -44,6 +44,8 @@ abstract class MiisSysadminController extends MiisController {
                'items' => array(
                     array('label' => 'Support', 'url' => Yii::app()->baseUrl . '/sysadmin/supports.html', 'active' => $this->id == 'support' ? true : false),
                     array('label' => 'Danh ngôn', 'url' => Yii::app()->baseUrl . '/sysadmin/danhngon.html', 'active' => $this->id == 'danhngon' ? true : false),
+                    array('label' => 'Danh hiệu', 'url' => Yii::app()->baseUrl . '/sysadmin/danhhieu.html', 'active' => $this->id == 'danhhieu' ? true : false),
+                    array('label' => 'Banner - Logo', 'url' => Yii::app()->baseUrl . '/sysadmin/logo.html', 'active' => $this->id == 'logo' ? true : false),
                     //array('label' => 'Create HocQuaClip', 'url' => Yii::app()->baseUrl . '/sysadmin/hocquaclip/create.html', 'active' => $this->id == 'create' ? true : false),
                     //array('label' => 'Mangage HocQuaClip', 'url' => Yii::app()->baseUrl . '/sysadmin/hocquaclip.html', 'active' => $this->id == 'hocquaclip' ? true : false),
                 )
