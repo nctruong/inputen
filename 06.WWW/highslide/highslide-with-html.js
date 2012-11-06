@@ -1,6 +1,6 @@
 /** 
  * Name:    Highslide JS
- * Version: 4.1.13 (2011-10-06)
+ * Version: 4.1.12 (2011-03-28)
  * Config:  default +inline +ajax +iframe +flash
  * Author:  Torstein Hønsi
  * Support: www.highslide.com/support
@@ -14,8 +14,8 @@ lang : {
 	loadingTitle : 'Click to cancel',
 	focusTitle : 'Click to bring to front',
 	fullExpandTitle : 'Expand to actual size (f)',
-	creditsText : 'Powered by <i>Highslide JS</i>',
-	creditsTitle : 'Go to the Highslide JS homepage',
+	creditsText : 'www.tienganh123.com',
+	creditsTitle : 'TiengAnh123',
 	previousText : 'Previous',
 	nextText : 'Next', 
 	moveText : 'Move',
@@ -52,7 +52,7 @@ padToMinWidth : false, // pad the popup width to make room for wide caption
 fullExpandPosition : 'bottom right',
 fullExpandOpacity : 1,
 showCredits : true, // you can set this to false if you want
-creditsHref : 'http://highslide.com/',
+creditsHref : 'http://www.tienganh123.com/',
 creditsTarget : '_self',
 enableKeyListener : true,
 openerTagNames : ['a'], // Add more to allow slideshow indexing
@@ -243,17 +243,17 @@ css: function(el, prop) {
 
 getPageSize : function () {
 	var d = document, w = window, iebody = d.compatMode && d.compatMode != 'BackCompat' 
-		? d.documentElement : d.body,
-		ieLt9 = hs.ie && (hs.uaVersion < 9 || typeof pageXOffset == 'undefined');
+		? d.documentElement : d.body;
 	
-	var width = ieLt9 ? iebody.clientWidth : 
+	var width = hs.ieLt9 ? iebody.clientWidth : 
 			(d.documentElement.clientWidth || self.innerWidth),
-		height = ieLt9 ? iebody.clientHeight : self.innerHeight;
+		height = hs.ieLt9 ? iebody.clientHeight : self.innerHeight;
+	
 	hs.page = {
 		width: width,
 		height: height,		
-		scrollLeft: ieLt9 ? iebody.scrollLeft : pageXOffset,
-		scrollTop: ieLt9 ? iebody.scrollTop : pageYOffset
+		scrollLeft: hs.ieLt9 ? iebody.scrollLeft : pageXOffset,
+		scrollTop: hs.ieLt9 ? iebody.scrollTop : pageYOffset
 	};
 	return hs.page;
 },
@@ -470,7 +470,8 @@ keyHandler : function(e) {
 		case 13: // Enter
 			op = 0;
 	}
-	if (op !== null) {hs.removeEventListener(document, window.opera ? 'keypress' : 'keydown', hs.keyHandler);
+	if (op !== null) {
+		hs.removeEventListener(document, window.opera ? 'keypress' : 'keydown', hs.keyHandler);
 		if (!hs.enableKeyListener) return true;
 		
 		if (e.preventDefault) e.preventDefault();
@@ -2295,17 +2296,13 @@ doFullExpand : function () {
 		if (this.fullExpandLabel) hs.discardElement(this.fullExpandLabel);
 		
 		this.focus();
-		var xSize = this.x.size,
-        	ySize = this.y.size;
-        this.resizeTo(this.x.full, this.y.full);
-       
-        var xpos = this.x.pos - (this.x.size - xSize) / 2;
-        if (xpos < hs.marginLeft) xpos = hs.marginLeft;
-       
-        var ypos = this.y.pos - (this.y.size - ySize) / 2;
-        if (ypos < hs.marginTop) ypos = hs.marginTop;
-       
-        this.moveTo(xpos, ypos);
+		var xSize = this.x.size;
+		this.resizeTo(this.x.full, this.y.full);
+		
+		var xpos = this.x.pos - (this.x.size - xSize) / 2;
+		if (xpos < hs.marginLeft) xpos = hs.marginLeft;
+		
+		this.moveTo(xpos, this.y.pos);
 		this.doShowHide('hidden');
 	
 	} catch (e) {
@@ -2446,12 +2443,10 @@ hs.addEventListener(window, 'load', hs.ready);
 hs.addEventListener(document, 'ready', function() {
 	if (hs.expandCursor) {
 		var style = hs.createElement('style', { type: 'text/css' }, null, 
-			document.getElementsByTagName('HEAD')[0]), 
-			backCompat = document.compatMode == 'BackCompat';
+			document.getElementsByTagName('HEAD')[0]);
 			
-		
-		function addRule(sel, dec) {
-			if (hs.ie && (hs.uaVersion < 9 || backCompat)) {
+		function addRule(sel, dec) {		
+			if (hs.ie && hs.uaVersion < 9) {
 				var last = document.styleSheets[document.styleSheets.length - 1];
 				if (typeof(last.addRule) == "object") last.addRule(sel, dec);
 			} else {
