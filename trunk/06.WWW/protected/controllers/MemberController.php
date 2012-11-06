@@ -19,24 +19,11 @@ class MemberController extends MiisController {
         echo $id;
     }
     public function actionAjaxquestion(){
-        $js = json_decode($_POST['js']);
-        foreach($js as $k){
-            if($k->name=='content_reply'){
-                $content = $k->value;
-            }
-            if($k->name=='hid'){
-                $id = $k->value;
-            }
-        }
+        echo "aaa";
+        echo "<pre>";
+        print_r($_POST);
+        echo "</pre>";
 
-        
-                $model = new Mquestion;
-                $model->content = htmlspecialchars($content);
-                $model->parent = $id;
-                $model->user_id = $this->_session['login_id'];                
-                $model->state = Libraries::get_vip($this->_session['login_id']);
-                $model->date_create = new CDbExpression('NOW()');
-                $model->save();
     }
     public function actionRegister() {
         $model = new Member;

@@ -38,7 +38,14 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
             <?php echo $form->textFieldRow($model, 'author', array('class' => 'span5', 'maxlength' => 255)); ?>
             <div class="op_2 op_1 ctrl" style="">
                 <div class="control-group ">        
-
+                <?php
+                        $this->widget('ext.elFinder.ServerFileInput', array(
+                            'model' => $model,
+                            'attribute' => 'audio',
+                            'connectorRoute' => 'sysadmin/elfinder/connector',
+                                )
+                        );
+                        ?>
                 </div>
             </div>
         </div>
