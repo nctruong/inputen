@@ -28,11 +28,12 @@
             <div id="top" class="row-fluid">
                 <img class="logo" src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/img/logo.png">
             </div><!-- end #top -->
-
+            <?php
+                $this->widget("wbanner");
+            ?>
             <?php
             $this->widget("menus");
             ?>
-
             <?php
             $this->widget('bootstrap.widgets.TbAlert', array(
                 'block' => true, // display a larger alert block?
@@ -99,14 +100,14 @@
                 </div>
             </div>
         </div><!-- end #footer-info -->
-        <div class="highslide-html-content" id="highslide-html">
+        <div class="highslide-html-content br" id="highslide-html">
             <div class="highslide-header">
                 <ul>
                     <li class="highslide-move">
                         <a href="#" onclick="return false">Move</a>
                     </li>
                     <li class="highslide-close">
-                        <a href="#" onclick="return hs.close(this)">Close</a>
+                        <span class="floatL">English 456</span><a href="#" onclick="return hs.close(this)"></a>
                     </li>
                 </ul>
             </div>
@@ -131,9 +132,16 @@
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/cufon-yui.js"></script>
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/League_Gothic_400.font.js"></script>
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/script.js"></script>   
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/chilltip-packed.js"></script>   
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery.tinyscrollbar.min.js"></script>   
+    
     <script>
+        var base_url = "<?php echo Yii::app()->getBaseUrl(true)?>";
         $(document).ready(function(){
             $('a.highslide').click(function(e){
+                hs.graphicsDir = '<?php echo Yii::app()->getBaseUrl()?>/highslide/graphics/';
+                hs.outlineType = 'rounded-white';
+                hs.wrapperClassName = 'draggable-header';
                 return hs.htmlExpand(this, { contentId: 'highslide-html' } );
                
             });
