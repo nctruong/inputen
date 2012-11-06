@@ -29,8 +29,6 @@ $(".pagin_home_n1 li a").click(function(){
     url = $(this).attr("href");
     page_num = $(this).attr("rel");
     x = $(this).parent().parent().parent().parent().prev().find("ul");
-    if(x == 'unbd')
-        alert($(this).parent().parent().parent().parent().prev().attr("id"));
     x.css("opacity",0);
     s_parent = x.parent().parent().parent().parent();
     load_obj = s_parent.find("img.ax_load");
@@ -67,10 +65,46 @@ function tab(control,source){
     
 }
 $().ready(function(){
-    $(".hitstat embed").css("border:1px solid #ccc");
-    $("input.search_query_input").css({"padding":"4px"});
+    $(".btn_ajax_submit").click(function(){
+        id = $(this).attr("alt");
+        form = $(".form_ajax_"+id);
+        
+        alert(form.serialize());
+        $.ajax({
+            type:'POST',
+            data:form.serialize(),
+            url:base_url+"/thanh-vien/ajaxquestion/",
+            beforeSend:function(){
+            },
+            success:function(data){
+                alert(data);
+                
+            }
+        })
+        return false;
+    })
+     $(".close_cmt").click(function(){
+        $(this).parent().parent().slideUp();
+        return false;
+    })
+    $("span.answer").click(function(){
+        id = $(this).attr("alt");
+        $(".hidden_reply").each(function(){
+            if($(this).attr("alt") != id){
+                $(this).slideUp();
+            }
+        })
+        target = $(this).next();
+        $(target).slideToggle();
+        
+    })
+    $("input.search_query_input").css({
+        "padding":"4px"
+    });
     $(".danhngon_block").ChillTip().hover(function(){
-        $(this).css({"background":"#FCD116"});
+        $(this).css({
+            "background":"#FCD116"
+        });
     },function(){
         $(this).css("background","none");
     });
@@ -95,11 +129,11 @@ $().ready(function(){
     
     
     $("a").each(function(){
-        if($(this).attr("href")=='#'){
-            $(this).click(function(){
-                //alert("Phần này đang hoàn thành");
-                return false;
-            })
+        if($(this).attr("href")=='#' | $(this).attr("href")==''){
+                $(this).addClass("highslide");
+            
+            
+            
         }
     })
     
@@ -109,6 +143,8 @@ $().ready(function(){
     tab('ul.block_listen_news_comment','.block-info-body');
     tab('ul#ul-study','.video_show_case');
     tab('ul.list_video_trailer','.list_video_trailer_component');    
+    tab('ul.control_member','.top_member_list');    
+    
     
     
     
@@ -236,11 +272,13 @@ $().ready(function(){
         scrollInertia:900,
         scrollEasing:"easeOutQuint"
     });
-    $(".mem-body").mCustomScrollbar({
-        scrollButtons:{
-            enable:true
-        },
-        scrollInertia:900,
-        scrollEasing:"easeOutQuint"
-    });
+   
+    
+//    $(".mem-body").mCustomScrollbar({
+//        scrollButtons:{
+//            enable:true
+//        },
+//        scrollInertia:900,
+//        scrollEasing:"easeOutQuint"
+//    });
 })
