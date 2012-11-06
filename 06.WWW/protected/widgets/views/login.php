@@ -13,7 +13,7 @@
         ?>  </div>
             <div class="row-fluid align_center"><?php $avt = ($user->avatar == '') ? 'no-avt.png' : $user->avatar ?><img src="<?php echo Yii::app()->getBaseUrl(true) ?>/data/avatar/<?php echo $avt ?>"></div>
             <div class="row-fluid align_center"><b><?php echo $user->username ?></b></div>
-            <div class="row-fluid align_center"><a href="<?php echo Yii::app()->getBaseUrl(true)?>/thanh-vien/<?php echo $user->id?>">Vào trang cá nhân</a>&nbsp;|&nbsp;<a href="<?php echo Yii::app()->getBaseUrl(true) ?>/member/logout.html">Thoát</div>    
+            <div class="row-fluid align_center"><a href="<?php echo Yii::app()->getBaseUrl(true)?>/thanh-vien/<?php echo $user->id?>">Vào trang cá nhân</a>&nbsp;|&nbsp;<a href="<?php echo Yii::app()->getBaseUrl(true) ?>/thanh-vien/logout.html">Thoát</div>    
             <div class="row-fluid margin20"></div>
         <?php } else { ?>
             <?php

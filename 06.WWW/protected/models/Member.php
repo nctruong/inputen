@@ -71,7 +71,9 @@ class Member extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'Comments'  => array(self::HAS_MANY, 'Comments', 'member_id')                 
+            'Comments'  => array(self::HAS_MANY, 'Comments', 'member_id'),
+            'Mquestion'  => array(self::HAS_MANY, 'Mquestion', 'user_id'),
+            //'Question'  => array(self::HAS_MANY, 'Comments', 'member_id'),                 
         );
     }
 

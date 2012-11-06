@@ -9,6 +9,7 @@
  * @property integer $location
  * @property integer $index
  * @property string $url
+ * @property string $image
  * @property integer $width
  * @property integer $height
  */
@@ -40,7 +41,7 @@ class Logo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, location', 'required'),
+			array('name, location, image', 'required'),
 			array('location, index, width, height', 'numerical', 'integerOnly'=>true),
 			array('name, url', 'length', 'max'=>255),
 			// The following rule is used by search().
@@ -73,6 +74,7 @@ class Logo extends CActiveRecord
 			'url' => 'Url',
 			'width' => 'Width',
 			'height' => 'Height',
+                    	'image' => 'Image',
 		);
 	}
 
@@ -94,6 +96,7 @@ class Logo extends CActiveRecord
 		$criteria->compare('url',$this->url,true);
 		$criteria->compare('width',$this->width);
 		$criteria->compare('height',$this->height);
+                $criteria->compare('image',$this->image);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -18,7 +18,26 @@ class MemberController extends MiisController {
         $id = Yii::app()->request->getParam("id");
         echo $id;
     }
+    public function actionAjaxquestion(){
+        $js = json_decode($_POST['js']);
+        foreach($js as $k){
+            if($k->name=='content_reply'){
+                $content = $k->value;
+            }
+            if($k->name=='hid'){
+                $id = $k->value;
+            }
+        }
 
+        
+                $model = new Mquestion;
+                $model->content = htmlspecialchars($content);
+                $model->parent = $id;
+                $model->user_id = $this->_session['login_id'];                
+                $model->state = Libraries::get_vip($this->_session['login_id']);
+                $model->date_create = new CDbExpression('NOW()');
+                $model->save();
+    }
     public function actionRegister() {
         $model = new Member;
         if (isset($_POST['Member'])) {
@@ -57,13 +76,26 @@ class MemberController extends MiisController {
         if (isset($_POST['UserLoginForm'])) {
             $iUser_login->attributes = $_POST['UserLoginForm'];
             if ($iUser_login->validate() && $iUser_login->login()) {
+                $id = $this->_session['login_id'];
+                $user = Member::model()->findByPk($id);                
+                $cur = $user->diligent_point;
+                if(gmdate ('M j, Y') != $user->date_login){
+                if((time() - $user->last_login) <= (60*60*24)){                    
+                    Member::model()->updateByPk($id,array("diligent_point"=>$cur + 1));
+                }else{
+                    if($cur == 0){
+                        $cur = 2;
+                    }
+                    $day = round((time() - $user->last_login)/(3600*24));
+                    Member::model()->updateByPk($id,array("diligent_point"=>($cur - (2*$day) < 0) ? 0 :  $cur - ((2*$day)) ));
+                }
+                Member::model()->updateByPk($id,array("last_login"=>time(),"date_login"=> gmdate ('M j, Y') ));
                 $this->redirect($_SERVER['HTTP_REFERER']);
-                
+                }
             } else {
                 Yii::app()->user->setFlash('error', 'Sai username hoặc password.');
             }
         }
-
         $this->redirect(Yii::app()->getBaseUrl(true));
     }
 
