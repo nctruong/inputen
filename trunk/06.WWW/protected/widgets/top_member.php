@@ -13,8 +13,10 @@ class Top_member extends MiisWidget {
 
     public function run() {
         parent::run();
-        
-        $this->render('top_member');
+        $data['mem_nhiettinh'] = Member::model()->findAll(array("limit"=>6,"order"=>"point desc"));        
+        $data['mem_chuyencan'] = Member::model()->findAll(array("limit"=>6,"order"=>"diligent_point desc"));        
+        $data['mem_thanhtich'] = Member::model()->findAll(array("limit"=>6,"order"=>"mark desc"));  
+        $this->render('top_member',$data);
     }
 
 }

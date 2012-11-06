@@ -7,6 +7,7 @@
  * @property integer $id
  * @property string $name
  * @property integer $point
+ * @property integer $type
  */
 class Danhhieu extends CActiveRecord
 {
@@ -36,12 +37,12 @@ class Danhhieu extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, point', 'required'),
-			array('point', 'numerical', 'integerOnly'=>true),
+			array('name, point, type', 'required'),
+			array('point, type', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, point', 'safe', 'on'=>'search'),
+			array('id, name, point, type', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,6 +66,7 @@ class Danhhieu extends CActiveRecord
 			'id' => 'ID',
 			'name' => 'Name',
 			'point' => 'Point',
+			'type' => 'Type',
 		);
 	}
 
@@ -82,6 +84,7 @@ class Danhhieu extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('point',$this->point);
+		$criteria->compare('type',$this->type);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

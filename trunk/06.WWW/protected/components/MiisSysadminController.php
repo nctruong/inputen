@@ -76,9 +76,9 @@ abstract class MiisSysadminController extends MiisController {
                     array('label' => 'Manage Resources', 'url' => Yii::app()->baseUrl . '/sysadmin/resources.html', 'active' => $this->id == 'resource' ? true : false),
                 )
             ), // Comments
-            array('label' => 'Comments', 'icon' => 'icon-comment icon-white', 'url' => Yii::app()->baseUrl . '/sysadmin.html', 'active' => $this->id == 'comments' ? true : false,
+            array('label' => 'Comments', 'icon' => 'icon-comment icon-white', 'url' => Yii::app()->baseUrl . '/sysadmin/mquestion.html', 'active' => $this->id == 'comments' ? true : false,
                 'items' => array(
-                    array('label' => 'Manage Resources', 'url' => Yii::app()->baseUrl . '/sysadmin.html', 'active' => $this->id == 'comments' ? true : false),
+                    array('label' => 'Manage Resources', 'url' => Yii::app()->baseUrl . '/sysadmin/mquestion.html', 'active' => $this->id == 'memberquestion' ? true : false),
                 )
             ), // Users
             array('label' => 'Members', 'icon' => 'icon-user icon-white', 'url' => Yii::app()->baseUrl . '/sysadmin/users.html', 'active' => $this->id == 'users' ? true : false,

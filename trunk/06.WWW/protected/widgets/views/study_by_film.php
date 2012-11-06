@@ -3,7 +3,7 @@
         <div class='row-fluid block-home-4-title'>
             <a href='#'>học qua phim</a>
         </div>
-        <div class='box-ul box-ul-video'>
+        <div class='box-ul box-ul-video relative'>
             <ul class='ul3 list_video_trailer'>
                 <li class='active'><a href='tab'>Phim trailer</a></li>
                 <li><a href='tab1'>VOA Video</a></li>
@@ -96,9 +96,9 @@
                     }
                     ?>
                 </div>
-                
+           
             </div>
-
+<img class='ax_load' src="<?php echo Yii::app()->getBaseUrl(true) ?>/themes/default/assets/img/325.gif">     
         </div>
     </div>
 </div>
