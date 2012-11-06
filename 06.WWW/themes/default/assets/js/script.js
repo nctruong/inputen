@@ -130,7 +130,7 @@ $().ready(function(){
     
     $("a").each(function(){
         if($(this).attr("href")=='#' | $(this).attr("href")==''){
-                $(this).addClass("highslide");
+       //         $(this).addClass("highslide");
             
             
             

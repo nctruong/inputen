@@ -14,7 +14,10 @@
             <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/page2.css" rel="stylesheet"/>            
             <link href="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/css/row.css" rel="stylesheet"/>            
             <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/highslide/highslide.css" rel="stylesheet"/> 
+            <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/highslide/jquery.cluetip.css" rel="stylesheet"/> 
+            
             <script src="<?php echo Yii::app()->getBaseUrl(true); ?>/highslide/highslide-with-html.min.js"></script>
+            
             <style>
                 .highslide-credits{display:none;}
             </style>
@@ -134,19 +137,39 @@
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/script.js"></script>   
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/chilltip-packed.js"></script>   
     <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery.tinyscrollbar.min.js"></script>   
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/swfobject.js"></script>   
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/audio-player-uncompressed.js"></script>  
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery.cluetip.js"></script>  
+    <script src="<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/jquery.hoverIntent.js"></script>  
+    
     
     <script>
         var base_url = "<?php echo Yii::app()->getBaseUrl(true)?>";
         $(document).ready(function(){
+             AudioPlayer.setup("<?php echo Yii::app()->theme->getBaseUrl(); ?>/assets/js/player.swf", {  
+                width: 250,
+                initialvolume: 100,  
+                transparentpagebg: "yes",  
+                autostart: "yes"
+            });  
             $('a.highslide').click(function(e){
                 hs.graphicsDir = '<?php echo Yii::app()->getBaseUrl()?>/highslide/graphics/';
                 hs.outlineType = 'rounded-white';
                 hs.wrapperClassName = 'draggable-header';
                 return hs.htmlExpand(this, { contentId: 'highslide-html' } );
                
+               
             });
+           $('a').cluetip({
+  hoverIntent: {
+    sensitivity:  1,
+    interval:     750,
+    timeout:      750
+  }
+});
             
         });
     </script>
 </html>
+
 
