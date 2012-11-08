@@ -26,6 +26,14 @@ class Libraries {
         }
     }
 
+    public static function dataCleasing($data) {
+        $data = Yii::app()->input->purify($data);    
+        $data = Yii::app()->input->xssClean($data);  
+        $data = Yii::app()->input->stripTags($data);  
+        $data = Yii::app()->input->stripClean($data);  
+        return $data;
+    }
+
     public static function check($s) {
         echo "<pre>";
         print_r($s);
@@ -44,8 +52,9 @@ class Libraries {
     public static function isEnable($id) {
         return count((Content::model()->findAll("category_id = " . $id . " and state = 1")));
     }
-    public static function getTendanhhieu($type){
-        switch($type){
+
+    public static function getTendanhhieu($type) {
+        switch ($type) {
             case 1:
                 return 'Điểm danh hiệu';
                 break;
@@ -57,14 +66,15 @@ class Libraries {
                 break;
         }
     }
-    public static function getDanhhieu($point,$type = 1) {
+
+    public static function getDanhhieu($point, $type = 1) {
 
         if ($point == 0) {
             $point = 1;
         }
         $array = array();
         $i = 0;
-        $total = Danhhieu::model()->findAll("type = ".$type);
+        $total = Danhhieu::model()->findAll("type = " . $type);
         foreach ($total as $k) {
             $array[$i]['point'] = $k->point;
             $array[$i]['id'] = $k->id;
@@ -73,30 +83,30 @@ class Libraries {
         }
 
         $rs = '';
-        if($point < $array[0]['point']){
+        if ($point < $array[0]['point']) {
             $rs = $array[0];
         }
-         if($point > $array[$i-1]['point']){    
-            $rs = $array[$i-1];
+        if ($point > $array[$i - 1]['point']) {
+            $rs = $array[$i - 1];
         }
-        
-        if(!is_array($rs)){
-            $i=0;
-        foreach ($array as $k => $v) {
-            if ($array[$i]['point'] <= $point && $array[$i + 1]['point'] > $point) {
-                $rs = $array[$i];
-                break;
+
+        if (!is_array($rs)) {
+            $i = 0;
+            foreach ($array as $k => $v) {
+                if ($array[$i]['point'] <= $point && $array[$i + 1]['point'] > $point) {
+                    $rs = $array[$i];
+                    break;
+                }
+                if ($array[$i]['point'] < $point && $array[$i + 1]['point'] >= $point) {
+                    $rs = $array[$i + 1];
+                    break;
+                }
+                if ($array[$i]['point'] == $point) {
+                    $rs = $array[$i];
+                    break;
+                }
+                $i++;
             }
-            if ($array[$i]['point'] < $point && $array[$i + 1]['point'] >= $point) {
-                $rs = $array[$i + 1];
-                break;
-            }
-            if ($array[$i]['point'] == $point) {
-                $rs = $array[$i];
-                break;
-            }
-            $i++;
-        }
         }
         return $rs['name'];
     }

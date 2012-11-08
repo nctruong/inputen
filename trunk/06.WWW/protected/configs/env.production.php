@@ -5,7 +5,7 @@ return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
     'name' => 'Tiếng Anh 123',
     'preload' => array(
-        'bootstrap', 'TiiSlug','MiisCG'
+        'bootstrap', 'TiiSlug', 'MiisCG', 'input'
     ),
     'import' => array(
         'application.widgets.*',
@@ -14,8 +14,7 @@ return array(
     ),
     //set language
     'sourceLanguage' => 'vi',
-     //set language
-    'sourceLanguage'=>'vi',
+    //set language
     'modules' => array(
         'members',
         'sysadmin',
@@ -36,6 +35,11 @@ return array(
         ),
         'bootstrap' => array(
             'class' => 'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
+        ),
+        'input' => array(
+            'class' => 'application.components.CmsInput',
+            'cleanPost' => true,
+            'cleanGet' => true,
         ),
         'urlManager' => array(
             'urlFormat' => 'path',
@@ -62,7 +66,6 @@ return array(
                 'thanh-vien/dang-nhap' => 'member/login',
                 'thanh-vien/logout' => 'member/logout',
                 'thanh-vien/<id:\d+>' => 'member/detail',
-                
                 'video' => 'video',
                 'video/<title:.*?>-<tid:\d+>/<slug:.*?>-<id:\d+>' => array('video/view/', 'urlSuffix' => '.html'),
                 'video/<slug:.*>-<id:\d+>' => 'video/viewlist/',
@@ -93,11 +96,10 @@ return array(
                 'tin-tuc/<slug:.*>-<id:\d+>' => 'news/viewlist/',
                 //clip
                 'hoc-qua-clip' => 'clip',
-                'hoc-qua-clip/<slug:.*?>/<id_cat:\d+>/page/<page:\d+>' =>'clip/ajax',                
-                'hoc-qua-clip/<slug:.*?>/<id_cat:\d+>/<type:.*?>/page/<page:\d+>' =>'clip/ajax',                
+                'hoc-qua-clip/<slug:.*?>/<id_cat:\d+>/page/<page:\d+>' => 'clip/ajax',
+                'hoc-qua-clip/<slug:.*?>/<id_cat:\d+>/<type:.*?>/page/<page:\d+>' => 'clip/ajax',
                 'hoc-qua-clip/<controller:\w+>' => 'news/<controller>',
                 'hoc-qua-clip/<controller:\w+>/<action:\w+>' => 'news/<controller>/<action>',
-                
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',

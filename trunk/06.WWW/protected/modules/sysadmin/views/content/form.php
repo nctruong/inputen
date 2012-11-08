@@ -18,7 +18,22 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     <?php echo $form->textFieldRow($model, 'title', array('class' => 'span5', 'maxlength' => 255)); ?>
 
     <?php echo $form->textFieldRow($model, 'slug', array('class' => 'span5', 'maxlength' => 255)); ?>
-    <?php echo $form->textFieldRow($model, 'image', array('class' => 'span5', 'maxlength' => 255)); ?>
+    <div class="control-group">
+        <div class="control-label">
+     <?php echo $form->labelEx($model,'image'); ?>       
+        </div>
+        <div class="controls">
+            
+      <?php
+                        $this->widget('ext.elFinder.ServerFileInput', array(
+                            'model' => $model,
+                            'attribute' => 'image',
+                            'connectorRoute' => 'sysadmin/elfinder/connector',
+                                )
+                        );
+      ?>
+        </div>
+    </div>
 <!--    <div class="control-group">
         <label class="control-label">Mô tả</label>-->
         <!-- <div class="controls">

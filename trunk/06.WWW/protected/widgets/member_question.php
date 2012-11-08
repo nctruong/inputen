@@ -26,7 +26,7 @@ class Member_question extends MiisWidget {
                 $model->date_create = new CDbExpression('NOW()');
                 $model->save();
             }        
-        $data['question'] = Mquestion::model()->findAll(array("condition"=>"state = 1","order" => "date_create desc","limit"=>10));
+        $data['question'] = Mquestion::model()->findAll(array("condition"=>"state = 1 and parent = 0 ","order" => "date_create desc","limit"=>1));
         $data['u_log'] = $this->_session['login_id'];
         $this->render('member_question',$data);
     }

@@ -26,18 +26,13 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 //                            ),
 //                        ));
                         ?>
-            
-        </div-->
-<!--    </div>-->
-    
-    
-    <div class="control-group">
-        <div class="confirm" style="">
+        -->
             <?php echo $form->textAreaRow($model, 'title', array('class' => 'span5', 'rows' => 3)); ?>
             <?php echo $form->textAreaRow($model, 'dictionary', array('class' => 'span5', 'rows' => 3)); ?>
             <?php echo $form->textFieldRow($model, 'author', array('class' => 'span5', 'maxlength' => 255)); ?>
-            <div class="op_2 op_1 ctrl" style="">
-                <div class="control-group ">        
+            <div class="control-group">
+        <label class="control-label">Audio</label>
+        <div class="controls">
                 <?php
                         $this->widget('ext.elFinder.ServerFileInput', array(
                             'model' => $model,
@@ -48,7 +43,6 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
                         ?>
                 </div>
             </div>
-        </div>
 
 
         <?php echo $form->dropDownListRow($model, 'state', array(1 => 'Publish', 0 => 'UnPublish')); ?>

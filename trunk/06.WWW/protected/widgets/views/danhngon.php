@@ -8,7 +8,7 @@
                 <?php
                 foreach($danhngon as $k){ ?>
                 <li>
-                    <a class='danhngon_block' href="javascript:void(0)" title="<?php echo $k->dictionary?>"><?php echo $k->title?></a> <span class='vlum'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-volume.png' /></span>
+                    <a class='danhngon_block' href="javascript:void(0)" title="<?php echo $k->dictionary?>"><?php echo $k->title?></a> <span class='vlum' alt="<?php echo $k->audio ?>"><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/icon-volume.png' /></span>
                     <p><?php echo $k->author?></p>            
                     </li>
                 <?php } ?>
