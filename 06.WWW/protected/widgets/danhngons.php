@@ -13,8 +13,10 @@ class Danhngons extends MiisWidget {
 
     public function run() {
         parent::run();
-        $data['danhngon'] = Danhngon::model()->findAll(array("condition"=>"state = 1","order"=>"created_date desc","limit"=>10));
-        $this->render('danhngon',$data);
+        $cs = Yii::app()->getClientScript();
+        $cs->registerScript('Audio','$(".vlum").click(function(e){playAudio($(this),$(this).attr("alt"));})',CClientScript::POS_END);
+        $data['danhngon'] = Danhngon::model()->findAll(array("condition" => "state = 1", "order" => "created_date desc", "limit" => 10));
+        $this->render('danhngon', $data);
     }
 
 }

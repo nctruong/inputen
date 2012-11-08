@@ -68,8 +68,9 @@ class DanhngonController extends MiisSysadminController {
             Libraries::check($model->attributes);
             $model->created_date = new CDbExpression('NOW()');
             $model->title = ($model->title);
-            $model->validate();
-            Libraries::check($model->getErrors());
+            //$model->validate();
+            //Libraries::check($model->getErrors());
+            $model->audio = str_replace("/06.WWW/","",$model->audio);
             if ($model->save())
                 $this->redirect(array('index'));
         }

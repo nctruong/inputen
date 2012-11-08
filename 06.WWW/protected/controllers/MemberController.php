@@ -19,11 +19,27 @@ class MemberController extends MiisController {
         echo $id;
     }
     public function actionAjaxquestion(){
-        echo "aaa";
-        echo "<pre>";
-        print_r($_POST);
-        echo "</pre>";
-
+        $array['status'] = 0;
+        if(isset($_POST['submit_reply'])){
+            $id = $_POST['hid'];
+                $model = new Mquestion;
+                $model->content = Libraries::dataCleasing($_POST['content_reply']);
+                $model->parent = $_POST['hid'];
+                $model->user_id = $this->_session['login_id'];
+                $model->state = Libraries::get_vip($model->user_id);
+                $model->date_create = new CDbExpression('NOW()');
+                if($model->save()){
+                    $user = Member::model()->findByPk($model->user_id);
+                    $array['status'] = 1;
+                    $array['content'] = '<li><span class="name"><a href="'.Yii::app()->getBaseUrl(true).'/thanh-vien/'.$model->user_id.'.html">'.$user->username.'</a>';
+                    if($user->premium==1){
+                        $array['content'].="<img src='".Yii::app()->getBaseUrl(true)."/themes/default/assets/img/vip_i.gif'>";
+                    }
+                     $array['vip'] = $user->premium;
+                     $array['content'].='</span><p>'.$model->content.'</p></li>';
+                }
+        }
+        echo json_encode($array);
     }
     public function actionRegister() {
         $model = new Member;
