@@ -27,10 +27,10 @@ class Libraries {
     }
 
     public static function dataCleasing($data) {
-        $data = Yii::app()->input->purify($data);    
-        $data = Yii::app()->input->xssClean($data);  
-        $data = Yii::app()->input->stripTags($data);  
-        $data = Yii::app()->input->stripClean($data);  
+        $data = Yii::app()->input->purify($data);
+        $data = Yii::app()->input->xssClean($data);
+        $data = Yii::app()->input->stripTags($data);
+        $data = Yii::app()->input->stripClean($data);
         return $data;
     }
 
@@ -51,6 +51,13 @@ class Libraries {
 
     public static function isEnable($id) {
         return count((Content::model()->findAll("category_id = " . $id . " and state = 1")));
+    }
+
+    public static function validateURL($url, $prefix = '') {
+        $regex = "|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i";   
+        if (preg_match($regex, $url))
+            return $url;
+        return Yii::app()->getBaseUrl(true) . $prefix . $url;
     }
 
     public static function getTendanhhieu($type) {

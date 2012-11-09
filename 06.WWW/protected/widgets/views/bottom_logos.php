@@ -1,10 +1,9 @@
 <div class='row-fluid logo-footer'>
     <ul>
-        <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/logo-123.png' /></a></li>
-        <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/logo-123.png' /></a></li>
-        <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/logo-123.png' /></a></li>
-        <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/logo-123.png' /></a></li>
-        <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/logo-123.png' /></a></li>
-        <li><a href='#'><img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/default/assets/img/logo-123.png' /></a></li>
+        <?php
+            foreach($adv as $k){
+                echo "<li><a href='".$k->link."' title='".$k->title."'><img src='".Yii::app()->getBaseUrl(true).$k->image."' /></a></li>";
+            }   
+        ?>
     </ul>
 </div>
