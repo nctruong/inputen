@@ -18,6 +18,19 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     <?php echo $form->textFieldRow($model, 'slug', array('class' => 'span5', 'maxlength' => 255)); ?>
 
     <?php echo $form->textAreaRow($model, 'desc', array('rows' => 6, 'cols' => 50, 'class' => 'span8')); ?>
+      <div class="control-group">
+        <label class="control-label">Image</label>
+        <div class="controls">
+                <?php
+                        $this->widget('ext.elFinder.ServerFileInput', array(
+                            'model' => $model,
+                            'attribute' => 'image',
+                            'connectorRoute' => 'sysadmin/elfinder/connector',
+                                )
+                        );
+                        ?>
+                </div>
+            </div>
 
     
     <?php echo $form->textFieldRow($model, 'order', array('class' => 'span5')); ?>

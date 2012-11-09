@@ -42,7 +42,7 @@ class Category extends CActiveRecord {
             array('title, slug, parent, state, taxonomy_id', 'required'),
             array('order, parent, state, taxonomy_id', 'numerical', 'integerOnly' => true),
             array('title, slug', 'length', 'max' => 255),
-            array('desc, created_date', 'safe'),
+            array('desc, created_date, image', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             array('id, title, slug, desc, created_date, order, parent, state, taxonomy_id', 'safe', 'on' => 'search'),

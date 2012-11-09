@@ -27,6 +27,9 @@ return array(
         ),
     ),
     'components' => array(
+        //'format' => array(
+        //    'class' => 'system.utils.CFormatter',
+        //),
         'errorHandler' => array(
             'errorAction' => 'site/error',
         ),
@@ -36,11 +39,11 @@ return array(
         'bootstrap' => array(
             'class' => 'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
         ),
-        'input' => array(
-            'class' => 'application.components.CmsInput',
-            'cleanPost' => true,
-            'cleanGet' => true,
-        ),
+        //'input' => array(
+        //    'class' => 'application.components.CmsInput',
+        //    'cleanPost' => true,
+        //    'cleanGet' => true,
+        //),
         'urlManager' => array(
             'urlFormat' => 'path',
             'urlSuffix' => '.html',
@@ -83,6 +86,7 @@ return array(
                 'hoc-qua-clip/<title:.*?>-<tid:\d+>/<slug:.*?>-<id:\d+>' => array('clip/view/', 'urlSuffix' => '.html'),
                 'hoc-qua-clip/<slug:.*>-<id:\d+>' => 'clip/viewlist/',
                 'hoc-va-choi' => 'lern',
+                'hoc-va-choi/<title:.*?>-<tid:\d+>/<title2:.*?>-<tid2:\d+>/<slug:.*?>-<id:\d+>' => array('lern/view2/', 'urlSuffix' => '.html'),
                 'hoc-va-choi/<title:.*?>-<tid:\d+>/<slug:.*?>-<id:\d+>' => array('lern/view/', 'urlSuffix' => '.html'),
                 'hoc-va-choi/<slug:.*>-<id:\d+>' => 'lern/viewlist/',
                 'bai-test' => 'test',

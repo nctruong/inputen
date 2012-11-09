@@ -17,6 +17,7 @@ echo "\n?>\n";
     echo "\$this->widget('bootstrap.widgets.TbGridView', array(
         'id' => '" . $this->modelClass . "-grid',
         'type' => 'striped bordered condensed',
+        'filter' => \$model,
         'dataProvider' => \$model->search(),
         'selectableRows' => 2, // multiple rows can be selected
         'template' => \"{items}{summary}{pager}\",

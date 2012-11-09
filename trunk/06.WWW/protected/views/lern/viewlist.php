@@ -1,26 +1,26 @@
 <div id='sub-nav' class='row-fluid'>
     <div class='page3'>
-        <div class='title_ab span4'>
+        <div class='title_ab span12'>
             <span class="row-fluid span12 title_small">THỂ LOẠI</span>
             <span class="row-fluid span12 title_big">HỌC VÀ CHƠI</span>           
         </div>
         <div id='' class='span8 en-title-pg2'>
             <?php
-                $total = count($listcat);
-                echo "<div class='row-fluid'>";
-                $i=0;
-                foreach($listcat as $k=>$v){
-                        $i++;
-                        if($i==round($total/2)){
-                            echo "</div>";
-                            echo "<div class='row-fluid'>";
-                        }
-                        echo "<a  href='".Yii::app()->getBaseUrl(true)."/hoc-va-choi/".$v->slug."-".$v->id.".html'>".$v->title."</a>";
-                        if($i < $total){
-                            echo "/";
-                        }
-                }  
-                echo "</div>";  
+//                $total = count($listcat);
+//                echo "<div class='row-fluid'>";
+//                $i=0;
+//                foreach($listcat as $k=>$v){
+//                        $i++;
+//                        if($i==round($total/2)){
+//                            echo "</div>";
+//                            echo "<div class='row-fluid'>";
+//                        }
+//                        echo "<a  href='".Yii::app()->getBaseUrl(true)."/hoc-va-choi/".$v->slug."-".$v->id.".html'>".$v->title."</a>";
+//                        if($i < $total){
+//                            echo "/";
+//                        }
+//                }  
+//                echo "</div>";  
             ?>
         </div>
     </div>
@@ -37,7 +37,15 @@
         </div><!-- end header-at-->
         <div class='row-fluid body-at container'>	
             <?php
+                      
                 $total_item = count($items);
+                echo $total_item;
+                $link = '';
+                     
+                     if(count($cate)!=0){
+                         $link = $cate->slug."-".$cate->id."/";
+                     }
+                
                 echo "<div id='en-left' class='span6 pag7 pag2'>";
                 $i = 0;
                 foreach($items as $k=>$v){
@@ -50,16 +58,35 @@
                     ?>
                     <div class="en-box row-fluid">
                     <div class="row-fluid en-box-title">
-                       <a class='title-listen' href="<?php echo Yii::app()->getBaseUrl(true)."/hoc-va-choi/".$root->slug."-".$root->id."/".$v->slug."-".$v->id.".html"?>" title="<?php echo $v->title ?>"><?php echo $v->title ?></a>
+                        
+                        <?php
+                        
+                            if(@$is_cate){?>
+                        
+                                <a class='title-listen' href="<?php echo Yii::app()->getBaseUrl(true)."/hoc-va-choi/".$root->slug."-".$root->id."/".$v->slug."-".$v->id.".html"?>" title="<?php echo $v->title ?>"><?php echo $v->title ?></a>        
+                            <?php }else{?>
+                                <a class='title-listen' href="<?php echo Yii::app()->getBaseUrl(true)."/hoc-va-choi/".$link.$root->slug."-".$root->id."/".$v->slug."-".$v->id.".html"?>" title="<?php echo $v->title ?>"><?php echo $v->title ?></a>
+                            <?php }
+                        ?>
+                       
                     </div>
                     <div class="row-fluid en-box-feature "><!-- .en-box-feature -->
                         <div class="row-fluid">
                             <div class="span8 offset2" >
-                                <a href="<?php echo Yii::app()->getBaseUrl(true)."/hoc-va-choi/".$root->slug."-".$root->id."/".$v->slug."-".$v->id.".html"?>" class="thumbnail" title="<?php echo $v->title ?>" ><img class="" src="<?php echo Libraries::getImage($v->content) ?>" /></a>
+                                <?php
+                            if(@$is_cate){?>
+                                <a href="<?php echo Yii::app()->getBaseUrl(true)."/hoc-va-choi/".$root->slug."-".$root->id."/".$v->slug."-".$v->id.".html"?>" class="thumbnail" title="<?php echo $v->title ?>" ><img class="" src="<?php echo Yii::app()->getBaseUrl(true).$v->image ?>" /></a>
+                           <?php }else{?>
+                                         <a href="<?php echo Yii::app()->getBaseUrl(true)."/hoc-va-choi/".$link.$root->slug."-".$root->id."/".$v->slug."-".$v->id.".html"?>" class="thumbnail" title="<?php echo $v->title ?>" ><img class="" src="<?php echo Libraries::validateURL($v->image) ?>" /></a>
+                            <?php }
+                        ?>
+                       
+                                
+                       
                             </div>
                         </div>
                         <div class="row-fluid box-feature">
-                            Mạo từ là từ dùng trước danh từ và cho biết danh từ ấn đề cập đến một đối tượng xác định hay không xác định
+                           
                         </div> 
                     </div><!-- end .en-box-feature -->
                 </div><!-- end .en-box //ngu phap -->

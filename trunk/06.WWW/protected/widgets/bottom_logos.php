@@ -17,10 +17,8 @@ class Bottom_logos extends CWidget {
         $criteria->order='t.order ASC';
 
         $menu = Menu::model()->findAll($criteria);
-        
-        
-
-        $this->render('bottom_logos');
+        $data['adv'] = Advertisement::model()->findAll("state = 1");
+        $this->render('bottom_logos',$data);
     }
 
 }
